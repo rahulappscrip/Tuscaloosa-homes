@@ -26,6 +26,14 @@ export const metadata: Metadata = {
     "cash home buyer tuscaloosa",
     "sell house for cash alabama",
   ],
+  robots: {
+    index: false,
+    follow: false,
+    googleBot: {
+      index: false,
+      follow: false,
+    },
+  },
 };
 
 export default function RootLayout({

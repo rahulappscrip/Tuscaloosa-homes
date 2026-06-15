@@ -335,7 +335,7 @@ export function Header() {
           <div className="flex h-[70px] items-center justify-between gap-6">
             {/* Logo */}
             <Link href="/" className="flex min-w-0 shrink items-center gap-2.5 sm:gap-3">
-              <Logo className="h-10 w-10 shrink-0 sm:h-11 sm:w-11" />
+              <Logo className="h-10 w-auto shrink-0 sm:h-11" />
               <div className="min-w-0 leading-[1.2]">
                 <strong className="font-primary block truncate text-[0.95rem] font-bold text-navy sm:text-[1.05rem] sm:whitespace-nowrap">
                   We Buy Tuscaloosa Homes

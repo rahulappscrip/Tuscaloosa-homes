@@ -44,20 +44,17 @@ export function MeetJoe() {
 
               <div className="absolute right-4 bottom-4 flex items-center gap-3 rounded-xl bg-white px-4 py-3 shadow-[0_8px_28px_rgba(26,35,50,0.12)] sm:right-6 sm:bottom-6">
                 <div
-                  className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-gold text-lg text-navy"
+                  className="font-primary flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-teal text-[0.8rem] font-bold text-white"
                   aria-hidden
                 >
-                  🏆
+                  JL
                 </div>
                 <div className="font-secondary leading-tight">
-                  <div className="mb-0.5 text-[0.7rem] tracking-wide text-gold">
-                    ★★★★★
-                  </div>
                   <strong className="block text-[0.95rem] font-bold text-navy">
-                    5.0
+                    Joe LeBlanc
                   </strong>
-                  <span className="text-[0.72rem] text-slate">
-                    103+ verified reviews
+                  <span className="text-[0.72rem] font-semibold text-teal">
+                    Founder, We Buy Tuscaloosa Homes
                   </span>
                 </div>
               </div>

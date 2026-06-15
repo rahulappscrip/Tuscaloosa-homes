@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
 
@@ -132,86 +133,6 @@ function ChevronIcon() {
   );
 }
 
-function MapIllustration() {
-  return (
-    <svg
-      className="absolute inset-0 h-full w-full"
-      viewBox="0 0 800 640"
-      preserveAspectRatio="xMidYMid slice"
-      aria-hidden
-    >
-      <defs>
-        <linearGradient id="map-sky" x1="0" y1="0" x2="1" y2="1">
-          <stop offset="0%" stopColor="#e8f6fa" />
-          <stop offset="100%" stopColor="#dceef2" />
-        </linearGradient>
-        <linearGradient id="map-land" x1="0" y1="0" x2="0" y2="1">
-          <stop offset="0%" stopColor="#d4ede4" />
-          <stop offset="100%" stopColor="#c5e6d8" />
-        </linearGradient>
-      </defs>
-
-      <rect width="800" height="640" fill="url(#map-sky)" />
-
-      {/* Region shape */}
-      <path
-        d="M80 140 C160 80, 320 60, 520 100 C660 130, 740 220, 720 360 C700 480, 560 560, 400 580 C220 600, 100 520, 60 360 C40 260, 50 190, 80 140 Z"
-        fill="url(#map-land)"
-        opacity="0.9"
-      />
-
-      {/* River */}
-      <path
-        d="M120 420 C220 380, 300 400, 400 360 C500 320, 580 340, 680 300"
-        fill="none"
-        stroke="#9fd4e8"
-        strokeWidth="18"
-        strokeLinecap="round"
-        opacity="0.7"
-      />
-      <path
-        d="M120 420 C220 380, 300 400, 400 360 C500 320, 580 340, 680 300"
-        fill="none"
-        stroke="#b8e4f2"
-        strokeWidth="8"
-        strokeLinecap="round"
-      />
-
-      {/* Roads */}
-      <path d="M200 180 L620 220" stroke="#ffffff" strokeWidth="3" opacity="0.55" />
-      <path d="M160 300 L680 280" stroke="#ffffff" strokeWidth="3" opacity="0.45" />
-      <path d="M400 120 L420 520" stroke="#ffffff" strokeWidth="3" opacity="0.4" />
-      <path d="M280 200 L520 420" stroke="#ffffff" strokeWidth="2" opacity="0.35" />
-
-      {/* Subtle grid */}
-      {Array.from({ length: 12 }).map((_, i) => (
-        <line
-          key={`v-${i}`}
-          x1={i * 70}
-          y1="0"
-          x2={i * 70}
-          y2="640"
-          stroke="#2bbcd4"
-          strokeWidth="0.5"
-          opacity="0.06"
-        />
-      ))}
-      {Array.from({ length: 10 }).map((_, i) => (
-        <line
-          key={`h-${i}`}
-          x1="0"
-          y1={i * 70}
-          x2="800"
-          y2={i * 70}
-          stroke="#2bbcd4"
-          strokeWidth="0.5"
-          opacity="0.06"
-        />
-      ))}
-    </svg>
-  );
-}
-
 function ServiceMap({
   activeId,
   onSelect,
@@ -222,34 +143,19 @@ function ServiceMap({
   const activeArea = areas.find((area) => area.id === activeId) ?? areas[0];
 
   return (
-    <div className="relative aspect-[5/4] w-full min-w-0 max-w-full overflow-hidden rounded-2xl border border-mist bg-[#dfeef0] shadow-[0_8px_32px_rgba(26,35,50,0.08)] sm:min-h-[460px]">
-      <MapIllustration />
-
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_48%,rgba(43,188,212,0.18),transparent_60%)]" />
-
-      {/* Core coverage */}
-      <div
-        className="pointer-events-none absolute rounded-full border-2 border-teal/25 bg-teal/10"
-        style={{
-          left: "50%",
-          top: "48%",
-          width: "62%",
-          height: "62%",
-          transform: "translate(-50%, -50%)",
-        }}
-      />
-      <div
-        className="pointer-events-none absolute rounded-full border border-teal/15 bg-teal/5"
-        style={{
-          left: "50%",
-          top: "48%",
-          width: "82%",
-          height: "82%",
-          transform: "translate(-50%, -50%)",
-        }}
+    <div className="relative aspect-square w-full min-w-0 max-w-full overflow-hidden rounded-2xl border border-mist bg-[#f7f5ef] shadow-[0_8px_32px_rgba(26,35,50,0.08)]">
+      <Image
+        src="/assets/tuscaloosa-map.jpg"
+        alt="Map of Tuscaloosa and surrounding areas we buy houses in"
+        fill
+        className="object-cover"
+        sizes="(max-width: 1024px) 100vw, 50vw"
+        priority={false}
       />
 
-      {/* Active area pulse */}
+      <div className="absolute inset-0 bg-white/5" aria-hidden />
+
+      {/* Active area highlight */}
       <div
         className="pointer-events-none absolute z-10 rounded-full bg-teal/20 transition-all duration-500 ease-out"
         style={{
