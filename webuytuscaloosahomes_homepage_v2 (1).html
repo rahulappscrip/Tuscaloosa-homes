@@ -1,0 +1,2181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>We Buy Homes for Cash in Tuscaloosa | Local Home Buyer Joe</title>
+<meta name="description" content="Need to sell your house fast in Tuscaloosa? We buy homes for cash, as-is, with no repairs or closing costs. Get a fair local cash offer from Joe in 24 hours.">
+
+<!-- Google Fonts -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Inter:wght@300;400;500;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+
+<style>
+/* =========================================
+   DESIGN TOKENS
+   Palette: Alabama earth — warm not generic
+   ========================================= */
+:root {
+  --navy:    #1B2D45;
+  --green:   #3A7D44;
+  --green-l: #4E9E5C;
+  --amber:   #C8873A;
+  --amber-l: #E8A55A;
+  --cream:   #F7F3EC;
+  --charcoal:#2C2C2C;
+  --mid:     #6B6B6B;
+  --border:  #E0D8CE;
+  --white:   #FFFFFF;
+  --hero-bg: #1B2D45;
+  --radius:  6px;
+  --font-serif: 'DM Serif Display', Georgia, serif;
+  --font-sans:  'Inter', system-ui, sans-serif;
+  --font-mono:  'Space Mono', monospace;
+}
+
+/* =========================================
+   RESET & BASE
+   ========================================= */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body {
+  font-family: var(--font-sans);
+  color: var(--charcoal);
+  background: var(--white);
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+img { max-width: 100%; display: block; }
+a { text-decoration: none; color: inherit; }
+ul { list-style: none; }
+
+/* =========================================
+   TYPOGRAPHY
+   ========================================= */
+.serif { font-family: var(--font-serif); }
+.mono  { font-family: var(--font-mono); }
+
+h1, h2, h3 { font-family: var(--font-serif); line-height: 1.15; }
+h1 { font-size: clamp(2.4rem, 6vw, 4.2rem); }
+h2 { font-size: clamp(1.8rem, 4vw, 3rem); }
+h3 { font-size: clamp(1.1rem, 2vw, 1.4rem); }
+p  { font-size: 1.05rem; line-height: 1.75; color: var(--mid); }
+
+/* =========================================
+   UTILITY
+   ========================================= */
+.container { max-width: 1200px; margin: 0 auto; padding: 0 24px; }
+.container--sm { max-width: 800px; margin: 0 auto; padding: 0 24px; }
+.accent-green  { color: var(--green); }
+.accent-amber  { color: var(--amber); }
+.tag {
+  display: inline-block;
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--amber);
+  border: 1px solid var(--amber);
+  padding: 4px 10px;
+  border-radius: 2px;
+  margin-bottom: 16px;
+}
+.tag--white { color: rgba(255,255,255,0.7); border-color: rgba(255,255,255,0.3); }
+
+/* Buttons */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 15px 30px;
+  border-radius: var(--radius);
+  font-family: var(--font-sans);
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s;
+  border: 2px solid transparent;
+}
+.btn--primary {
+  background: var(--green);
+  color: white;
+}
+.btn--primary:hover { background: var(--green-l); transform: translateY(-2px); box-shadow: 0 6px 24px rgba(58,125,68,0.35); }
+.btn--amber {
+  background: var(--amber);
+  color: white;
+}
+.btn--amber:hover { background: var(--amber-l); transform: translateY(-2px); box-shadow: 0 6px 24px rgba(200,135,58,0.35); }
+.btn--outline {
+  background: transparent;
+  border-color: white;
+  color: white;
+}
+.btn--outline:hover { background: white; color: var(--navy); }
+.btn--full { width: 100%; justify-content: center; }
+.btn--lg { padding: 18px 36px; font-size: 1.1rem; }
+
+/* =========================================
+   TOP BAR
+   ========================================= */
+.topbar {
+  background: var(--navy);
+  color: rgba(255,255,255,0.8);
+  font-size: 0.8rem;
+  padding: 8px 0;
+}
+.topbar__inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+.topbar__stars {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+.topbar__stars .stars { color: #F5C518; letter-spacing: 1px; }
+.topbar__links {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+.topbar__links a {
+  color: rgba(255,255,255,0.75);
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 0.82rem;
+  transition: color 0.2s;
+}
+.topbar__links a:hover { color: white; }
+.topbar__bbb {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 0.8rem;
+  color: rgba(255,255,255,0.75);
+}
+.bbb-badge {
+  background: var(--amber);
+  color: white;
+  font-family: var(--font-mono);
+  font-size: 0.65rem;
+  font-weight: 700;
+  padding: 2px 6px;
+  border-radius: 2px;
+  letter-spacing: 0.05em;
+}
+
+/* =========================================
+   NAVBAR
+   ========================================= */
+.navbar {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background: var(--white);
+  border-bottom: 1px solid var(--border);
+  box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+}
+.navbar__inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 70px;
+  gap: 24px;
+}
+.navbar__logo {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-shrink: 0;
+}
+.navbar__logo-img {
+  width: 44px;
+  height: 44px;
+  object-fit: contain;
+}
+.navbar__logo-text { line-height: 1.2; }
+.navbar__logo-text strong {
+  display: block;
+  font-family: var(--font-serif);
+  font-size: 1.05rem;
+  color: var(--navy);
+}
+.navbar__logo-text span {
+  display: block;
+  font-size: 0.65rem;
+  font-family: var(--font-mono);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--green);
+}
+
+/* Nav links */
+.navbar__nav { display: flex; align-items: center; gap: 4px; }
+.navbar__nav > li { position: relative; }
+.navbar__nav > li > a,
+.navbar__nav > li > button {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  padding: 8px 14px;
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: var(--charcoal);
+  background: none;
+  border: none;
+  cursor: pointer;
+  border-radius: 4px;
+  transition: all 0.2s;
+  font-family: var(--font-sans);
+}
+.navbar__nav > li > a:hover,
+.navbar__nav > li > button:hover { color: var(--green); background: rgba(58,125,68,0.07); }
+
+/* Dropdown */
+.dropdown {
+  position: absolute;
+  top: calc(100% + 8px);
+  left: 50%;
+  transform: translateX(-50%);
+  background: white;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  box-shadow: 0 12px 40px rgba(0,0,0,0.12);
+  min-width: 220px;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.2s, transform 0.2s;
+  transform: translateX(-50%) translateY(8px);
+  z-index: 200;
+}
+.dropdown--wide { min-width: 480px; }
+.navbar__nav > li:hover .dropdown {
+  opacity: 1;
+  pointer-events: all;
+  transform: translateX(-50%) translateY(0);
+}
+.dropdown__label {
+  font-size: 0.68rem;
+  font-family: var(--font-mono);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--mid);
+  padding: 14px 16px 6px;
+}
+.dropdown a {
+  display: block;
+  padding: 9px 16px;
+  font-size: 0.88rem;
+  color: var(--charcoal);
+  transition: background 0.15s;
+  border-radius: 4px;
+  margin: 0 4px;
+}
+.dropdown a:hover { background: var(--cream); color: var(--green); }
+.dropdown__grid { display: grid; grid-template-columns: 1fr 1fr; gap: 0; padding: 8px; }
+.dropdown__grid a { margin: 2px; border-radius: 4px; }
+.dropdown__divider { border: none; border-top: 1px solid var(--border); margin: 6px 12px; }
+
+.navbar__cta { display: flex; align-items: center; gap: 10px; flex-shrink: 0; }
+.navbar__phone {
+  font-family: var(--font-mono);
+  font-size: 0.88rem;
+  font-weight: 700;
+  color: var(--navy);
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+.navbar__phone:hover { color: var(--green); }
+
+/* Mobile menu toggle */
+.nav-toggle {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  cursor: pointer;
+  background: none;
+  border: none;
+  padding: 6px;
+}
+.nav-toggle span {
+  display: block;
+  width: 24px;
+  height: 2px;
+  background: var(--navy);
+  border-radius: 2px;
+  transition: all 0.3s;
+}
+
+/* Mobile nav */
+.mobile-nav {
+  display: none;
+  background: white;
+  border-top: 1px solid var(--border);
+  padding: 16px 24px 24px;
+}
+.mobile-nav.open { display: block; }
+.mobile-nav a, .mobile-nav button {
+  display: block;
+  padding: 11px 0;
+  font-size: 1rem;
+  color: var(--charcoal);
+  border-bottom: 1px solid var(--border);
+  background: none;
+  border-left: none;
+  border-right: none;
+  border-top: none;
+  width: 100%;
+  text-align: left;
+  cursor: pointer;
+  font-family: var(--font-sans);
+}
+.mobile-nav .mobile-sub { padding-left: 16px; }
+.mobile-nav .mobile-sub a { font-size: 0.9rem; color: var(--mid); }
+.mobile-nav__cta { margin-top: 16px; }
+
+/* =========================================
+   HERO — SPLIT SCREEN
+   Signature: asymmetric split with diagonal
+   ========================================= */
+.hero {
+  min-height: 92vh;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  position: relative;
+  overflow: hidden;
+}
+.hero__left {
+  background: var(--navy);
+  padding: 72px 60px 72px 40px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  position: relative;
+  z-index: 2;
+}
+/* Diagonal clip — the signature element */
+.hero__left::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: -60px;
+  bottom: 0;
+  width: 120px;
+  background: var(--navy);
+  clip-path: polygon(0 0, 40% 0, 100% 100%, 0 100%);
+  z-index: 3;
+}
+.hero__right {
+  position: relative;
+  overflow: hidden;
+  background: var(--cream);
+}
+.hero__right-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center top;
+  filter: grayscale(20%);
+}
+.hero__right-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, rgba(27,45,69,0.25) 0%, transparent 60%);
+}
+.hero__right-form {
+  position: absolute;
+  bottom: 32px;
+  right: 32px;
+  left: 40px;
+  background: white;
+  border-radius: 12px;
+  padding: 28px;
+  box-shadow: 0 20px 60px rgba(27,45,69,0.25);
+  border-top: 4px solid var(--green);
+  z-index: 5;
+}
+.hero__right-form h3 {
+  font-size: 1.1rem;
+  color: var(--navy);
+  margin-bottom: 4px;
+}
+.hero__right-form p {
+  font-size: 0.82rem;
+  color: var(--mid);
+  margin-bottom: 16px;
+}
+.hero__eyebrow {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 24px;
+}
+.hero__eyebrow-line {
+  width: 40px;
+  height: 2px;
+  background: var(--amber);
+}
+.hero__eyebrow-text {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  color: var(--amber);
+}
+.hero h1 {
+  color: white;
+  margin-bottom: 8px;
+}
+.hero h1 em {
+  font-style: italic;
+  color: var(--amber);
+}
+.hero__sub {
+  color: rgba(255,255,255,0.72);
+  font-size: 1.1rem;
+  margin-bottom: 32px;
+  max-width: 420px;
+  line-height: 1.7;
+}
+.hero__pills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 36px;
+}
+.pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: rgba(255,255,255,0.1);
+  border: 1px solid rgba(255,255,255,0.2);
+  color: white;
+  font-size: 0.8rem;
+  padding: 6px 12px;
+  border-radius: 100px;
+}
+.pill svg { flex-shrink: 0; }
+.hero__cta { display: flex; flex-wrap: wrap; gap: 12px; align-items: center; }
+.hero__trust {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 28px;
+}
+.hero__trust-avatar {
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  border: 2px solid rgba(255,255,255,0.3);
+  object-fit: cover;
+  object-position: top;
+}
+.hero__trust-text { font-size: 0.8rem; color: rgba(255,255,255,0.65); line-height: 1.4; }
+.hero__trust-text strong { color: white; display: block; }
+
+/* Stats ribbon */
+.stats-ribbon {
+  background: var(--cream);
+  border-bottom: 1px solid var(--border);
+}
+.stats-ribbon__inner {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0;
+}
+.stat-item {
+  padding: 28px 24px;
+  border-right: 1px solid var(--border);
+  text-align: center;
+}
+.stat-item:last-child { border-right: none; }
+.stat-item__number {
+  font-family: var(--font-serif);
+  font-size: 2.2rem;
+  color: var(--navy);
+  line-height: 1;
+}
+.stat-item__number sup {
+  font-family: var(--font-mono);
+  font-size: 0.9rem;
+  vertical-align: super;
+  color: var(--amber);
+}
+.stat-item__label {
+  font-size: 0.78rem;
+  color: var(--mid);
+  margin-top: 4px;
+  font-family: var(--font-mono);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+/* =========================================
+   FORM STYLES (shared)
+   ========================================= */
+.form-group { margin-bottom: 12px; }
+.form-group label {
+  display: block;
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--navy);
+  margin-bottom: 5px;
+}
+.form-group input,
+.form-group select,
+.form-group textarea {
+  width: 100%;
+  padding: 11px 14px;
+  border: 1.5px solid var(--border);
+  border-radius: var(--radius);
+  font-size: 0.9rem;
+  font-family: var(--font-sans);
+  color: var(--charcoal);
+  background: white;
+  transition: border-color 0.2s;
+  -webkit-appearance: none;
+}
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+  outline: none;
+  border-color: var(--green);
+  box-shadow: 0 0 0 3px rgba(58,125,68,0.12);
+}
+.form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+.form-disclaimer {
+  font-size: 0.72rem;
+  color: var(--mid);
+  margin-top: 10px;
+  line-height: 1.5;
+}
+
+/* =========================================
+   SECTION DIAGONAL DIVIDERS
+   ========================================= */
+.diagonal-top {
+  position: relative;
+  margin-top: -40px;
+  padding-top: 80px;
+}
+.diagonal-top::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 60px;
+  background: inherit;
+  clip-path: polygon(0 60px, 100% 0, 100% 60px, 0 60px);
+  z-index: 1;
+}
+
+/* =========================================
+   HOW IT WORKS
+   ========================================= */
+.section { padding: 90px 0; }
+.section--cream { background: var(--cream); }
+.section--navy { background: var(--navy); }
+.section--white { background: white; }
+.section__header { text-align: center; margin-bottom: 60px; }
+.section__header h2 { margin-bottom: 14px; }
+.section__header h2 em { font-style: italic; color: var(--green); }
+.section__header p { max-width: 540px; margin: 0 auto; }
+
+.steps-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0;
+  position: relative;
+}
+.steps-grid::before {
+  content: '';
+  position: absolute;
+  top: 36px;
+  left: 12.5%;
+  right: 12.5%;
+  height: 2px;
+  background: linear-gradient(90deg, var(--green) 0%, var(--amber) 100%);
+  z-index: 0;
+}
+.step-card {
+  text-align: center;
+  padding: 0 24px;
+  position: relative;
+  z-index: 1;
+}
+.step-card__num {
+  width: 72px;
+  height: 72px;
+  border-radius: 50%;
+  background: white;
+  border: 3px solid var(--green);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 24px;
+  font-family: var(--font-mono);
+  font-weight: 700;
+  font-size: 1.1rem;
+  color: var(--green);
+  position: relative;
+  transition: all 0.3s;
+}
+.step-card:hover .step-card__num {
+  background: var(--green);
+  color: white;
+}
+.step-card__badge {
+  position: absolute;
+  bottom: -8px;
+  right: -8px;
+  background: var(--amber);
+  color: white;
+  font-size: 0.6rem;
+  font-family: var(--font-mono);
+  padding: 2px 5px;
+  border-radius: 2px;
+  white-space: nowrap;
+}
+.step-card h3 { font-size: 1.1rem; color: var(--navy); margin-bottom: 10px; }
+.step-card p { font-size: 0.88rem; }
+
+/* =========================================
+   OFFER CALCULATOR VISUAL
+   ========================================= */
+.offer-calc {
+  background: var(--navy);
+  color: white;
+  padding: 90px 0;
+}
+.offer-calc .section__header h2 { color: white; }
+.offer-calc .section__header h2 em { color: var(--amber); }
+.offer-calc .section__header p { color: rgba(255,255,255,0.7); }
+
+.calc-layout {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  align-items: center;
+}
+.calc-visual {
+  background: rgba(255,255,255,0.06);
+  border: 1px solid rgba(255,255,255,0.12);
+  border-radius: 12px;
+  padding: 36px;
+}
+.calc-formula {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+.calc-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 14px 16px;
+  border-radius: 8px;
+  background: rgba(255,255,255,0.05);
+  border-left: 4px solid transparent;
+}
+.calc-row--arv { border-left-color: var(--green); }
+.calc-row--hold { border-left-color: rgba(255,255,255,0.2); }
+.calc-row--profit { border-left-color: rgba(255,255,255,0.2); }
+.calc-row--repair { border-left-color: rgba(255,255,255,0.2); }
+.calc-row--result {
+  border-left-color: var(--amber);
+  background: rgba(200,135,58,0.15);
+  margin-top: 8px;
+}
+.calc-row__label { font-size: 0.85rem; color: rgba(255,255,255,0.8); }
+.calc-row__label small {
+  display: block;
+  font-size: 0.7rem;
+  color: rgba(255,255,255,0.45);
+  margin-top: 2px;
+}
+.calc-row__op {
+  font-family: var(--font-mono);
+  font-size: 1.2rem;
+  color: rgba(255,255,255,0.3);
+  width: 24px;
+  text-align: center;
+}
+.calc-row__value {
+  font-family: var(--font-mono);
+  font-weight: 700;
+  color: white;
+  font-size: 0.95rem;
+}
+.calc-row--result .calc-row__value { color: var(--amber); font-size: 1.1rem; }
+.calc-row--result .calc-row__label { color: white; font-weight: 600; }
+
+.calc-points { display: flex; flex-direction: column; gap: 20px; }
+.calc-point {
+  display: flex;
+  gap: 16px;
+  align-items: flex-start;
+}
+.calc-point__icon {
+  width: 40px;
+  height: 40px;
+  background: rgba(255,255,255,0.08);
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  color: var(--amber);
+  font-size: 1.2rem;
+}
+.calc-point h4 { font-family: var(--font-sans); font-size: 0.95rem; color: white; font-weight: 600; margin-bottom: 4px; }
+.calc-point p { font-size: 0.84rem; color: rgba(255,255,255,0.6); line-height: 1.6; }
+
+/* =========================================
+   SITUATIONS / WHO WE HELP
+   ========================================= */
+.situations-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+}
+.situation-card {
+  background: white;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 24px;
+  transition: all 0.25s;
+  cursor: default;
+  position: relative;
+  overflow: hidden;
+}
+.situation-card::before {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: var(--green);
+  transform: scaleX(0);
+  transition: transform 0.3s;
+}
+.situation-card:hover { box-shadow: 0 8px 32px rgba(0,0,0,0.1); transform: translateY(-3px); }
+.situation-card:hover::before { transform: scaleX(1); }
+.situation-card__icon {
+  width: 44px;
+  height: 44px;
+  background: var(--cream);
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 14px;
+  font-size: 1.4rem;
+}
+.situation-card h3 { font-size: 1rem; color: var(--navy); margin-bottom: 8px; }
+.situation-card p { font-size: 0.84rem; }
+
+/* =========================================
+   COMPARISON TABLE
+   ========================================= */
+.comparison-wrap { overflow-x: auto; border-radius: 12px; border: 1px solid var(--border); }
+.comparison-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.88rem;
+}
+.comparison-table thead th {
+  padding: 16px 20px;
+  text-align: left;
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  background: var(--navy);
+  color: rgba(255,255,255,0.7);
+  font-weight: 400;
+}
+.comparison-table thead th:first-child { border-radius: 12px 0 0 0; }
+.comparison-table thead th:last-child { border-radius: 0 12px 0 0; }
+.comparison-table thead th.highlight { color: var(--amber); }
+.comparison-table tbody tr { border-bottom: 1px solid var(--border); }
+.comparison-table tbody tr:last-child { border-bottom: none; }
+.comparison-table tbody tr:hover td { background: rgba(58,125,68,0.04); }
+.comparison-table tbody td { padding: 14px 20px; color: var(--charcoal); vertical-align: top; }
+.comparison-table tbody td:first-child { font-weight: 600; color: var(--navy); font-size: 0.82rem; }
+.comparison-table tbody td.highlight {
+  background: rgba(58,125,68,0.05);
+  font-weight: 600;
+  color: var(--navy);
+}
+.check { color: var(--green); font-size: 1rem; }
+.cross { color: #D94F4F; font-size: 1rem; }
+
+/* =========================================
+   MEET JOE
+   ========================================= */
+.joe-section { background: var(--cream); }
+.joe-layout {
+  display: grid;
+  grid-template-columns: 420px 1fr;
+  gap: 80px;
+  align-items: center;
+}
+.joe-photo-wrap {
+  position: relative;
+}
+.joe-photo {
+  width: 100%;
+  border-radius: 12px;
+  object-fit: cover;
+  object-position: top center;
+  max-height: 540px;
+  filter: grayscale(15%);
+}
+.joe-badge {
+  position: absolute;
+  bottom: 24px;
+  left: 24px;
+  background: var(--navy);
+  color: white;
+  border-radius: 8px;
+  padding: 14px 18px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.joe-badge__icon { font-size: 1.5rem; }
+.joe-badge__text strong { display: block; font-size: 0.9rem; }
+.joe-badge__text span { font-size: 0.75rem; color: rgba(255,255,255,0.65); }
+.joe-content h2 { color: var(--navy); margin-bottom: 8px; }
+.joe-content h2 em { color: var(--green); }
+.joe-name-block {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 24px;
+}
+.joe-name-block__line { flex: 1; height: 1px; background: var(--border); }
+.joe-name-block__label {
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--mid);
+}
+.joe-content .bio { font-size: 1.05rem; color: var(--charcoal); margin-bottom: 16px; }
+.joe-facts {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+  margin: 28px 0;
+}
+.joe-fact {
+  background: white;
+  border-radius: 8px;
+  padding: 16px;
+  border-left: 3px solid var(--green);
+}
+.joe-fact__val {
+  font-family: var(--font-serif);
+  font-size: 1.6rem;
+  color: var(--navy);
+  line-height: 1;
+  margin-bottom: 4px;
+}
+.joe-fact__label { font-size: 0.75rem; color: var(--mid); }
+
+/* =========================================
+   REVIEWS / SOCIAL PROOF
+   ========================================= */
+.reviews-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+.review-card {
+  background: white;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 24px;
+  position: relative;
+}
+.review-card__quote-mark {
+  font-family: var(--font-serif);
+  font-size: 3rem;
+  color: var(--green);
+  line-height: 0.5;
+  margin-bottom: 16px;
+  display: block;
+}
+.review-card__text {
+  font-size: 0.9rem;
+  color: var(--charcoal);
+  line-height: 1.7;
+  margin-bottom: 18px;
+  font-style: italic;
+}
+.review-card__stars { color: #F5C518; font-size: 0.85rem; margin-bottom: 10px; }
+.review-card__author {
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--navy);
+}
+.review-card__meta { font-size: 0.75rem; color: var(--mid); }
+.review-aggregate {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 24px;
+  margin-bottom: 48px;
+  flex-wrap: wrap;
+}
+.review-agg-stars {
+  display: flex;
+  align-items: baseline;
+  gap: 8px;
+}
+.review-agg-stars .big-num {
+  font-family: var(--font-serif);
+  font-size: 3.5rem;
+  color: var(--navy);
+  line-height: 1;
+}
+.review-agg-stars .stars-row { color: #F5C518; font-size: 1.4rem; }
+.review-agg-from { font-size: 0.82rem; color: var(--mid); }
+
+/* =========================================
+   FAQ
+   ========================================= */
+.faq-list { max-width: 780px; margin: 0 auto; }
+.faq-item {
+  border-bottom: 1px solid var(--border);
+}
+.faq-question {
+  width: 100%;
+  background: none;
+  border: none;
+  text-align: left;
+  cursor: pointer;
+  padding: 20px 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  font-family: var(--font-sans);
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--navy);
+  transition: color 0.2s;
+}
+.faq-question:hover { color: var(--green); }
+.faq-question svg {
+  flex-shrink: 0;
+  transition: transform 0.3s;
+  color: var(--green);
+}
+.faq-question.open svg { transform: rotate(45deg); }
+.faq-answer {
+  display: none;
+  padding: 0 0 20px;
+  font-size: 0.92rem;
+  color: var(--charcoal);
+  line-height: 1.75;
+}
+.faq-answer.open { display: block; }
+
+/* =========================================
+   AREA COVERAGE
+   ========================================= */
+.areas-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+}
+.area-pill {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: white;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 14px 16px;
+  font-size: 0.88rem;
+  font-weight: 500;
+  color: var(--navy);
+  transition: all 0.2s;
+}
+.area-pill:hover { border-color: var(--green); color: var(--green); background: rgba(58,125,68,0.04); }
+.area-pill .dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--green);
+  flex-shrink: 0;
+}
+
+/* =========================================
+   FINAL CTA BAND
+   ========================================= */
+.cta-band {
+  background: linear-gradient(135deg, var(--navy) 0%, #0E1E33 100%);
+  padding: 100px 0;
+  position: relative;
+  overflow: hidden;
+}
+.cta-band::before {
+  content: '';
+  position: absolute;
+  top: -100px;
+  right: -100px;
+  width: 500px;
+  height: 500px;
+  border-radius: 50%;
+  background: rgba(58,125,68,0.08);
+  pointer-events: none;
+}
+.cta-band__inner {
+  text-align: center;
+  position: relative;
+  z-index: 1;
+}
+.cta-band h2 { color: white; margin-bottom: 16px; }
+.cta-band h2 em { color: var(--amber); font-style: italic; }
+.cta-band p { color: rgba(255,255,255,0.7); margin-bottom: 36px; max-width: 500px; margin-left: auto; margin-right: auto; }
+.cta-band__buttons { display: flex; justify-content: center; gap: 14px; flex-wrap: wrap; }
+.cta-band__phone {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  color: rgba(255,255,255,0.6);
+  font-size: 0.85rem;
+  margin-top: 20px;
+  font-family: var(--font-mono);
+}
+.cta-band__phone strong { color: white; }
+
+/* =========================================
+   FOOTER
+   ========================================= */
+.footer {
+  background: var(--charcoal);
+  color: rgba(255,255,255,0.6);
+  padding: 60px 0 32px;
+}
+.footer__grid {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr 1fr;
+  gap: 48px;
+  margin-bottom: 48px;
+}
+.footer__brand h3 {
+  font-family: var(--font-serif);
+  font-size: 1.3rem;
+  color: white;
+  margin-bottom: 8px;
+}
+.footer__brand p { font-size: 0.84rem; line-height: 1.6; max-width: 280px; }
+.footer__col h4 {
+  font-size: 0.72rem;
+  font-family: var(--font-mono);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: rgba(255,255,255,0.4);
+  margin-bottom: 14px;
+}
+.footer__col a {
+  display: block;
+  font-size: 0.88rem;
+  color: rgba(255,255,255,0.6);
+  margin-bottom: 8px;
+  transition: color 0.2s;
+}
+.footer__col a:hover { color: white; }
+.footer__bottom {
+  border-top: 1px solid rgba(255,255,255,0.08);
+  padding-top: 24px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 10px;
+  font-size: 0.78rem;
+}
+
+/* =========================================
+   RESPONSIVE
+   ========================================= */
+@media (max-width: 1024px) {
+  .navbar__nav { display: none; }
+  .nav-toggle { display: flex; }
+  .hero { grid-template-columns: 1fr; min-height: auto; }
+  .hero__left { padding: 60px 32px 48px; }
+  .hero__left::after { display: none; }
+  .hero__right { min-height: 420px; }
+  .hero__right-form { position: static; margin: 0 24px 32px; box-shadow: none; border-radius: 8px; }
+  .stats-ribbon__inner { grid-template-columns: repeat(2, 1fr); }
+  .stat-item:nth-child(2) { border-right: none; }
+  .steps-grid { grid-template-columns: 1fr 1fr; gap: 40px; }
+  .steps-grid::before { display: none; }
+  .calc-layout { grid-template-columns: 1fr; gap: 40px; }
+  .joe-layout { grid-template-columns: 1fr; gap: 40px; }
+  .joe-photo { max-height: 400px; width: 100%; }
+  .situations-grid { grid-template-columns: 1fr 1fr; }
+  .reviews-grid { grid-template-columns: 1fr 1fr; }
+  .areas-grid { grid-template-columns: 1fr 1fr; }
+  .footer__grid { grid-template-columns: 1fr 1fr; gap: 32px; }
+}
+@media (max-width: 640px) {
+  .topbar__bbb { display: none; }
+  .hero__left { padding: 40px 20px 32px; }
+  .hero h1 { font-size: 2.2rem; }
+  .stats-ribbon__inner { grid-template-columns: 1fr 1fr; }
+  .stat-item { padding: 20px 12px; }
+  .stat-item__number { font-size: 1.7rem; }
+  .steps-grid { grid-template-columns: 1fr; }
+  .situations-grid { grid-template-columns: 1fr; }
+  .reviews-grid { grid-template-columns: 1fr; }
+  .areas-grid { grid-template-columns: 1fr 1fr; }
+  .comparison-table thead th, .comparison-table tbody td { padding: 10px 12px; font-size: 0.78rem; }
+  .footer__grid { grid-template-columns: 1fr; gap: 28px; }
+  .footer__bottom { flex-direction: column; text-align: center; }
+  .form-row { grid-template-columns: 1fr; }
+  .joe-facts { grid-template-columns: 1fr 1fr; }
+  .cta-band__buttons { flex-direction: column; align-items: center; }
+  .section { padding: 60px 0; }
+  .hero__right-form { margin: 0 16px 24px; padding: 20px; }
+  .navbar__phone { display: none; }
+}
+</style>
+</head>
+<body>
+
+<!-- ===================== TOP BAR ===================== -->
+<div class="topbar">
+  <div class="container">
+    <div class="topbar__inner">
+      <div class="topbar__stars">
+        <span class="stars">★★★★★</span>
+        <span>Rated 5.0 by 103+ Tuscaloosa homeowners</span>
+      </div>
+      <div class="topbar__bbb">
+        <span class="bbb-badge">BBB A+</span>
+        <span>Accredited Business (High Noon Home Buyers)</span>
+      </div>
+      <div class="topbar__links">
+        <a href="tel:8037847672">
+          <svg width="13" height="13" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 11.5a19.79 19.79 0 01-3.07-8.67A2 2 0 012 .84h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 8.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 15.92l.02 1z"/></svg>
+          (803) 784-7672
+        </a>
+        <a href="/cdn-cgi/l/email-protection#7b12151d143b0c1e190e020f0e08181a171414081a1314161e0855181416">
+          <svg width="13" height="13" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 01-2.06 0L2 7"/></svg>
+          <span class="__cf_email__" data-cfemail="1c75727a735c6b797e696568696f7f7d7073736f7d747371796f327f7371">[email&#160;protected]</span>
+        </a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ===================== NAVBAR ===================== -->
+<nav class="navbar">
+  <div class="container">
+    <div class="navbar__inner">
+      <!-- Logo -->
+      <a href="/" class="navbar__logo">
+        <!-- Inline SVG logo mark (hexagon + house + cash) matching brand -->
+        <svg class="navbar__logo-img" viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <polygon points="40,4 74,22 74,58 40,76 6,58 6,22" fill="#1B2D45" stroke="#3A7D44" stroke-width="3"/>
+          <polygon points="40,4 74,22 74,58 40,76 6,58 6,22" fill="#1B2D45"/>
+          <!-- house -->
+          <path d="M22 44 L40 28 L58 44" stroke="#3A7D44" stroke-width="3" stroke-linecap="round" fill="none"/>
+          <rect x="30" y="44" width="20" height="16" rx="1" fill="#3A7D44" opacity="0.8"/>
+          <rect x="36" y="50" width="8" height="10" rx="1" fill="#1B2D45"/>
+          <!-- cash lines -->
+          <rect x="14" y="54" width="16" height="2" rx="1" fill="#C8873A" opacity="0.9"/>
+          <rect x="14" y="58" width="12" height="2" rx="1" fill="#C8873A" opacity="0.6"/>
+        </svg>
+        <div class="navbar__logo-text">
+          <strong>We Buy Tuscaloosa Homes</strong>
+          <span>For Cash in Alabama</span>
+        </div>
+      </a>
+
+      <!-- Desktop nav -->
+      <ul class="navbar__nav">
+        <li><a href="#how-it-works">How It Works</a></li>
+        <li><a href="#reviews">Reviews</a></li>
+        <li>
+          <button type="button">Locations ▾</button>
+          <div class="dropdown">
+            <div class="dropdown__label">Cities We Serve</div>
+            <a href="#">Tuscaloosa</a>
+            <a href="#">Northport</a>
+            <a href="#">Cottondale</a>
+            <a href="#">Brookwood</a>
+            <a href="#">Coaling</a>
+            <a href="#">West Alabama Area</a>
+          </div>
+        </li>
+        <li>
+          <button type="button">Situations ▾</button>
+          <div class="dropdown dropdown--wide">
+            <div class="dropdown__grid">
+              <a href="#">Facing Foreclosure</a>
+              <a href="#">Inherited / Probate</a>
+              <a href="#">Divorce</a>
+              <a href="#">Tired Landlord</a>
+              <a href="#">Fire Damage</a>
+              <a href="#">Water Damage</a>
+              <a href="#">Mold / Structural</a>
+              <a href="#">Behind on Taxes</a>
+              <a href="#">Bankruptcy</a>
+              <a href="#">Relocating</a>
+              <a href="#">Sell As-Is</a>
+              <a href="#">Cash Home Buyers</a>
+            </div>
+          </div>
+        </li>
+        <li>
+          <button type="button">Company ▾</button>
+          <div class="dropdown">
+            <a href="#meet-joe">About Joe</a>
+            <a href="#faq">FAQ</a>
+            <a href="#">Blog</a>
+            <a href="#contact">Contact</a>
+          </div>
+        </li>
+      </ul>
+
+      <!-- CTA -->
+      <div class="navbar__cta">
+        <a href="tel:8037847672" class="navbar__phone">
+          <svg width="14" height="14" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 11.5a19.79 19.79 0 01-3.07-8.67A2 2 0 012 .84h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 8.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 15.92l.02 1z"/></svg>
+          (803) 784-7672
+        </a>
+        <a href="#offer-form" class="btn btn--primary">Get Cash Offer</a>
+      </div>
+
+      <!-- Mobile toggle -->
+      <button class="nav-toggle" onclick="toggleMobileNav()" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+
+  <!-- Mobile nav -->
+  <div class="mobile-nav" id="mobileNav">
+    <a href="#how-it-works">How It Works</a>
+    <a href="#reviews">Reviews</a>
+    <button type="button" onclick="toggleSubnav('sub-locations')">Locations ▾</button>
+    <div class="mobile-sub" id="sub-locations" style="display:none">
+      <a href="#">Tuscaloosa</a>
+      <a href="#">Northport</a>
+      <a href="#">Cottondale</a>
+      <a href="#">West Alabama</a>
+    </div>
+    <button type="button" onclick="toggleSubnav('sub-situations')">Situations ▾</button>
+    <div class="mobile-sub" id="sub-situations" style="display:none">
+      <a href="#">Foreclosure</a>
+      <a href="#">Inherited / Probate</a>
+      <a href="#">Divorce</a>
+      <a href="#">Tired Landlord</a>
+      <a href="#">Fire / Water / Mold Damage</a>
+      <a href="#">Relocating</a>
+    </div>
+    <a href="#meet-joe">About Joe</a>
+    <a href="#faq">FAQ</a>
+    <a href="#contact">Contact</a>
+    <div class="mobile-nav__cta">
+      <a href="#offer-form" class="btn btn--primary btn--full btn--lg">Get My Cash Offer</a>
+    </div>
+  </div>
+</nav>
+
+<!-- ===================== HERO ===================== -->
+<section class="hero" id="hero">
+  <!-- LEFT: headline + copy -->
+  <div class="hero__left">
+    <div class="hero__eyebrow">
+      <div class="hero__eyebrow-line"></div>
+      <span class="hero__eyebrow-text">Tuscaloosa, Alabama</span>
+    </div>
+
+    <h1>We Buy Homes<br>for Cash in <em>Tuscaloosa,</em> Alabama</h1>
+
+    <p class="hero__sub">
+      Sell your Tuscaloosa house as-is without repairs, commissions, or showings. Get a fair offer from Joe and choose a closing date that works for you.
+    </p>
+
+    <div class="hero__pills">
+      <span class="pill">
+        <svg width="12" height="12" fill="var(--green-l)" viewBox="0 0 16 16"><circle cx="8" cy="8" r="8"/></svg>
+        No repairs or cleaning
+      </span>
+      <span class="pill">
+        <svg width="12" height="12" fill="var(--green-l)" viewBox="0 0 16 16"><circle cx="8" cy="8" r="8"/></svg>
+        No commissions or surprise fees
+      </span>
+      <span class="pill">
+        <svg width="12" height="12" fill="var(--green-l)" viewBox="0 0 16 16"><circle cx="8" cy="8" r="8"/></svg>
+        Close in 7 days or your schedule
+      </span>
+      <span class="pill">
+        <svg width="12" height="12" fill="var(--green-l)" viewBox="0 0 16 16"><circle cx="8" cy="8" r="8"/></svg>
+        No open houses or showings
+      </span>
+    </div>
+
+    <div class="hero__cta">
+      <a href="#offer-form" class="btn btn--amber btn--lg">Get My Cash Offer</a>
+      <a href="tel:8037847672" class="btn btn--outline">Call Joe Directly</a>
+    </div>
+
+    <div class="hero__trust">
+      <img src="/mnt/user-data/uploads/highnoon-joe.jpeg" alt="Joe LeBlanc" class="hero__trust-avatar">
+      <div class="hero__trust-text">
+        <strong>Joe LeBlanc, Founder</strong>
+        Local cash buyer serving Tuscaloosa &amp; West Alabama
+      </div>
+    </div>
+  </div>
+
+  <!-- RIGHT: Joe's photo + inline form -->
+  <div class="hero__right">
+    <img src="/mnt/user-data/uploads/highnoon-joe.jpeg" alt="Joe LeBlanc — local Tuscaloosa cash home buyer" class="hero__right-img">
+    <div class="hero__right-overlay"></div>
+
+    <div class="hero__right-form" id="offer-form">
+      <h3>Get Your Fair Offer Today</h3>
+      <p>Share a few details about your property and get a fair local cash offer in 24 hours. No obligation. No pressure.</p>
+      <div class="form-row">
+        <div class="form-group">
+          <label>First Name</label>
+          <input type="text" placeholder="John">
+        </div>
+        <div class="form-group">
+          <label>Last Name</label>
+          <input type="text" placeholder="Smith">
+        </div>
+      </div>
+      <div class="form-group">
+        <label>Property Address in Tuscaloosa</label>
+        <input type="text" placeholder="123 Main St, Tuscaloosa, AL 35401">
+      </div>
+      <div class="form-group">
+        <label>Why Are You Looking to Sell?</label>
+        <select>
+          <option value="">Select a reason</option>
+          <option>Facing foreclosure</option>
+          <option>Inherited / estate property</option>
+          <option>Divorce or separation</option>
+          <option>Relocating for work</option>
+          <option>Tired landlord</option>
+          <option>Financial hardship</option>
+          <option>Too much work needed</option>
+          <option>Other</option>
+        </select>
+      </div>
+      <div class="form-row">
+        <div class="form-group">
+          <label>Phone</label>
+          <input type="tel" placeholder="(205) 555-0100">
+        </div>
+        <div class="form-group">
+          <label>Email (optional)</label>
+          <input type="email" placeholder="you@email.com">
+        </div>
+      </div>
+      <a href="#" class="btn btn--primary btn--full btn--lg">Get My Fair Cash Offer →</a>
+      <p class="form-disclaimer">By submitting you agree to receive SMS, calls, and emails about your property inquiry from We Buy Tuscaloosa Homes. Reply STOP to opt out. Your info is never sold.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== STATS RIBBON ===================== -->
+<div class="stats-ribbon">
+  <div class="container">
+    <div class="stats-ribbon__inner">
+      <div class="stat-item">
+        <div class="stat-item__number">24<sup>hr</sup></div>
+        <div class="stat-item__label">Cash offer turnaround</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-item__number">7<sup>days</sup></div>
+        <div class="stat-item__label">Minimum close time</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-item__number">$0</div>
+        <div class="stat-item__label">Fees &amp; commissions</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-item__number">5.0<sup>★</sup></div>
+        <div class="stat-item__label">Rating · 103 reviews</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- VALUE PROPOSITION S02 -->
+<section class="section section--cream" id="why-cash">
+  <div class="container">
+    <div class="section__header">
+      <div class="tag">Why Joe</div>
+      <h2>Why sell your Tuscaloosa home for cash <em>to a local buyer?</em></h2>
+      <p>Selling your Tuscaloosa home for cash to a local buyer like Joe means a fast, as-is home sale with no repairs, showings, or open houses. Instead of waiting the typical 30+ days for a traditional buyer's loan and inspections, you move straight to a simple, certain closing.</p>
+    </div>
+    <div style="display:grid; grid-template-columns:1fr 1fr; gap:60px; align-items:start;">
+      <div>
+        <div style="display:flex; flex-direction:column; gap:18px;">
+          <div style="display:flex; gap:16px; align-items:flex-start; padding:18px; background:white; border-radius:8px; border-left:3px solid var(--green);">
+            <span style="font-size:1.4rem; flex-shrink:0;">⚡</span>
+            <div><strong style="color:var(--navy); font-size:0.95rem;">Fast timeline when you need it most</strong><p style="font-size:0.85rem; margin-top:4px;">Joe can often close in about 7–21 days, instead of the weeks or months it can take to go from listing to closing.</p></div>
+          </div>
+          <div style="display:flex; gap:16px; align-items:flex-start; padding:18px; background:white; border-radius:8px; border-left:3px solid var(--green);">
+            <span style="font-size:1.4rem; flex-shrink:0;">💰</span>
+            <div><strong style="color:var(--navy); font-size:0.95rem;">No agent commissions</strong><p style="font-size:0.85rem; margin-top:4px;">You keep more of what you walk away with because you're not paying a typical 5–6% commission on your Tuscaloosa home.</p></div>
+          </div>
+          <div style="display:flex; gap:16px; align-items:flex-start; padding:18px; background:white; border-radius:8px; border-left:3px solid var(--green);">
+            <span style="font-size:1.4rem; flex-shrink:0;">📋</span>
+            <div><strong style="color:var(--navy); font-size:0.95rem;">No closing costs</strong><p style="font-size:0.85rem; margin-top:4px;">We Buy Tuscaloosa Homes covers standard closing costs, so you're not writing checks at the closing table.</p></div>
+          </div>
+          <div style="display:flex; gap:16px; align-items:flex-start; padding:18px; background:white; border-radius:8px; border-left:3px solid var(--green);">
+            <span style="font-size:1.4rem; flex-shrink:0;">🔨</span>
+            <div><strong style="color:var(--navy); font-size:0.95rem;">Sell without repairs</strong><p style="font-size:0.85rem; margin-top:4px;">You can sell without repairs, updates, or cleaning. Joe factors the work into his offer and handles the improvements later.</p></div>
+          </div>
+          <div style="display:flex; gap:16px; align-items:flex-start; padding:18px; background:white; border-radius:8px; border-left:3px solid var(--green);">
+            <span style="font-size:1.4rem; flex-shrink:0;">📅</span>
+            <div><strong style="color:var(--navy); font-size:0.95rem;">Flexible closing date</strong><p style="font-size:0.85rem; margin-top:4px;">Need to close quickly, or want extra time to move? Joe works around your schedule — not a lender's timeline.</p></div>
+          </div>
+          <div style="display:flex; gap:16px; align-items:flex-start; padding:18px; background:white; border-radius:8px; border-left:3px solid var(--green);">
+            <span style="font-size:1.4rem; flex-shrink:0;">🤝</span>
+            <div><strong style="color:var(--navy); font-size:0.95rem;">Direct access to the decision-maker</strong><p style="font-size:0.85rem; margin-top:4px;">You deal directly with Joe, your local cash home buyer in Alabama — not a call center or anonymous fund.</p></div>
+          </div>
+        </div>
+      </div>
+      <div>
+        <div style="background:var(--navy); color:white; border-radius:12px; padding:36px;">
+          <div style="font-family:var(--font-mono); font-size:0.7rem; text-transform:uppercase; letter-spacing:0.1em; color:var(--amber); margin-bottom:16px;">A simple example</div>
+          <p style="color:rgba(255,255,255,0.8); font-size:0.9rem; line-height:1.7; margin-bottom:20px;">If you sold a $270,000 Tuscaloosa house with an agent at 6% commission, you could pay around $16,000 in commissions plus closing costs and repairs.</p>
+          <p style="color:rgba(255,255,255,0.8); font-size:0.9rem; line-height:1.7; margin-bottom:24px;">With Joe, you trade a bit of price for speed, certainty, no repairs, and no upfront costs — often a better fit when time and simplicity matter most.</p>
+          <div style="border-top:1px solid rgba(255,255,255,0.1); padding-top:20px;">
+            <p style="color:rgba(255,255,255,0.65); font-size:0.84rem; line-height:1.6;">If you're comparing options, Joe's goal is simple: give you a clear, fair cash offer so you can decide what's right for you without any pressure.</p>
+          </div>
+          <a href="#offer-form" class="btn btn--amber" style="margin-top:24px; width:100%; justify-content:center;">See What Your Home Could Sell for in Cash</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<section class="section section--white" id="how-it-works">
+  <div class="container">
+    <div class="section__header">
+      <div class="tag">The Process</div>
+      <h2>How does selling your Tuscaloosa home <em>for cash work?</em></h2>
+      <p>Selling your Tuscaloosa home for cash with Joe is a simple, four-step process: contact Joe, get a quick walkthrough, receive a fair cash offer, and close on your timeline.</p>
+    </div>
+    <div class="steps-grid">
+      <div class="step-card">
+        <div class="step-card__num">01<span class="step-card__badge">~ 2 min</span></div>
+        <h3>Tell Joe About Your House</h3>
+        <p>Call, text, or fill out a short form with your Tuscaloosa property address and basic details. Joe or a team member typically follows up the same day to learn more about your situation and answer questions.</p>
+      </div>
+      <div class="step-card">
+        <div class="step-card__num">02<span class="step-card__badge">No repairs</span></div>
+        <h3>Quick Visit or Virtual Walkthrough</h3>
+        <p>Joe schedules a quick visit to see the house in person, or a virtual walkthrough if needed. There's no need to clean or repair. This step helps him understand the condition so he can make an accurate, as-is cash offer.</p>
+      </div>
+      <div class="step-card">
+        <div class="step-card__num">03<span class="step-card__badge">24 hours</span></div>
+        <h3>Get Your No-Obligation Cash Offer</h3>
+        <p>After the walkthrough, Joe reviews recent Tuscaloosa sales, repair needs, and your goals, then presents a clear written cash offer often within 24 hours. He explains how he arrived at the number so you can decide if it works for you. You're free to say yes or no.</p>
+      </div>
+      <div class="step-card">
+        <div class="step-card__num">04<span class="step-card__badge">Your choice</span></div>
+        <h3>Choose Your Closing Date and Get Paid</h3>
+        <p>If you accept, you choose a closing date that fits your move, sometimes in as little as 7 days, or longer if you need more time. Joe works with a trusted local title company to handle the paperwork, pays standard closing costs, and you get your cash at closing.</p>
+      </div>
+    </div>
+    <div style="text-align:center; margin-top:48px;">
+      <a href="#offer-form" class="btn btn--primary btn--lg">Start Step 1: Tell Joe About Your House</a>
+      <p style="font-size:0.82rem; color:var(--mid); margin-top:12px;">Answer a few quick questions and Joe will follow up with your cash offer options.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== OFFER MATH ===================== -->
+<section class="offer-calc" id="offer-math">
+  <div class="container">
+    <div class="section__header">
+      <div class="tag" style="color:rgba(255,255,255,0.6); border-color:rgba(255,255,255,0.2);">Transparent Pricing</div>
+      <h2 style="color:white;">How we decide on your <em>cash offer in Tuscaloosa</em></h2>
+      <p style="color:rgba(255,255,255,0.65);">Joe decides on your cash offer by looking at your home's after-repair value, subtracting repair and holding costs, and leaving a reasonable profit — without adding commissions or hidden fees.</p>
+    </div>
+    <div class="calc-layout">
+      <div class="calc-visual">
+        <div class="calc-formula">
+          <div class="calc-row calc-row--arv">
+            <div class="calc-row__label">After-Repair Value (ARV)<small>What your home would sell for in fully renovated, market-ready condition — based on recent Tuscaloosa comparable sales</small></div>
+            <div class="calc-row__op">=</div>
+            <div class="calc-row__value">$271,050</div>
+          </div>
+          <div class="calc-row calc-row--hold">
+            <div class="calc-row__label">Holding &amp; Selling Costs<small>Taxes, insurance, utilities while Joe holds it, plus agent commissions and closing costs when resold (~10%)</small></div>
+            <div class="calc-row__op">−</div>
+            <div class="calc-row__value">$27,105</div>
+          </div>
+          <div class="calc-row calc-row--profit">
+            <div class="calc-row__label">Our Profit<small>A reasonable margin that keeps Joe in business. He does not maximize this at your expense (~10%)</small></div>
+            <div class="calc-row__op">−</div>
+            <div class="calc-row__value">$25,000</div>
+          </div>
+          <div class="calc-row calc-row--repair">
+            <div class="calc-row__label">Repair Costs<small>Estimated cost to bring your home to market-ready condition. Joe absorbs this risk — you pay nothing out of pocket</small></div>
+            <div class="calc-row__op">−</div>
+            <div class="calc-row__value">$35,000</div>
+          </div>
+          <div class="calc-row calc-row--result">
+            <div class="calc-row__label">Your Cash Offer</div>
+            <div class="calc-row__op">=</div>
+            <div class="calc-row__value">~$183,945</div>
+          </div>
+        </div>
+        <p style="color:rgba(255,255,255,0.4); font-size:0.72rem; margin-top:14px;">Example only using the Tuscaloosa median sale price. Every offer is calculated on your specific property, condition, and local comps.</p>
+      </div>
+      <div class="calc-points">
+        <div style="margin-bottom:8px;">
+          <p style="color:rgba(255,255,255,0.75); font-size:0.95rem; line-height:1.7; margin-bottom:16px;">Unlike a traditional sale where you might pay around 5–6% in commissions plus closing costs and repairs, Joe's offers include:</p>
+          <div style="display:flex; flex-direction:column; gap:10px; margin-bottom:24px;">
+            <div style="display:flex; align-items:center; gap:10px; color:white; font-size:0.9rem;"><span style="color:var(--green); font-weight:700;">✓</span> 0% commission paid to Joe</div>
+            <div style="display:flex; align-items:center; gap:10px; color:white; font-size:0.9rem;"><span style="color:var(--green); font-weight:700;">✓</span> Standard closing costs paid by Joe</div>
+            <div style="display:flex; align-items:center; gap:10px; color:white; font-size:0.9rem;"><span style="color:var(--green); font-weight:700;">✓</span> No fees to receive or review an offer</div>
+          </div>
+        </div>
+        <div class="calc-points">
+          <div class="calc-point">
+            <div class="calc-point__icon">🏠</div>
+            <div>
+              <h4>Agent route vs. Joe's route</h4>
+              <p>Agent route: Sale price minus commissions minus closing costs minus repairs minus carrying costs. Joe's route: Cash offer minus any remaining mortgage balance equals what you walk away with.</p>
+            </div>
+          </div>
+          <div class="calc-point">
+            <div class="calc-point__icon">📋</div>
+            <div>
+              <h4>Compare before you decide</h4>
+              <p>Joe encourages you to compare his cash offer with other options so you can decide if the tradeoff between price and speed makes sense for you. If it doesn't, you can walk away with no obligation.</p>
+            </div>
+          </div>
+        </div>
+        <a href="#offer-form" class="btn btn--amber" style="margin-top:16px;">Request a Transparent Cash Offer Breakdown</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== SITUATIONS ===================== -->
+<section class="section section--cream" id="situations">
+  <div class="container">
+    <div class="section__header">
+      <div class="tag">Seller Situations</div>
+      <h2>Situations where selling your Tuscaloosa house <em>for cash makes sense</em></h2>
+      <p>Selling to a cash home buyer in Tuscaloosa isn't right for everyone, but it can be the best move when speed, certainty, and simplicity matter more than squeezing out every last dollar.</p>
+    </div>
+    <div class="situations-grid">
+      <div class="situation-card">
+        <div class="situation-card__icon">🏦</div>
+        <h3>Behind on Payments or Facing Foreclosure</h3>
+        <p>If you're behind on your mortgage or have a foreclosure date coming up, a quick cash sale can help you avoid months of stress and protect remaining equity. With Alabama foreclosure filings rising and timelines tightening, having a buyer who can close in about 7–21 days can be the difference between a sale and losing the home.</p>
+      </div>
+      <div class="situation-card">
+        <div class="situation-card__icon">📜</div>
+        <h3>Inherited or Probate Property</h3>
+        <p>If you've inherited a house in Tuscaloosa you don't want to keep, repairs, taxes, and trips to the property add up fast. Joe can buy inherited and probate houses as-is, work with a local title company or attorney, and help you and any co-heirs turn the property into cash without months of showings or landlord duties.</p>
+      </div>
+      <div class="situation-card">
+        <div class="situation-card__icon">🔨</div>
+        <h3>Major Repairs or Damage</h3>
+        <p>Homes that need significant repairs, have code issues, or won't qualify for traditional financing can sit on the market. Joe buys properties in any condition in Tuscaloosa, from outdated rentals to houses needing major work, so you don't have to fund repairs before you sell.</p>
+      </div>
+      <div class="situation-card">
+        <div class="situation-card__icon">🏘️</div>
+        <h3>Bad Tenants or Tired of Being a Landlord</h3>
+        <p>If you own rentals in or around Tuscaloosa and are tired of chasing rent, handling repairs, or dealing with problem tenants, a quick home sale to a cash buyer can help you exit without fixing everything first. Joe can often buy with tenants in place and handle the transition after closing.</p>
+      </div>
+      <div class="situation-card">
+        <div class="situation-card__icon">⚖️</div>
+        <h3>Divorce, Job Change, or Life Transition</h3>
+        <p>When life changes suddenly — divorce, a new job in another city, or a shift in finances — dragging out a sale can make everything harder. By selling your house fast for cash, you simplify one of the biggest pieces of the puzzle and free up cash to move forward.</p>
+      </div>
+      <div class="situation-card">
+        <div class="situation-card__icon">⏱️</div>
+        <h3>When a Quick, Certain Sale Matters More Than Top Dollar</h3>
+        <p>Traditional listings in Tuscaloosa typically go pending in about 33 days, then wait through inspections, appraisals, and buyer financing. A local cash offer trades some price for speed and certainty: you know your closing date, your net proceeds, and that the buyer isn't relying on a loan.</p>
+      </div>
+    </div>
+    <div style="text-align:center; margin-top:36px;">
+      <a href="#offer-form" class="btn btn--primary btn--lg">Tell Joe About Your Situation</a>
+      <p style="font-size:0.82rem; color:var(--mid); margin-top:12px;">Share what's going on with your Tuscaloosa property and get honest feedback, not a sales pitch.</p>
+    </div>
+  </div>
+</section>
+
+<!-- S07: WHO WE HELP (standalone section per WRTA) -->
+<section class="section section--white" id="who-we-help">
+  <div class="container">
+    <div class="section__header">
+      <div class="tag">Who We Help</div>
+      <h2>Who we help when we buy homes <em>for cash in Tuscaloosa</em></h2>
+      <p>Joe helps a wide range of Tuscaloosa homeowners who need to sell quickly and want a straightforward path to the closing table.</p>
+    </div>
+    <div style="max-width:820px; margin:0 auto; display:grid; grid-template-columns:1fr 1fr; gap:16px;">
+      <div class="situation-card" style="padding:20px;">
+        <h3 style="font-size:0.95rem; margin-bottom:8px;">Facing Foreclosure or Behind on Payments</h3>
+        <p style="font-size:0.84rem;">A quick home sale for cash can help you avoid a completed foreclosure, protect remaining equity, and move on with a clean slate.</p>
+      </div>
+      <div class="situation-card" style="padding:20px;">
+        <h3 style="font-size:0.95rem; margin-bottom:8px;">Inherited or Probate Property Owners</h3>
+        <p style="font-size:0.84rem;">Joe can buy it as-is and work with a local title company or attorney to handle the paperwork, avoiding months of showings or landlord duties.</p>
+      </div>
+      <div class="situation-card" style="padding:20px;">
+        <h3 style="font-size:0.95rem; margin-bottom:8px;">Homeowners Behind on Taxes</h3>
+        <p style="font-size:0.84rem;">When property taxes are piling up, selling to a local cash buyer can stop the cycle and turn the property into cash instead of another bill.</p>
+      </div>
+      <div class="situation-card" style="padding:20px;">
+        <h3 style="font-size:0.95rem; margin-bottom:8px;">Tired Landlords and Rental Owners</h3>
+        <p style="font-size:0.84rem;">Joe can buy with tenants in place and let you exit quietly — no evictions required, no fixing everything first.</p>
+      </div>
+      <div class="situation-card" style="padding:20px;">
+        <h3 style="font-size:0.95rem; margin-bottom:8px;">Owners of Houses Needing Major Repairs</h3>
+        <p style="font-size:0.84rem;">From fire or water damage to long-deferred maintenance, Joe buys houses that may not be ready for a traditional listing.</p>
+      </div>
+      <div class="situation-card" style="padding:20px;">
+        <h3 style="font-size:0.95rem; margin-bottom:8px;">People Going Through Divorce or Separation</h3>
+        <p style="font-size:0.84rem;">A cash offer can help both parties reach a faster resolution without a long sale process in the middle of everything else.</p>
+      </div>
+      <div class="situation-card" style="padding:20px;">
+        <h3 style="font-size:0.95rem; margin-bottom:8px;">Relocating for Work or Life Changes</h3>
+        <p style="font-size:0.84rem;">If you're moving out of Tuscaloosa and don't have months to wait, a local cash buyer can shorten your timeline and remove uncertainty.</p>
+      </div>
+      <div class="situation-card" style="padding:20px; display:flex; align-items:center; justify-content:center; background:var(--cream); border-style:dashed;">
+        <div style="text-align:center;">
+          <p style="font-size:0.88rem; color:var(--navy); font-weight:600; margin-bottom:8px;">Not sure if you qualify?</p>
+          <a href="tel:8037847672" class="btn btn--primary" style="padding:10px 20px; font-size:0.88rem;">Ask Joe Directly</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== COMPARISON ===================== -->
+<section class="section section--white" id="compare">
+  <div class="container">
+    <div class="section__header">
+      <div class="tag">Side by Side</div>
+      <h2>Sell to Joe vs. <em>other options</em></h2>
+      <p>Every path has tradeoffs. Here's an honest look at what you gain and give up with each choice, so you can decide with confidence.</p>
+    </div>
+    <div class="comparison-wrap">
+      <table class="comparison-table">
+        <thead>
+          <tr>
+            <th>What matters to you</th>
+            <th class="highlight">Sell to Joe (Local Cash)</th>
+            <th>List With an Agent</th>
+            <th>Other Cash Buyers</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Time to close</td>
+            <td class="highlight"><span class="check">✓</span> 7–21 days, your schedule</td>
+            <td>30–60+ days typical</td>
+            <td>Varies — may rely on loans</td>
+          </tr>
+          <tr>
+            <td>Repairs before sale</td>
+            <td class="highlight"><span class="check">✓</span> Zero repairs, sell as-is</td>
+            <td>Often needed to list</td>
+            <td>Usually as-is, terms vary</td>
+          </tr>
+          <tr>
+            <td>Showings &amp; open houses</td>
+            <td class="highlight"><span class="check">✓</span> One walkthrough only</td>
+            <td>Many showings required</td>
+            <td>Minimal, but unclear</td>
+          </tr>
+          <tr>
+            <td>Agent commissions</td>
+            <td class="highlight"><span class="check">✓</span> 0% — none</td>
+            <td><span class="cross">✗</span> ~5–6% of sale price</td>
+            <td>Usually 0%, check terms</td>
+          </tr>
+          <tr>
+            <td>Closing costs</td>
+            <td class="highlight"><span class="check">✓</span> Joe pays standard costs</td>
+            <td><span class="cross">✗</span> Seller pays a portion</td>
+            <td>Varies by buyer</td>
+          </tr>
+          <tr>
+            <td>Certainty of closing</td>
+            <td class="highlight"><span class="check">✓</span> Cash — no financing risk</td>
+            <td><span class="cross">✗</span> Subject to appraisal &amp; financing</td>
+            <td>Some assign contracts</td>
+          </tr>
+          <tr>
+            <td>Who you deal with</td>
+            <td class="highlight"><span class="check">✓</span> Directly with Joe, local</td>
+            <td>Multiple agents &amp; parties</td>
+            <td>Could be national call center</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div style="text-align:center; margin-top:32px;">
+      <a href="#offer-form" class="btn btn--primary btn--lg">Get a No-Obligation Cash Offer to Compare</a>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== MEET JOE ===================== -->
+<section class="section joe-section" id="meet-joe">
+  <div class="container">
+    <div class="joe-layout">
+      <div class="joe-photo-wrap">
+        <img src="/mnt/user-data/uploads/highnoon-joe.jpeg" alt="Joe LeBlanc, founder of We Buy Tuscaloosa Homes" class="joe-photo">
+        <div class="joe-badge">
+          <div class="joe-badge__icon">🏆</div>
+          <div class="joe-badge__text">
+            <strong>5.0 / 5.0 Rating</strong>
+            <span>103+ verified reviews</span>
+          </div>
+        </div>
+      </div>
+      <div class="joe-content">
+        <div class="tag">Your Local Buyer</div>
+        <h2>Meet <em>Joe LeBlanc,</em> your local Tuscaloosa cash home buyer</h2>
+        <div class="joe-name-block">
+          <div class="joe-name-block__line"></div>
+          <span class="joe-name-block__label">Founder &amp; CEO, We Buy Tuscaloosa Homes</span>
+          <div class="joe-name-block__line"></div>
+        </div>
+        <p class="bio">Joe LeBlanc is the founder and CEO behind We Buy Tuscaloosa Homes, a local cash home buyer focused on helping homeowners in Tuscaloosa and across West Alabama sell simply and on their terms.</p>
+        <p class="bio">Joe leads the High Noon Home Buyers family of brands, which has helped scores of owners across Alabama and neighboring states sell houses as-is for cash. His approach is straightforward: listen first, explain the numbers in plain language, and never pressure anyone into a decision.</p>
+        <p class="bio">Joe's connection to Tuscaloosa shows up in how he operates. He partners with trusted local title companies, keeps communication personal rather than routed through a call center, and treats each house like a one-on-one conversation — not a transaction on a spreadsheet.</p>
+        <p class="bio">When you reach out, you'll either talk directly with Joe or a small team member he trusts. The goal is always the same: give you a clear, honest cash offer and advice you'd be comfortable sharing with a friend or family member.</p>
+        <div class="joe-facts">
+          <div class="joe-fact">
+            <div class="joe-fact__val">7 days</div>
+            <div class="joe-fact__label">Fastest close time</div>
+          </div>
+          <div class="joe-fact">
+            <div class="joe-fact__val">$0</div>
+            <div class="joe-fact__label">Commission charged to you</div>
+          </div>
+          <div class="joe-fact">
+            <div class="joe-fact__val">24 hrs</div>
+            <div class="joe-fact__label">Offer turnaround</div>
+          </div>
+          <div class="joe-fact">
+            <div class="joe-fact__val">W. AL</div>
+            <div class="joe-fact__label">Markets served</div>
+          </div>
+        </div>
+        <a href="tel:8037847672" class="btn btn--primary btn--lg">Talk Directly With Joe — Skip the Call Center</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== REVIEWS ===================== -->
+<section class="section section--white" id="reviews">
+  <div class="container">
+    <div class="section__header">
+      <div class="tag">Social Proof</div>
+      <h2>What Tuscaloosa homeowners say about <em>selling to Joe</em></h2>
+      <p>Tuscaloosa homeowners who have sold to Joe and the High Noon Home Buyers team consistently describe the experience as fast, easy, and fair — with a 5.0 out of 5.0 average rating from 103+ reviews for the parent brand.</p>
+    </div>
+    <div class="review-aggregate">
+      <div class="review-agg-stars">
+        <span class="big-num">5.0</span>
+        <div>
+          <div class="stars-row">★★★★★</div>
+          <div class="review-agg-from">103+ reviews · High Noon Home Buyers</div>
+        </div>
+      </div>
+    </div>
+    <div class="reviews-grid">
+      <div class="review-card">
+        <span class="review-card__quote-mark">"</span>
+        <p class="review-card__text">Joe made everything so simple. We were on a tight timeline with our Tuscaloosa house and didn't have money for repairs. He walked us through the offer, handled the paperwork with the title company, and we closed right on schedule.</p>
+        <div class="review-card__stars">★★★★★</div>
+        <div class="review-card__author">Marcus T.</div>
+        <div class="review-card__meta">Tuscaloosa, AL · Inherited property</div>
+      </div>
+      <div class="review-card">
+        <span class="review-card__quote-mark">"</span>
+        <p class="review-card__text">I was nervous about selling to a cash buyer, but Joe explained every step and never pushed us. We ended up with a fair offer, no closing costs, and no last-minute surprises. It felt like working with a neighbor, not a corporation.</p>
+        <div class="review-card__stars">★★★★★</div>
+        <div class="review-card__author">Linda K.</div>
+        <div class="review-card__meta">Northport, AL · Facing foreclosure</div>
+      </div>
+      <div class="review-card">
+        <span class="review-card__quote-mark">"</span>
+        <p class="review-card__text">We had an inherited house that needed more work than we could take on. Joe bought it as-is, let us leave unwanted furniture, and the whole process took a couple of weeks from first call to closing.</p>
+        <div class="review-card__stars">★★★★★</div>
+        <div class="review-card__author">Sandra &amp; Ray M.</div>
+        <div class="review-card__meta">Tuscaloosa, AL · Estate sale</div>
+      </div>
+    </div>
+    <div style="text-align:center; margin-top:16px;">
+      <p style="font-size:0.84rem; color:var(--mid); margin-bottom:12px;">Across Tuscaloosa neighborhoods, homeowners talk about the same things: clear communication, no-pressure conversations, and a closing that happens when they're ready.</p>
+      <a href="#" class="btn btn--primary">Read All Reviews</a>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== LOCAL MARKET ===================== -->
+<section class="section section--cream" id="market">
+  <div class="container--sm">
+    <div class="section__header">
+      <div class="tag">Tuscaloosa Market · 2026</div>
+      <h2>Tuscaloosa home-selling market: what sellers need to know <em>in 2026</em></h2>
+    </div>
+    <div style="display:grid; grid-template-columns:1fr 1fr; gap:24px; margin-bottom:36px;">
+      <div style="background:white; border-radius:10px; padding:24px; border-left:4px solid var(--green);">
+        <div style="font-family:var(--font-serif); font-size:2rem; color:var(--navy);">$271,050</div>
+        <div style="font-size:0.8rem; color:var(--mid); margin-top:4px;">Tuscaloosa median sale price (2026)</div>
+      </div>
+      <div style="background:white; border-radius:10px; padding:24px; border-left:4px solid var(--amber);">
+        <div style="font-family:var(--font-serif); font-size:2rem; color:var(--navy);">33 days</div>
+        <div style="font-size:0.8rem; color:var(--mid); margin-top:4px;">Typical days to pending in Tuscaloosa</div>
+      </div>
+    </div>
+    <p style="font-size:1.02rem; color:var(--charcoal); margin-bottom:16px;">Selling a house quickly in Tuscaloosa in 2026 means balancing price, timing, and certainty in a market where typical homes go pending in about 33 days and the median sale price is around $271,050.</p>
+    <p style="font-size:1.02rem; color:var(--charcoal); margin-bottom:16px;">Across Alabama, recent reports show thousands of homes changing hands each month and foreclosure filings rising, which puts extra pressure on some owners to decide quickly whether to repair, list, or sell for cash. In markets like Tuscaloosa, where many buyers rely on financing, deals can still fall through if appraisals or inspections don't go as planned.</p>
+    <p style="font-size:1.02rem; color:var(--charcoal); margin-bottom:16px;">A traditional listing often looks like this: you clean and repair the house, hire an agent, host showings and open houses, negotiate repairs after inspection, and then wait for the buyer's loan to clear before closing. That path can make sense if your home is in great shape and you have time.</p>
+    <p style="font-size:1.02rem; color:var(--charcoal); margin-bottom:8px;">When you work with a local cash home buyer in Tuscaloosa, you can:</p>
+    <ul style="margin-bottom:20px; padding-left:20px; display:flex; flex-direction:column; gap:8px;">
+      <li style="font-size:0.95rem; color:var(--charcoal);">Skip repairs and sell as-is, even if the home needs updates or major work.</li>
+      <li style="font-size:0.95rem; color:var(--charcoal);">Skip real estate commissions, and Joe covers standard closing costs.</li>
+      <li style="font-size:0.95rem; color:var(--charcoal);">Often move from first contact to closing in about 7–21 days instead of months.</li>
+    </ul>
+    <p style="font-size:1.02rem; color:var(--charcoal); margin-bottom:20px;">For some Tuscaloosa homeowners, the best outcome isn't squeezing out the highest theoretical price — it's choosing the path that gets them out from under payments, repairs, or stress on a clear timeline.</p>
+    <p style="font-size:0.88rem; color:var(--mid);">For deeper market data, visit the <a href="https://data.tuscaloosanews.com/real-estate-market-report/" target="_blank" rel="noopener" style="color:var(--green); font-weight:600;">Tuscaloosa News real estate market report</a> or <a href="https://acre.culverhouse.ua.edu/research/residential-research/tuscaloosa/" target="_blank" rel="noopener" style="color:var(--green); font-weight:600;">UA Culverhouse housing research</a>. Joe follows these same data points but keeps his offers simple and easy to understand.</p>
+    <div style="text-align:center; margin-top:32px;">
+      <a href="#offer-form" class="btn btn--primary btn--lg">See If a Cash Sale Fits the Tuscaloosa Market for You</a>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== AREAS WE COVER ===================== -->
+<section class="section section--white" id="areas">
+  <div class="container">
+    <div class="section__header">
+      <div class="tag">Service Area</div>
+      <h2>Areas of Tuscaloosa where <em>we buy houses for cash</em></h2>
+      <p>Joe buys houses for cash across Tuscaloosa and the greater Tuscaloosa area, focusing on residential neighborhoods where owners want a fast, certain sale.</p>
+    </div>
+    <div class="areas-grid">
+      <div class="area-pill"><span class="dot"></span>Central Tuscaloosa</div>
+      <div class="area-pill"><span class="dot"></span>North Tuscaloosa</div>
+      <div class="area-pill"><span class="dot"></span>South Tuscaloosa</div>
+      <div class="area-pill"><span class="dot"></span>Indian Hills</div>
+      <div class="area-pill"><span class="dot"></span>Forest Lake</div>
+      <div class="area-pill"><span class="dot"></span>Northport</div>
+      <div class="area-pill"><span class="dot"></span>Cottondale</div>
+      <div class="area-pill"><span class="dot"></span>Brookwood</div>
+      <div class="area-pill"><span class="dot"></span>Coaling</div>
+      <div class="area-pill"><span class="dot"></span>Gordo</div>
+      <div class="area-pill"><span class="dot"></span>Moundville</div>
+      <div class="area-pill"><span class="dot"></span>Greater Tuscaloosa Area</div>
+    </div>
+    <div style="background:var(--cream); border-radius:10px; padding:24px; margin-top:28px; text-align:center;">
+      <p style="font-size:0.95rem; color:var(--charcoal); margin-bottom:12px;">If you're wondering, <em>"Are there home buyers near me who will actually come look at my place?"</em> — the answer is yes. Joe focuses on Tuscaloosa and nearby areas he knows well. If your property sits just outside the city limits or in a nearby Alabama town, it may still be a fit.</p>
+      <a href="tel:8037847672" style="color:var(--green); font-weight:600; font-size:0.9rem;">Call Joe to confirm coverage right away &#8594;</a>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== FAQ ===================== -->
+<section class="section section--cream" id="faq">
+  <div class="container">
+    <div class="section__header">
+      <div class="tag">FAQ</div>
+      <h2>Tuscaloosa cash home buyer <em>FAQs</em></h2>
+      <p>Below are answers to common questions homeowners ask before selling to a cash home buyer in Tuscaloosa.</p>
+    </div>
+    <div class="faq-list">
+      <div class="faq-item">
+        <button class="faq-question" onclick="toggleFaq(this)">
+          How does selling my house for cash in Tuscaloosa work?
+          <svg width="20" height="20" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path d="M12 5v14M5 12h14"/></svg>
+        </button>
+        <div class="faq-answer">The process is simple. You tell a local Tuscaloosa cash home buyer about your property, they review the house, then make you a no-obligation cash offer. If you like the number, you pick the closing date and sign standard sale paperwork with a title company in Alabama. You can usually sell as-is without repairs, open houses, or long listings.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question" onclick="toggleFaq(this)">
+          Will I get a fair price if I sell my Tuscaloosa house for cash?
+          <svg width="20" height="20" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path d="M12 5v14M5 12h14"/></svg>
+        </button>
+        <div class="faq-answer">Yes. A fair cash price comes from your Tuscaloosa home's after-repair value, minus needed repairs, holding costs, and a reasonable profit for the cash home buyer. You avoid paying agent commissions, which traditional sales often include, and you do not wait through showings or buyer financing. The right cash offer balances speed, certainty, and what you walk away with.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question" onclick="toggleFaq(this)">
+          Do I have to make repairs before selling my house as-is in Tuscaloosa?
+          <svg width="20" height="20" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path d="M12 5v14M5 12h14"/></svg>
+        </button>
+        <div class="faq-answer">No. When you work with a local Tuscaloosa cash home buyer, you can usually sell the house as-is without doing repairs or upgrades first. The buyer looks at the home's condition and subtracts expected repair costs when deciding on a cash offer. This can save you time, stress, and upfront money compared to fixing the property before listing.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question" onclick="toggleFaq(this)">
+          How fast can you buy my house for cash in Tuscaloosa?
+          <svg width="20" height="20" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path d="M12 5v14M5 12h14"/></svg>
+        </button>
+        <div class="faq-answer">A local Tuscaloosa cash home buyer can often close significantly faster than a traditional agent sale. Once you accept a cash offer, the timeline mainly depends on the title work and your move-out needs. Some sellers choose a very quick closing, while others prefer more time. The key benefit is flexibility, not waiting on buyer loan approvals or multiple showings.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question" onclick="toggleFaq(this)">
+          What fees or commissions do you charge when you buy my house?
+          <svg width="20" height="20" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path d="M12 5v14M5 12h14"/></svg>
+        </button>
+        <div class="faq-answer">A genuine local cash home buyer does not charge you real estate commissions for buying your house. In a traditional sale, sellers often pay agent commissions on top of other closing costs. With a direct cash buyer, you are selling straight to the buyer, so there is no listing commission, and any other costs or credits are spelled out clearly in the purchase agreement.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question" onclick="toggleFaq(this)">
+          How can I tell if a cash home buyer in Tuscaloosa is legitimate?
+          <svg width="20" height="20" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path d="M12 5v14M5 12h14"/></svg>
+        </button>
+        <div class="faq-answer">You can check legitimacy by asking for proof of funds, looking up the cash buyer's business registration, and reading reviews from other Alabama sellers. A real cash home buyer will also close through a trusted title company, not ask for upfront fees, and answer questions about their offer in plain language. It is reasonable to vet any buyer before you sign.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question" onclick="toggleFaq(this)">
+          What percentage do cash home buyers usually pay compared to market value?
+          <svg width="20" height="20" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path d="M12 5v14M5 12h14"/></svg>
+        </button>
+        <div class="faq-answer">Cash home buyers pay less than full market value because they cover repairs, holding costs, and the risk of owning the property. Instead of a fixed percentage for every house, the offer depends on after-repair value, condition, and location. A transparent local buyer in Tuscaloosa will walk you through their numbers so you understand how they arrived at the amount.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question" onclick="toggleFaq(this)">
+          Can you still buy my house if I'm facing foreclosure in Tuscaloosa?
+          <svg width="20" height="20" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path d="M12 5v14M5 12h14"/></svg>
+        </button>
+        <div class="faq-answer">Yes. A local Tuscaloosa cash home buyer may be able to purchase your house before a foreclosure, but timing is critical. The buyer and title company must have enough time to clear title and close before any sale date. While no specific outcome is guaranteed, reaching out early gives you more options than waiting until the last minute.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question" onclick="toggleFaq(this)">
+          Do you buy inherited or probate houses in Tuscaloosa?
+          <svg width="20" height="20" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path d="M12 5v14M5 12h14"/></svg>
+        </button>
+        <div class="faq-answer">Yes. Local Tuscaloosa cash home buyers often purchase inherited or probate houses, even if they need work. All legal owners or heirs usually need to agree to the sale, and a title company or attorney in Alabama helps handle the paperwork. Selling for cash can simplify splitting proceeds and avoid months of repairs, showings, or landlord duties.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question" onclick="toggleFaq(this)">
+          What types of houses do you buy in Tuscaloosa?
+          <svg width="20" height="20" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path d="M12 5v14M5 12h14"/></svg>
+        </button>
+        <div class="faq-answer">Local Tuscaloosa cash home buyers typically purchase single-family houses, small rental homes, and other residential properties in a wide range of conditions. That can include move-in ready homes, rentals with tenants, or places needing major repairs. If you own a house in or around Tuscaloosa, it is usually worth asking whether it fits their buying criteria.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question" onclick="toggleFaq(this)">
+          Do you only buy houses in Tuscaloosa, or other parts of Alabama too?
+          <svg width="20" height="20" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path d="M12 5v14M5 12h14"/></svg>
+        </button>
+        <div class="faq-answer">Local cash home buyers focus on houses in Tuscaloosa and the greater Tuscaloosa area, since that is the market they know best. Some will also buy in nearby Alabama towns, depending on the property and situation. If your house is outside city limits, it is still worth reaching out to confirm whether it falls inside their service area.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question" onclick="toggleFaq(this)">
+          Is there any obligation if I get a cash offer from you and decide not to sell?
+          <svg width="20" height="20" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path d="M12 5v14M5 12h14"/></svg>
+        </button>
+        <div class="faq-answer">Offers are no-obligation and sellers can say no or compare to other options. There are no fees for receiving an offer and no pressure to accept. For broader context about how buyers and sellers behave nationally, you can also review <a href="https://www.nar.realtor/research-and-statistics/research-reports/highlights-from-the-profile-of-home-buyers-and-sellers" target="_blank" rel="noopener" style="color:var(--green); font-weight:600;">home buyers and sellers insights</a> from the National Association of Realtors.</div>
+      </div>
+    </div>
+    <div style="text-align:center; margin-top:36px;">
+      <p style="font-size:0.9rem; color:var(--mid); margin-bottom:16px;">Didn't see your question? Ask Joe directly.</p>
+      <a href="tel:8037847672" class="btn btn--primary btn--lg">Ask Joe a Question</a>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== FINAL CTA ===================== -->
+<section class="cta-band" id="contact">
+  <div class="container">
+    <div class="cta-band__inner">
+      <div class="tag" style="color:rgba(255,255,255,0.6); border-color:rgba(255,255,255,0.2);">Ready to Start?</div>
+      <h2>Ready to get a cash offer for your<br><em>Tuscaloosa home?</em></h2>
+      <p>Joe buys homes for cash in Tuscaloosa and can make you a clear, local offer — often within 24 hours — so you know exactly what a quick home sale would look like.</p>
+      <div style="max-width:420px; margin:0 auto 36px; text-align:left; display:flex; flex-direction:column; gap:10px;">
+        <div style="display:flex; align-items:center; gap:10px; color:rgba(255,255,255,0.85); font-size:0.95rem;"><span style="color:var(--green); font-weight:700;">✓</span> You share a few details about your house and situation.</div>
+        <div style="display:flex; align-items:center; gap:10px; color:rgba(255,255,255,0.85); font-size:0.95rem;"><span style="color:var(--green); font-weight:700;">✓</span> Joe follows up to answer questions and set a quick visit or walkthrough.</div>
+        <div style="display:flex; align-items:center; gap:10px; color:rgba(255,255,255,0.85); font-size:0.95rem;"><span style="color:var(--green); font-weight:700;">✓</span> You receive a no-obligation cash offer you can accept or decline.</div>
+      </div>
+      <p style="color:rgba(255,255,255,0.6); font-size:0.88rem; margin-bottom:32px;">No repairs. No commissions. No closing costs. Just a simple way to see whether selling to a local cash home buyer fits your plans.</p>
+      <div class="cta-band__buttons">
+        <a href="#offer-form" class="btn btn--amber btn--lg">Get My Free Cash Offer Now</a>
+        <a href="tel:8037847672" class="btn btn--outline btn--lg">
+          <svg width="16" height="16" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 11.5a19.79 19.79 0 01-3.07-8.67A2 2 0 012 .84h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 8.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 15.92l.02 1z"/></svg>
+          Call Joe Directly
+        </a>
+      </div>
+      <div class="cta-band__phone">Talk with Joe at <strong>&nbsp;(803) 784-7672</strong>&nbsp; · No obligation, no pressure</div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== FOOTER ===================== -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer__grid">
+      <div class="footer__brand">
+        <h3>We Buy Tuscaloosa Homes</h3>
+        <p>A local cash home buyer serving Tuscaloosa and West Alabama. Operating under High Noon Home Buyers. BBB A+ Accredited. 5.0 rating from 103+ reviews.</p>
+        <div style="margin-top:16px; font-family:var(--font-mono); font-size:0.8rem; color:rgba(255,255,255,0.4);">1301 McFarland Blvd N, Suite 200<br>Tuscaloosa, AL 35406</div>
+      </div>
+      <div class="footer__col">
+        <h4>Quick Links</h4>
+        <a href="#how-it-works">How It Works</a>
+        <a href="#offer-form">Get Cash Offer</a>
+        <a href="#reviews">Reviews</a>
+        <a href="#meet-joe">About Joe</a>
+        <a href="#faq">FAQ</a>
+      </div>
+      <div class="footer__col">
+        <h4>Situations</h4>
+        <a href="#">Foreclosure</a>
+        <a href="#">Inherited Property</a>
+        <a href="#">Divorce</a>
+        <a href="#">Tired Landlord</a>
+        <a href="#">Fire / Mold Damage</a>
+        <a href="#">Relocating</a>
+      </div>
+      <div class="footer__col">
+        <h4>Cities</h4>
+        <a href="#">Tuscaloosa</a>
+        <a href="#">Northport</a>
+        <a href="#">Cottondale</a>
+        <a href="#">Brookwood</a>
+        <a href="#">Coaling</a>
+        <a href="#">West Alabama</a>
+      </div>
+    </div>
+    <div class="footer__bottom">
+      <span>© 2026 We Buy Tuscaloosa Homes · High Noon Home Buyers · Deal Lead Marketing LLC</span>
+      <span>
+        <a href="#" style="color:rgba(255,255,255,0.4); margin-right:12px;">Privacy Policy</a>
+        <a href="#" style="color:rgba(255,255,255,0.4);">Terms</a>
+      </span>
+    </div>
+  </div>
+</footer>
+
+<!-- ===================== SCHEMA ===================== -->
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "LocalBusiness",
+  "name": "We Buy Tuscaloosa Homes",
+  "url": "https://webuytuscaloosahomes.com",
+  "telephone": "+18037847672",
+  "description": "We Buy Tuscaloosa Homes (operating under High Noon Home Buyers) is a cash home buying company serving Tuscaloosa, AL and surrounding West Alabama markets.",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "1301 McFarland Blvd N, Suite 200",
+    "addressLocality": "Tuscaloosa",
+    "addressRegion": "AL",
+    "postalCode": "35406",
+    "addressCountry": "US"
+  },
+  "geo": {
+    "@type": "GeoCoordinates",
+    "latitude": 33.2098,
+    "longitude": -87.5692
+  },
+  "areaServed": [
+    {"@type": "City", "name": "Tuscaloosa"},
+    {"@type": "City", "name": "Northport"},
+    {"@type": "City", "name": "Cottondale"}
+  ],
+  "aggregateRating": {
+    "@type": "AggregateRating",
+    "ratingValue": "5.0",
+    "reviewCount": "103"
+  }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": "Joe LeBlanc",
+  "jobTitle": "Founder and CEO, We Buy Tuscaloosa Homes",
+  "description": "Joe LeBlanc is the Founder and CEO of High Noon Home Buyers and We Buy Tuscaloosa Homes.",
+  "url": "https://webuytuscaloosahomes.com/about",
+  "worksFor": {
+    "@type": "Organization",
+    "name": "We Buy Tuscaloosa Homes"
+  }
+}
+</script>
+
+<!-- ===================== JS ===================== -->
+<script>
+// Mobile nav toggle
+function toggleMobileNav() {
+  const nav = document.getElementById('mobileNav');
+  nav.classList.toggle('open');
+}
+
+// Mobile subnav toggle
+function toggleSubnav(id) {
+  const el = document.getElementById(id);
+  if (el) el.style.display = el.style.display === 'block' ? 'none' : 'block';
+}
+
+// FAQ accordion
+function toggleFaq(btn) {
+  const answer = btn.nextElementSibling;
+  const isOpen = answer.classList.contains('open');
+
+  // Close all
+  document.querySelectorAll('.faq-answer.open').forEach(a => a.classList.remove('open'));
+  document.querySelectorAll('.faq-question.open').forEach(b => b.classList.remove('open'));
+
+  if (!isOpen) {
+    answer.classList.add('open');
+    btn.classList.add('open');
+  }
+}
+
+// Smooth scroll for anchor links
+document.querySelectorAll('a[href^="#"]').forEach(link => {
+  link.addEventListener('click', e => {
+    const target = document.querySelector(link.getAttribute('href'));
+    if (target) {
+      e.preventDefault();
+      target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+  });
+});
+
+// Navbar scroll shadow
+window.addEventListener('scroll', () => {
+  const navbar = document.querySelector('.navbar');
+  if (window.scrollY > 60) {
+    navbar.style.boxShadow = '0 4px 20px rgba(0,0,0,0.12)';
+  } else {
+    navbar.style.boxShadow = '0 2px 12px rgba(0,0,0,0.06)';
+  }
+});
+</script>
+
+</body>
+</html>

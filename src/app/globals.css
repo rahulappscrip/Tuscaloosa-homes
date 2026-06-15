@@ -1,0 +1,99 @@
+@import "tailwindcss";
+
+:root {
+  /* High Noon brand colours */
+  --navy: #1a2332;
+  --teal: #2bbcd4;
+  --teal-dark: #23a0b8;
+  --teal-tint: #e0f6f9;
+  --ice: #f2f9fa;
+  --gold: #f5c518;
+  --charcoal: #2c2c2c;
+  --slate: #5a6578;
+  --mist: #d6e8ec;
+  --white: #ffffff;
+  --radius: 5px;
+  --container-max: 1300px;
+  --hero-surface: #f7fafe;
+
+  /* Legacy aliases — keeps existing class names working */
+  --hero-bg: var(--navy);
+  --green: var(--teal);
+  --green-light: var(--teal-dark);
+  --green-active: var(--teal-dark);
+  --cream: var(--ice);
+  --border: var(--mist);
+  --mid: var(--slate);
+  --amber: var(--gold);
+}
+
+@theme inline {
+  --color-navy: var(--navy);
+  --color-teal: var(--teal);
+  --color-teal-dark: var(--teal-dark);
+  --color-teal-tint: var(--teal-tint);
+  --color-ice: var(--ice);
+  --color-gold: var(--gold);
+  --color-charcoal: var(--charcoal);
+  --color-slate: var(--slate);
+  --color-mist: var(--mist);
+  --color-white: var(--white);
+  --color-hero-surface: var(--hero-surface);
+  --color-green: var(--teal);
+  --color-green-light: var(--teal-dark);
+  --color-green-active: var(--teal-dark);
+  --color-amber: var(--gold);
+  --color-cream: var(--ice);
+  --color-mid: var(--slate);
+  --color-border: var(--mist);
+  --font-primary: var(--font-epilogue), system-ui, sans-serif;
+  --font-secondary: var(--font-plus-jakarta), system-ui, sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-secondary);
+  color: var(--charcoal);
+  background: var(--white);
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+
+h1,
+h2,
+h3 {
+  font-family: var(--font-primary);
+  line-height: 1.15;
+}
+
+.font-primary {
+  font-family: var(--font-primary);
+}
+
+.font-secondary {
+  font-family: var(--font-secondary);
+}
+
+.cash-offer-slider::-webkit-slider-thumb {
+  appearance: none;
+  width: 1.25rem;
+  height: 1.25rem;
+  border-radius: 9999px;
+  border: 3px solid var(--white);
+  background: var(--teal);
+  box-shadow: 0 2px 8px rgba(26, 35, 50, 0.2);
+  cursor: pointer;
+}
+
+.cash-offer-slider::-moz-range-thumb {
+  width: 1.25rem;
+  height: 1.25rem;
+  border-radius: 9999px;
+  border: 3px solid var(--white);
+  background: var(--teal);
+  box-shadow: 0 2px 8px rgba(26, 35, 50, 0.2);
+  cursor: pointer;
+}
