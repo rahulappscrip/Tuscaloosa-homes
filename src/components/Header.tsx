@@ -309,10 +309,10 @@ export function Header() {
       {/* Navbar */}
       <nav className="border-b border-border bg-white">
         <div className="mx-auto max-w-[1300px] px-6">
-          <div className="flex h-[70px] items-center justify-between gap-6">
+          <div className="flex h-[78px] items-center justify-between gap-6">
             {/* Logo */}
             <Link href="/" className="flex shrink-0 items-center">
-              <Logo className="h-9 w-auto max-w-[220px] sm:h-10 sm:max-w-[260px]" />
+              <Logo className="h-12 w-auto max-w-[300px] sm:h-14 sm:max-w-[380px]" />
             </Link>
 
             {/* Desktop nav */}

@@ -111,7 +111,7 @@ export function FinalCTA() {
           <div className="relative mx-auto w-full max-w-[320px] lg:mx-0 lg:max-w-none">
             <div className="relative overflow-hidden rounded-2xl border border-white/10 bg-teal-tint/20 shadow-[0_12px_40px_rgba(0,0,0,0.25)]">
               <Image
-                src="/joe.png"
+                src="/assets/joe.png"
                 alt="Joe LeBlanc, local Tuscaloosa cash home buyer"
                 width={1286}
                 height={2094}

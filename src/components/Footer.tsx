@@ -55,7 +55,7 @@ export function Footer() {
                 alt="We Buy Tuscaloosa Homes"
                 width={2812}
                 height={624}
-                className="h-10 w-auto max-w-[280px] sm:h-11"
+                className="h-12 w-auto max-w-[320px] sm:h-14 sm:max-w-[360px]"
               />
             </Link>
             <p className="max-w-[280px] text-[0.84rem] leading-relaxed">

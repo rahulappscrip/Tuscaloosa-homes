@@ -17,15 +17,15 @@ const plusJakarta = Plus_Jakarta_Sans({
 });
 
 export const metadata: Metadata = {
-  title: "We Buy Houses in Tuscaloosa, AL | Sell Your House Fast for Cash",
+  metadataBase: new URL("https://www.webuytuscaloosahomes.com"),
+  title: "We Buy Homes for Cash in Tuscaloosa | Local Home Buyer Joe",
   description:
-    "Need to sell your house fast in Tuscaloosa, Alabama? We buy houses for cash in any condition with no repairs, commissions, or closing costs. Get a fair cash offer from a trusted local home buyer today.",
-  keywords: [
-    "sell house fast tuscaloosa",
-    "we buy houses tuscaloosa",
-    "cash home buyer tuscaloosa",
-    "sell house for cash alabama",
-  ],
+    "Need to sell your house fast in Tuscaloosa? We buy homes for cash, as-is, with no repairs or closing costs. Get a fair local cash offer from Joe in 24 hours.",
+  keywords: ["we buy houses tuscaloosa"],
+  publisher: "We Buy Tuscaloosa Homes",
+  alternates: {
+    canonical: "/",
+  },
   robots: {
     index: false,
     follow: false,

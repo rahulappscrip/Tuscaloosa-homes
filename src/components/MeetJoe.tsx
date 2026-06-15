@@ -35,7 +35,7 @@ export function MeetJoe() {
           <div className="relative mx-auto w-full max-w-[420px] lg:mx-0">
             <div className="relative overflow-hidden rounded-2xl bg-teal-tint">
               <Image
-                src="/joe.png"
+                src="/assets/joe.png"
                 alt="Joe LeBlanc, founder of We Buy Tuscaloosa Homes"
                 width={1286}
                 height={2094}

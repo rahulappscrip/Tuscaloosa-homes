@@ -41,7 +41,7 @@ function JoeProfileCard() {
         <div className="relative mx-auto shrink-0 sm:mx-0">
           <div className="relative h-28 w-28 overflow-hidden rounded-full border-4 border-white shadow-[0_4px_16px_rgba(26,35,50,0.12)] sm:h-32 sm:w-32">
             <Image
-              src="/joe.png"
+              src="/assets/joe.png"
               alt="Joe LeBlanc, founder of We Buy Tuscaloosa Homes"
               width={1286}
               height={2094}

@@ -1,22 +1,8 @@
-import Image from "next/image";
 import Link from "next/link";
 
 const PHONE = "(803) 784-7672";
 const PHONE_HREF = "tel:8037847672";
-const YOUTUBE_URL = "https://www.youtube.com/watch?v=Ee1N4-K1rFQ";
-
-const videoPanels = [
-  {
-    image: "/assets/Repairs.webp",
-    label: "Sell without repairs",
-    alt: "Sell without repairs — Tuscaloosa home as-is before a local cash sale",
-  },
-  {
-    image: "/assets/Speed.webp",
-    label: "Fast timeline when you need it most",
-    alt: "Fast timeline when you need it most — quick cash closing in Tuscaloosa",
-  },
-] as const;
+const CASH_SALE_VIDEO = "/assets/why-cash-sale.mp4";
 
 const benefits = [
   {
@@ -138,45 +124,23 @@ function PlayIcon() {
 
 function CashSaleVideoCard() {
   return (
-    <a
-      href={YOUTUBE_URL}
-      target="_blank"
-      rel="noopener noreferrer"
-      className="group mt-6 block overflow-hidden rounded-xl border border-mist bg-white shadow-[0_8px_28px_rgba(26,35,50,0.08)]"
-      aria-label="Watch how selling your Tuscaloosa home for cash to a local buyer works on YouTube"
-    >
-      <div className="relative grid grid-cols-2">
-        {videoPanels.map((panel, index) => (
-          <div key={panel.label} className="relative aspect-[4/3] overflow-hidden">
-            <Image
-              src={panel.image}
-              alt={panel.alt}
-              fill
-              className={`object-cover ${index === 0 ? "brightness-75 grayscale" : ""}`}
-              sizes="(max-width: 1024px) 50vw, 280px"
-            />
-            <span
-              className={`font-secondary absolute top-2.5 left-2.5 max-w-[calc(100%-1.25rem)] rounded px-2 py-0.5 text-[0.58rem] leading-tight font-bold tracking-wide text-white uppercase sm:text-[0.62rem] ${
-                index === 0 ? "bg-black/50" : "bg-teal/90"
-              }`}
-            >
-              {panel.label}
-            </span>
-          </div>
-        ))}
-
-        <div className="absolute inset-0 flex items-center justify-center">
-          <span className="flex h-14 w-14 items-center justify-center rounded-full bg-white/95 text-teal shadow-[0_8px_24px_rgba(26,35,50,0.2)] transition-transform duration-200 group-hover:scale-105">
-            <PlayIcon />
-          </span>
-        </div>
-      </div>
+    <div className="mt-6 overflow-hidden rounded-xl border border-mist bg-white shadow-[0_8px_28px_rgba(26,35,50,0.08)]">
+      <video
+        className="aspect-video w-full bg-navy object-cover"
+        controls
+        playsInline
+        preload="metadata"
+        aria-label="Why sell your Tuscaloosa home for cash to a local buyer"
+      >
+        <source src={CASH_SALE_VIDEO} type="video/mp4" />
+        Your browser does not support embedded video.
+      </video>
 
       <div className="font-secondary flex items-center justify-center gap-2 border-t border-mist bg-ice px-4 py-3 text-[0.82rem] font-medium text-navy">
         <PlayIcon />
         Why sell your Tuscaloosa home for cash to a local buyer?
       </div>
-    </a>
+    </div>
   );
 }
 
