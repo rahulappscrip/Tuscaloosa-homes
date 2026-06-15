@@ -21,11 +21,11 @@ export default function Home() {
       <StatsRibbon />
       <WhyChooseUs />
       <HowItWorks />
-      <TransparentPricing />
-      <SellerSituations />
-      <ComparisonTable />
-      <MeetJoe />
       <Testimonials />
+      <ComparisonTable />
+      <SellerSituations />
+      <TransparentPricing />
+      <MeetJoe />
       <LocalMarket />
       <ServiceArea />
       <FAQ />

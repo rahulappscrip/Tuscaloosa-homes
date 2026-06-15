@@ -1,4 +1,6 @@
+import Image from "next/image";
 import Link from "next/link";
+import { sellerSituations, situationHref } from "@/data/situations";
 
 const quickLinks = [
   { label: "How It Works", href: "#how-it-works" },
@@ -6,15 +8,6 @@ const quickLinks = [
   { label: "Reviews", href: "#reviews" },
   { label: "About Joe", href: "#meet-joe" },
   { label: "FAQ", href: "#faq" },
-];
-
-const situations = [
-  { label: "Foreclosure", href: "#" },
-  { label: "Inherited Property", href: "#" },
-  { label: "Divorce", href: "#" },
-  { label: "Tired Landlord", href: "#" },
-  { label: "Fire / Mold Damage", href: "#" },
-  { label: "Relocating", href: "#" },
 ];
 
 const cities = [
@@ -26,15 +19,45 @@ const cities = [
   { label: "West Alabama", href: "#" },
 ];
 
+const situationsSplitIndex = Math.ceil(sellerSituations.length / 2);
+const situationsColumnOne = sellerSituations.slice(0, situationsSplitIndex);
+const situationsColumnTwo = sellerSituations.slice(situationsSplitIndex);
+
+function SituationLinks({
+  situations,
+}: {
+  situations: ReadonlyArray<(typeof sellerSituations)[number]>;
+}) {
+  return (
+    <>
+      {situations.map((situation) => (
+        <Link
+          key={situation.id}
+          href={situationHref(situation.id)}
+          className="mb-2 block text-[0.88rem] transition-colors hover:text-teal"
+        >
+          {situation.footerLabel}
+        </Link>
+      ))}
+    </>
+  );
+}
+
 export function Footer() {
   return (
     <footer className="bg-navy px-6 py-[60px] pb-8 text-white/60">
       <div className="mx-auto max-w-[1300px]">
-        <div className="mb-12 grid grid-cols-1 gap-7 sm:grid-cols-2 lg:grid-cols-[2fr_1fr_1fr_1fr] lg:gap-12">
+        <div className="mb-12 grid grid-cols-1 gap-7 sm:grid-cols-2 lg:grid-cols-[2fr_1fr_1fr_1fr_1fr] lg:gap-10 xl:gap-12">
           <div>
-            <h3 className="font-primary mb-2 text-[1.3rem] text-white">
-              We Buy Tuscaloosa Homes
-            </h3>
+            <Link href="/" className="mb-4 inline-block">
+              <Image
+                src="/assets/logo-bg.png"
+                alt="We Buy Tuscaloosa Homes"
+                width={2812}
+                height={624}
+                className="h-10 w-auto max-w-[280px] sm:h-11"
+              />
+            </Link>
             <p className="max-w-[280px] text-[0.84rem] leading-relaxed">
               A local cash home buyer serving Tuscaloosa and West Alabama.
               Operating under High Noon Home Buyers. BBB A+ Accredited. 5.0
@@ -66,15 +89,11 @@ export function Footer() {
             <h4 className="font-secondary mb-3.5 text-[0.72rem] uppercase tracking-widest text-white/40">
               Situations
             </h4>
-            {situations.map((link) => (
-              <Link
-                key={link.label}
-                href={link.href}
-                className="mb-2 block text-[0.88rem] transition-colors hover:text-teal"
-              >
-                {link.label}
-              </Link>
-            ))}
+            <SituationLinks situations={situationsColumnOne} />
+          </div>
+
+          <div className="sm:pt-0 lg:pt-[1.85rem]">
+            <SituationLinks situations={situationsColumnTwo} />
           </div>
 
           <div>

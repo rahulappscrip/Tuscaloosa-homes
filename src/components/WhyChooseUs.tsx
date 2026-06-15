@@ -5,6 +5,19 @@ const PHONE = "(803) 784-7672";
 const PHONE_HREF = "tel:8037847672";
 const YOUTUBE_URL = "https://www.youtube.com/watch?v=Ee1N4-K1rFQ";
 
+const videoPanels = [
+  {
+    image: "/assets/Repairs.webp",
+    label: "Sell without repairs",
+    alt: "Sell without repairs — Tuscaloosa home as-is before a local cash sale",
+  },
+  {
+    image: "/assets/Speed.webp",
+    label: "Fast timeline when you need it most",
+    alt: "Fast timeline when you need it most — quick cash closing in Tuscaloosa",
+  },
+] as const;
+
 const benefits = [
   {
     title: "Fast timeline when you need it most",
@@ -130,33 +143,27 @@ function CashSaleVideoCard() {
       target="_blank"
       rel="noopener noreferrer"
       className="group mt-6 block overflow-hidden rounded-xl border border-mist bg-white shadow-[0_8px_28px_rgba(26,35,50,0.08)]"
-      aria-label="Watch how a cash sale can change everything on YouTube"
+      aria-label="Watch how selling your Tuscaloosa home for cash to a local buyer works on YouTube"
     >
       <div className="relative grid grid-cols-2">
-        <div className="relative aspect-[4/3] overflow-hidden">
-          <Image
-            src="/assets/Repairs.webp"
-            alt="House before selling for cash"
-            fill
-            className="object-cover brightness-75 grayscale"
-            sizes="(max-width: 1024px) 50vw, 280px"
-          />
-          <span className="font-secondary absolute top-2.5 left-2.5 rounded bg-black/50 px-2 py-0.5 text-[0.62rem] font-bold tracking-wide text-white uppercase">
-            Before
-          </span>
-        </div>
-        <div className="relative aspect-[4/3] overflow-hidden">
-          <Image
-            src="/assets/Speed.webp"
-            alt="House after a fast cash sale"
-            fill
-            className="object-cover"
-            sizes="(max-width: 1024px) 50vw, 280px"
-          />
-          <span className="font-secondary absolute top-2.5 left-2.5 rounded bg-teal/90 px-2 py-0.5 text-[0.62rem] font-bold tracking-wide text-white uppercase">
-            After
-          </span>
-        </div>
+        {videoPanels.map((panel, index) => (
+          <div key={panel.label} className="relative aspect-[4/3] overflow-hidden">
+            <Image
+              src={panel.image}
+              alt={panel.alt}
+              fill
+              className={`object-cover ${index === 0 ? "brightness-75 grayscale" : ""}`}
+              sizes="(max-width: 1024px) 50vw, 280px"
+            />
+            <span
+              className={`font-secondary absolute top-2.5 left-2.5 max-w-[calc(100%-1.25rem)] rounded px-2 py-0.5 text-[0.58rem] leading-tight font-bold tracking-wide text-white uppercase sm:text-[0.62rem] ${
+                index === 0 ? "bg-black/50" : "bg-teal/90"
+              }`}
+            >
+              {panel.label}
+            </span>
+          </div>
+        ))}
 
         <div className="absolute inset-0 flex items-center justify-center">
           <span className="flex h-14 w-14 items-center justify-center rounded-full bg-white/95 text-teal shadow-[0_8px_24px_rgba(26,35,50,0.2)] transition-transform duration-200 group-hover:scale-105">
@@ -167,7 +174,7 @@ function CashSaleVideoCard() {
 
       <div className="font-secondary flex items-center justify-center gap-2 border-t border-mist bg-ice px-4 py-3 text-[0.82rem] font-medium text-navy">
         <PlayIcon />
-        See how a cash sale can change everything.
+        Why sell your Tuscaloosa home for cash to a local buyer?
       </div>
     </a>
   );
@@ -192,14 +199,12 @@ export function WhyChooseUs() {
               id="why-choose-heading"
               className="font-primary mb-4 text-[clamp(1.65rem,3.5vw,2.35rem)] font-extrabold leading-tight tracking-tight text-navy"
             >
-              The better way to sell your Tuscaloosa home{" "}
-              <em className="text-teal italic">for cash.</em>
+              Why Sell Your Tuscaloosa Home for Cash to a{" "}
+              <em className="text-teal italic">Local Buyer?</em>
             </h2>
 
             <p className="font-secondary max-w-xl text-[0.95rem] leading-relaxed text-slate">
-              Selling to a local cash buyer like Joe means a faster, simpler
-              experience with no agent, no repairs, and no hidden fees. Compare
-              the traditional route to a stress-free cash sale.
+            Selling your Tuscaloosa home for cash to a local buyer like Joe means a fast, as-is home sale with no repairs, showings, or open houses. Instead of waiting the typical 30+ days it can take for a traditional buyer's loan and inspections, you move straight to a simple, certain closing.
             </p>
 
             <CashSaleVideoCard />

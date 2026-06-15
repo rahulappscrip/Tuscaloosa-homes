@@ -1,9 +1,8 @@
 const steps = [
   {
-    number: "01",
     title: "Tell Joe About Your House",
     description:
-      "Call, text, or fill out a short form with your Tuscaloosa property address and basic details. Joe or a team member typically follows up the same day.",
+      "Call, text, or fill out a short form with your Tuscaloosa property address and basic details. Joe or a team member typically follows up the same day to learn more about your situation and answer questions.",
     icon: (
       <svg viewBox="0 0 24 24" fill="none" className="h-6 w-6" aria-hidden>
         <path
@@ -16,10 +15,9 @@ const steps = [
     ),
   },
   {
-    number: "02",
     title: "Quick Visit or Virtual Walkthrough",
     description:
-      "Joe schedules a quick visit to see the house in person, or a virtual walkthrough. There's no need to clean or repair anything first.",
+      "Joe schedules a quick visit to see the house in person, or a virtual walkthrough if needed. There's no need to clean or repair; this step helps him understand the condition so he can make an accurate, as-is cash offer.",
     icon: (
       <svg viewBox="0 0 24 24" fill="none" className="h-6 w-6" aria-hidden>
         <path
@@ -32,10 +30,9 @@ const steps = [
     ),
   },
   {
-    number: "03",
     title: "Get Your No-Obligation Cash Offer",
     description:
-      "Joe reviews recent Tuscaloosa sales and repair needs, then presents a clear written cash offer often within 24 hours. You're free to say yes or no.",
+      "After the walkthrough, Joe reviews recent Tuscaloosa sales, repair needs, and your goals, then presents a clear written cash offer—often within 24 hours. He explains how he arrived at the number so you can decide if it works for you. You're free to say yes or no.",
     icon: (
       <svg viewBox="0 0 24 24" fill="none" className="h-6 w-6" aria-hidden>
         <path
@@ -54,10 +51,9 @@ const steps = [
     ),
   },
   {
-    number: "04",
     title: "Choose Your Closing Date & Get Paid",
     description:
-      "Pick a closing date that fits your move — sometimes in as little as 7 days. Joe works with a trusted local title company and covers standard closing costs.",
+      "If you accept, you choose a closing date that fits your move—sometimes in as little as 7 days, or longer if you need more time. Joe works with a trusted local title company to handle the paperwork, pays standard closing costs, and you get your cash at closing.",
     icon: (
       <svg viewBox="0 0 24 24" fill="none" className="h-6 w-6" aria-hidden>
         <circle cx="8" cy="14" r="4" stroke="currentColor" strokeWidth="1.75" />
@@ -105,26 +101,26 @@ export function HowItWorks() {
         </div>
 
         <div className="relative">
-          <div
-            className="pointer-events-none absolute top-[5.25rem] right-[8%] left-[8%] hidden border-t-2 border-dashed border-teal/35 lg:block"
-            aria-hidden
-          />
-
           <div className="grid gap-10 sm:grid-cols-2 sm:gap-8 lg:grid-cols-4 lg:gap-6">
-            {steps.map((step) => (
+            {steps.map((step, index) => (
               <article
-                key={step.number}
-                className="relative flex flex-col items-center px-2 text-center sm:px-4"
+                key={step.title}
+                className="relative flex flex-col items-start px-2 text-left sm:px-4"
               >
+                {index < steps.length - 1 && (
+                  <div
+                    className={`pointer-events-none absolute top-7 left-[calc(0.5rem+1.75rem)] hidden h-0 w-[calc(100%+1.5rem)] border-t-2 border-dashed border-teal/35 sm:left-[calc(1rem+1.75rem)] ${
+                      index === 0 || index === 2 ? "sm:block" : ""
+                    } ${index < 3 ? "lg:block" : ""}`}
+                    aria-hidden
+                  />
+                )}
+
                 <div
-                  className="mb-4 flex h-14 w-14 items-center justify-center rounded-full border border-mist bg-ice text-teal"
+                  className="relative z-10 mb-4 flex h-14 w-14 shrink-0 items-center justify-center rounded-full border border-mist bg-ice text-teal"
                   aria-hidden
                 >
                   {step.icon}
-                </div>
-
-                <div className="relative z-10 mb-5 hidden h-8 w-8 items-center justify-center rounded-full bg-navy text-[0.72rem] font-bold text-white sm:flex">
-                  {step.number}
                 </div>
 
                 <h3 className="font-primary mb-2.5 text-[1.05rem] font-bold text-navy">

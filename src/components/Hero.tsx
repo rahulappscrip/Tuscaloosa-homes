@@ -120,10 +120,10 @@ const inputClass =
 export function Hero() {
   return (
     <section id="hero" className="bg-hero-surface lg:overflow-hidden">
-      <div className="mx-auto w-full max-w-[1300px] px-6 py-10 sm:py-12 lg:py-6 lg:pb-0">
-        <div className="grid items-start gap-8 lg:min-h-[calc(100dvh-132px)] lg:grid-cols-[minmax(0,1.15fr)_minmax(0,0.85fr)] lg:grid-rows-[1fr_auto] lg:gap-10 xl:gap-12">
-          {/* Content */}
-          <div className="order-1 flex flex-col lg:col-start-1 lg:row-start-1">
+      <div className="mx-auto w-full max-w-[1300px] px-6 py-10 sm:py-12 lg:py-8">
+        <div className="grid items-start gap-8 lg:grid-cols-[minmax(0,1.15fr)_minmax(0,0.85fr)] lg:gap-10 xl:gap-12">
+          {/* Content + Joe card on desktop */}
+          <div className="order-1 flex flex-col gap-6 lg:col-start-1 lg:row-start-1">
             <div className="mb-3 flex items-center gap-2.5">
               <span className="h-4 w-1 shrink-0 rounded-full bg-teal" aria-hidden />
               <span className="font-secondary text-[0.85rem] font-semibold text-teal">
@@ -154,16 +154,20 @@ export function Hero() {
                 </li>
               ))}
             </ul>
+
+            <div className="hidden lg:block">
+              <JoeProfileCard />
+            </div>
           </div>
 
-          {/* Form — narrower, vertically centered */}
-          <div className="order-2 flex w-full flex-col items-center lg:col-start-2 lg:row-span-2 lg:row-start-1 lg:items-end lg:justify-center lg:py-4">
+          {/* Form */}
+          <div className="order-2 flex w-full flex-col items-center lg:col-start-2 lg:row-start-1 lg:items-end lg:self-start">
             <div
               id="offer-form"
-              className="w-full max-w-[400px] rounded-2xl bg-white px-5 py-6 text-charcoal shadow-[0_12px_40px_rgba(26,35,50,0.08)] sm:px-6 sm:py-7"
+              className="w-full max-w-[450px] rounded-2xl bg-white px-5 py-6 text-charcoal shadow-[0_12px_40px_rgba(26,35,50,0.08)] sm:px-6 sm:py-7"
             >
               <h2 className="font-primary mb-3 text-[clamp(1.35rem,2.5vw,1.75rem)] leading-tight font-extrabold text-charcoal">
-                Get Your <span className="text-teal">Fair Offer</span> Today
+                Get Your <span className="text-teal">Cash Offer</span> Today
               </h2>
               <p className="font-secondary mb-5 text-[0.875rem] leading-relaxed text-slate">
                 Share a few details about your property and get a fair local cash
@@ -252,8 +256,8 @@ export function Hero() {
             </div>
           </div>
 
-          {/* Joe card — after form on mobile, bottom of left column on desktop */}
-          <div className="order-3 -mt-4 mb-8 w-full lg:col-start-1 lg:row-start-2 lg:-mt-2 lg:mb-6 lg:self-end">
+          {/* Joe card — after form on mobile only */}
+          <div className="order-3 mb-8 w-full lg:hidden">
             <JoeProfileCard />
           </div>
         </div>

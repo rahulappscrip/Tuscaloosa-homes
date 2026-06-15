@@ -8,34 +8,74 @@ const PHONE_HREF = "tel:8037847672";
 
 const faqs = [
   {
+    id: "how-it-works",
+    question: "How does selling my house for cash in Tuscaloosa work?",
+    answer:
+      "The process is simple. You tell a local Tuscaloosa cash home buyer about your property, they review the house, then make you a no-obligation cash offer. If you like the number, you pick the closing date and sign standard sale paperwork with a title company in Alabama. You can usually sell as-is without repairs, open houses, or long listings.",
+  },
+  {
+    id: "fair-price",
+    question: "Will I get a fair price if I sell my Tuscaloosa house for cash?",
+    answer:
+      "Yes. A fair cash price comes from your Tuscaloosa home's after-repair value, minus needed repairs, holding costs, and a reasonable profit for the cash home buyer. You avoid paying agent commissions, which traditional sales often include, and you do not wait through showings or buyer financing. The right cash offer balances speed, certainty, and what you walk away with.",
+  },
+  {
+    id: "repairs-as-is",
+    question:
+      "Do I have to make repairs before selling my house as-is in Tuscaloosa?",
+    answer:
+      "No. When you work with a local Tuscaloosa cash home buyer, you can usually sell the house as-is without doing repairs or upgrades first. The buyer looks at the home's condition and subtracts expected repair costs when deciding on a cash offer. This can save you time, stress, and upfront money compared to fixing the property before listing.",
+  },
+  {
     id: "how-fast",
-    question: "How fast can I sell my house in Tuscaloosa?",
+    question: "How fast can you buy my house for cash in Tuscaloosa?",
     answer:
-      "You can often receive a cash offer within 24 hours and close in as little as 7 days depending on your situation and title process.",
+      "A local Tuscaloosa cash home buyer can often close significantly faster than a traditional agent sale. Once you accept a cash offer, the timeline mainly depends on the title work and your move-out needs. Some sellers choose a very quick closing, while others prefer more time. The key benefit is flexibility, not waiting on buyer loan approvals or multiple showings.",
   },
   {
-    id: "repairs",
-    question: "Do I need to repair my house before selling?",
+    id: "fees-commissions",
+    question: "What fees or commissions do you charge when you buy my house?",
     answer:
-      "No. We buy houses in Tuscaloosa as-is, including homes with repairs, fire damage, water damage, or outdated interiors.",
+      "A genuine local cash home buyer does not charge you real estate commissions for buying your house. In a traditional sale, sellers often pay agent commissions on top of other closing costs. With a direct cash buyer, you are selling straight to the buyer, so there is no listing commission, and any other costs or credits are spelled out clearly in the purchase agreement.",
   },
   {
-    id: "fees",
-    question: "Are there any commissions or hidden fees?",
+    id: "legit-buyer",
+    question: "How can I tell if a cash home buyer in Tuscaloosa is legit?",
     answer:
-      "No. There are no realtor commissions, closing costs, or hidden fees when selling your house directly to us.",
+      "You can check legitimacy by asking for proof of funds, looking up the cash buyer's business registration, and reading reviews from other Alabama sellers. A real cash home buyer will also close through a trusted title company, not ask for upfront fees, and answer questions about their offer in plain language. It is reasonable to vet any buyer before you sign.",
   },
   {
-    id: "types",
-    question: "What types of properties do you buy?",
+    id: "market-value",
+    question:
+      "What percentage do cash home buyers usually pay compared to market value?",
     answer:
-      "We buy single-family homes, inherited properties, rental homes, distressed houses, and properties facing foreclosure throughout Tuscaloosa and nearby areas.",
+      "Cash home buyers pay less than full market value because they cover repairs, holding costs, and the risk of owning the property. Instead of a fixed percentage for every house, the offer depends on after-repair value, condition, and location. A transparent local buyer in Tuscaloosa will walk you through their numbers so you understand how they arrived at the amount.",
   },
   {
-    id: "obligation",
-    question: "Is there any obligation after requesting an offer?",
+    id: "foreclosure",
+    question:
+      "Can you still buy my house if I'm facing foreclosure in Tuscaloosa?",
     answer:
-      "No. Requesting a cash offer is completely free and comes with no obligation to accept.",
+      "Yes. A local Tuscaloosa cash home buyer may be able to purchase your house before a foreclosure, but timing is critical. The buyer and title company must have enough time to clear title and close before any sale date. While no specific outcome is guaranteed, reaching out early gives you more options than waiting until the last minute.",
+  },
+  {
+    id: "inherited-probate",
+    question: "Do you buy inherited or probate houses in Tuscaloosa?",
+    answer:
+      "Yes. Local Tuscaloosa cash home buyers often purchase inherited or probate houses, even if they need work. All legal owners or heirs usually need to agree to the sale, and a title company or attorney in Alabama helps handle the paperwork. Selling for cash can simplify splitting proceeds and avoid months of repairs, showings, or landlord duties.",
+  },
+  {
+    id: "house-types",
+    question: "What types of houses do you buy in Tuscaloosa?",
+    answer:
+      "Local Tuscaloosa cash home buyers typically purchase single-family houses, small rental homes, and other residential properties in a wide range of conditions. That can include move-in ready homes, rentals with tenants, or places needing major repairs. If you own a house in or around Tuscaloosa, it is usually worth asking whether it fits their buying criteria.",
+  },
+  {
+    id: "service-area",
+    question:
+      "Do you only buy houses in Tuscaloosa, or other parts of Alabama too?",
+    answer:
+      "Local cash home buyers focus on houses in Tuscaloosa and the greater Tuscaloosa area, since that is the market they know best. Some will also buy in nearby Alabama towns, depending on the property and situation. If your house is outside city limits, it is still worth reaching out to confirm whether it falls inside their service area.",
   },
 ] as const;
 
@@ -83,7 +123,7 @@ function ToggleIcon({ open }: { open: boolean }) {
 }
 
 export function FAQ() {
-  const [openId, setOpenId] = useState<string | null>("how-fast");
+  const [openId, setOpenId] = useState<string | null>("how-it-works");
 
   return (
     <section

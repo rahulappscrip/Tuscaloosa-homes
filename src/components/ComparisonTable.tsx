@@ -1,54 +1,60 @@
 import Link from "next/link";
 
 const columns = [
-  { key: "label", header: "What matters to you" },
-  { key: "joe", header: "Sell to Us (Local Cash)", highlight: true },
+  { key: "label", header: "Criteria" },
+  { key: "joe", header: "Sell to Joe (Local Cash Buyer)", highlight: true },
   { key: "agent", header: "List With an Agent" },
-  { key: "other", header: "Other Cash Buyers" },
+  { key: "other", header: "Sell to Other Investors" },
 ] as const;
 
 const rows = [
   {
     label: "Time to close",
-    joe: { text: "7–21 days, your schedule", positive: true },
-    agent: { text: "30–60+ days typical" },
-    other: { text: "Varies — may rely on loans" },
+    joe: { text: "Close in as little as 7–21 days, on your schedule" },
+    agent: { text: "Often 30–60+ days from listing to closing" },
+    other: { text: "Varies widely; some promise speed but may still rely on loans" },
   },
   {
-    label: "Repairs before sale",
-    joe: { text: "Zero repairs, sell as-is", positive: true },
-    agent: { text: "Often needed to list" },
-    other: { text: "Usually as-is, terms vary" },
+    label: "Repairs and cleaning",
+    joe: { text: "None — sell as-is", positive: true },
+    agent: { text: "Often need repairs and deep cleaning before listing" },
+    other: { text: "Many buy as-is, but terms and expectations vary" },
   },
   {
-    label: "Showings & open houses",
-    joe: { text: "One walkthrough only", positive: true },
-    agent: { text: "Many showings required" },
-    other: { text: "Minimal, but unclear" },
+    label: "Showings and open houses",
+    joe: { text: "None — one quick visit", positive: true },
+    agent: { text: "Multiple showings and open houses" },
+    other: { text: "Usually minimal showings, but process can be unclear" },
   },
   {
-    label: "Agent commissions",
-    joe: { text: "0% — none", positive: true },
-    agent: { text: "~5–6% of sale price", negative: true },
-    other: { text: "Usually 0%, check terms" },
+    label: "Commissions to agents",
+    joe: { text: "0% commission", positive: true },
+    agent: { text: "Typically around 5–6% of sale price" },
+    other: { text: 'Usually 0%, but some charge service or "program" fees' },
   },
   {
     label: "Closing costs",
-    joe: { text: "Joe pays standard costs", positive: true },
-    agent: { text: "Seller pays a portion", negative: true },
-    other: { text: "Varies by buyer" },
+    joe: { text: "Joe pays standard closing costs", positive: true },
+    agent: { text: "Seller often pays a portion of closing costs" },
+    other: { text: "Depends on the buyer; some shift more costs to you" },
   },
   {
     label: "Certainty of closing",
-    joe: { text: "Cash — no financing risk", positive: true },
-    agent: { text: "Subject to appraisal & financing", negative: true },
-    other: { text: "Some assign contracts" },
+    joe: { text: "High — Joe uses cash, not financing", positive: true },
+    agent: { text: "Subject to financing, appraisal & inspection risk" },
+    other: { text: "Varies; some investors wholesale or assign contracts" },
   },
   {
     label: "Who you deal with",
-    joe: { text: "Directly with Joe, local", positive: true },
-    agent: { text: "Multiple agents & parties" },
-    other: { text: "Could be national call center" },
+    joe: { text: "Directly with Joe, a local Tuscaloosa buyer" },
+    agent: { text: "Listing agent, buyer's agent & third parties" },
+    other: { text: "Could be local or a national call center" },
+  },
+  {
+    label: "Stress level",
+    joe: { text: "Low — simple, no-pressure steps", positive: true },
+    agent: { text: "Higher — longer timeline, more moving parts" },
+    other: { text: "Varies widely by company and experience" },
   },
 ] as const;
 
@@ -96,18 +102,17 @@ export function ComparisonTable() {
       <div className="mx-auto max-w-[1300px] px-6">
         <div className="mx-auto mb-10 max-w-3xl text-center sm:mb-12">
           <p className="font-secondary mb-3 text-[0.72rem] font-bold tracking-[0.14em] text-teal uppercase">
-            Side by Side
+          Compare your options
           </p>
           <h2
             id="comparison-heading"
             className="font-primary mb-4 text-[clamp(1.65rem,3.5vw,2.35rem)] font-extrabold tracking-tight text-navy"
           >
-            Sell to Joe vs.{" "}
-            <em className="text-teal italic">other Buyers</em>
+            Selling to Joe vs. Listing With an Agent vs.{" "}
+            <em className="text-teal italic">Other Cash Buyers</em>
           </h2>
-          <p className="font-secondary mx-auto max-w-[540px] text-[0.95rem] leading-relaxed text-slate">
-            Every path has tradeoffs. Here&apos;s an honest look at what you gain
-            and give up with each choice, so you can decide with confidence.
+          <p className="font-secondary mx-auto max-w-[600px] text-[0.95rem] leading-relaxed text-slate">
+          Selling to Joe, listing with an agent, and working with other cash buyers each have tradeoffs. Joe focuses on speed, simplicity, and clear, no-obligation offers so you can compare options and choose what's best for you.
           </p>
         </div>
 
@@ -121,8 +126,10 @@ export function ComparisonTable() {
                     scope="col"
                     className={`font-secondary px-4 py-4 text-left text-[0.68rem] font-semibold tracking-[0.08em] uppercase sm:px-5 ${
                       col.key === "joe"
-                        ? "bg-navy text-teal"
-                        : "bg-navy text-white/70"
+                        ? "bg-teal-tint/60 text-teal"
+                        : col.key === "label"
+                          ? "bg-ice text-slate"
+                          : "bg-ice text-slate"
                     } ${col.key === "label" ? "rounded-tl-xl" : ""} ${
                       col.key === "other" ? "rounded-tr-xl" : ""
                     }`}
@@ -157,6 +164,10 @@ export function ComparisonTable() {
         </div>
 
         <div className="mt-8 text-center sm:mt-10">
+          <p className="font-secondary mx-auto mb-5 max-w-xl text-[0.9rem] leading-relaxed text-slate">
+            When you know exactly what each option looks like, it&apos;s easier to
+            choose with confidence instead of guessing.
+          </p>
           <Link
             href="#offer-form"
             className="font-secondary inline-flex items-center justify-center gap-2 rounded-full bg-teal px-6 py-3.5 text-[0.9rem] font-bold text-white transition-all duration-200 hover:bg-teal-dark hover:shadow-[0_4px_20px_rgba(43,188,212,0.4)] sm:px-8 sm:text-[0.95rem]"

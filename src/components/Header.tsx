@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import { useCallback, useEffect, useRef, useState } from "react";
+import { sellerSituations, situationHref } from "@/data/situations";
 import { Logo } from "./Logo";
 
 const PHONE = "(803) 784-7672";
@@ -18,35 +19,11 @@ const locations = [
   "West Alabama Area",
 ];
 
-const situations = [
-  "Facing Foreclosure",
-  "Inherited / Probate",
-  "Divorce",
-  "Tired Landlord",
-  "Fire Damage",
-  "Water Damage",
-  "Mold / Structural",
-  "Behind on Taxes",
-  "Bankruptcy",
-  "Relocating",
-  "Sell As-Is",
-  "Cash Home Buyers",
-];
-
 const companyLinks = [
   { label: "About Joe", href: "#meet-joe" },
   { label: "FAQ", href: "#faq" },
   { label: "Blog", href: "#" },
   { label: "Contact", href: "#contact" },
-];
-
-const mobileSituations = [
-  "Foreclosure",
-  "Inherited / Probate",
-  "Divorce",
-  "Tired Landlord",
-  "Fire / Water / Mold Damage",
-  "Relocating",
 ];
 
 function ChevronDown({ className }: { className?: string }) {
@@ -334,16 +311,8 @@ export function Header() {
         <div className="mx-auto max-w-[1300px] px-6">
           <div className="flex h-[70px] items-center justify-between gap-6">
             {/* Logo */}
-            <Link href="/" className="flex min-w-0 shrink items-center gap-2.5 sm:gap-3">
-              <Logo className="h-10 w-auto shrink-0 sm:h-11" />
-              <div className="min-w-0 leading-[1.2]">
-                <strong className="font-primary block truncate text-[0.95rem] font-bold text-navy sm:text-[1.05rem] sm:whitespace-nowrap">
-                  We Buy Tuscaloosa Homes
-                </strong>
-                <span className="font-secondary block truncate text-[0.6rem] font-bold tracking-[0.08em] text-teal uppercase sm:text-[0.65rem]">
-                  For Cash in Alabama
-                </span>
-              </div>
+            <Link href="/" className="flex shrink-0 items-center">
+              <Logo className="h-9 w-auto max-w-[220px] sm:h-10 sm:max-w-[260px]" />
             </Link>
 
             {/* Desktop nav */}
@@ -383,9 +352,12 @@ export function Header() {
                 onClose={closeDropdown}
               >
                 <div className="grid grid-cols-2 gap-0 p-2 pb-3">
-                  {situations.map((situation) => (
-                    <DropdownLink key={situation} href="#">
-                      {situation}
+                  {sellerSituations.map((situation) => (
+                    <DropdownLink
+                      key={situation.id}
+                      href={situationHref(situation.id)}
+                    >
+                      {situation.footerLabel}
                     </DropdownLink>
                   ))}
                 </div>
@@ -493,14 +465,7 @@ export function Header() {
             ))}
 
             {(
-              [
-                { id: "locations", label: "Locations", items: locations },
-                {
-                  id: "situations",
-                  label: "Situations",
-                  items: mobileSituations,
-                },
-              ] as const
+              [{ id: "locations", label: "Locations", items: locations }] as const
             ).map((section) => (
               <div key={section.id} className="border-b border-border/70">
                 <button
@@ -534,6 +499,38 @@ export function Header() {
                 )}
               </div>
             ))}
+
+            <div className="border-b border-border/70">
+              <button
+                type="button"
+                className={`font-secondary flex w-full cursor-pointer items-center justify-between py-3.5 text-[0.95rem] font-semibold transition-colors ${
+                  openSubnav === "situations"
+                    ? "text-teal-dark"
+                    : "text-charcoal"
+                }`}
+                onClick={() => toggleSubnav("situations")}
+                aria-expanded={openSubnav === "situations"}
+              >
+                Situations
+                <ChevronDown
+                  className={`transition-transform duration-200 ${openSubnav === "situations" ? "rotate-180" : ""}`}
+                />
+              </button>
+              {openSubnav === "situations" && (
+                <div className="bg-teal-tint/60 px-4 pb-3">
+                  {sellerSituations.map((situation) => (
+                    <Link
+                      key={situation.id}
+                      href={situationHref(situation.id)}
+                      className="font-secondary block py-2 text-[0.88rem] text-slate"
+                      onClick={() => setMobileOpen(false)}
+                    >
+                      {situation.footerLabel}
+                    </Link>
+                  ))}
+                </div>
+              )}
+            </div>
 
             <div className="pt-4 pb-6">
               <Link
