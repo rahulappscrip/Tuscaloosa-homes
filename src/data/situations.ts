@@ -2,33 +2,33 @@ export const sellerSituations = [
   {
     id: "foreclosure",
     footerLabel: "Facing Foreclosure",
-    title: "Facing Foreclosure or Behind on Payments",
+    title: "Facing foreclosure or behind on payments",
     description:
-      "If you're behind on your mortgage or have a foreclosure date coming up, a quick cash sale can help you avoid months of stress and protect remaining equity. With Alabama foreclosure timelines tightening, a buyer who can close in about 7–21 days can be the difference between a sale and losing the home.",
+      "A quick home sale for cash can help you avoid a completed foreclosure, protect remaining equity, and move on with a clean slate.",
     image: "/assets/Foreclosure.webp",
   },
   {
     id: "inherited-probate",
     footerLabel: "Inherited / Probate",
-    title: "Inherited or Probate Property",
+    title: "Inherited or probate property owners",
     description:
-      "If you've inherited a house in Tuscaloosa you don't want to keep, repairs, taxes, and trips to the property add up fast. Joe can buy inherited and probate houses as-is and work with a local title company or attorney to handle the paperwork.",
+      "If you've inherited a house you don't want to fix up, Joe can buy it as-is and work with a local title company or attorney to handle the paperwork.",
     image: "/assets/Inherited.webp",
   },
   {
     id: "divorce",
     footerLabel: "Divorce",
-    title: "Divorce or Separation",
+    title: "People going through divorce or separation",
     description:
-      "A cash offer can help both parties reach a faster resolution without a long sale process in the middle of everything else. Joe keeps the process simple, private, and on your timeline.",
+      "When you need to move on without a long sale process, a cash offer can help both parties reach a faster resolution.",
     image: "/assets/Divorce.webp",
   },
   {
     id: "tired-landlord",
     footerLabel: "Tired Landlord",
-    title: "Tired Landlords and Rental Owners",
+    title: "Tired landlords and rental owners",
     description:
-      "If you own rentals in or around Tuscaloosa and are tired of chasing rent, handling repairs, or dealing with problem tenants, Joe can often buy with tenants in place and let you exit quietly.",
+      "If managing tenants in Tuscaloosa or nearby Alabama communities has become a burden, Joe can buy with tenants in place and let you exit quietly.",
     image: "/assets/Tenants.webp",
   },
   {
@@ -74,17 +74,17 @@ export const sellerSituations = [
   {
     id: "relocating",
     footerLabel: "Relocating",
-    title: "Relocating for Work or Life Changes",
+    title: "Relocating for work or life changes",
     description:
-      "If you're moving out of Tuscaloosa and don't have months to wait, a local cash buyer can shorten your timeline, remove uncertainty, and let you focus on what's next.",
+      "If you're moving out of Tuscaloosa and don't have months to wait, a local cash buyer can shorten your timeline and remove uncertainty.",
     image: "/assets/Speed.webp",
   },
   {
     id: "sell-as-is",
     footerLabel: "Sell As-Is",
-    title: "Sell Your House As-Is",
+    title: "Owners of houses needing major repairs",
     description:
-      "No repairs, no cleaning, no staging. Joe buys homes in their current condition and handles the work after closing — a straightforward option when you want simplicity.",
+      "From fire or water damage to long-deferred maintenance, Joe buys houses that may not be ready for a traditional listing.",
     image: "/assets/Repairs.webp",
   },
   {

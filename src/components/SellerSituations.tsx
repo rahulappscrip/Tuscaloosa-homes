@@ -1,5 +1,4 @@
 import Image from "next/image";
-import Link from "next/link";
 import { sellerSituations } from "@/data/situations";
 
 const featuredSituationIds = [
@@ -8,7 +7,7 @@ const featuredSituationIds = [
   "sell-as-is",
   "tired-landlord",
   "divorce",
-  "cash-home-buyers",
+  "relocating",
 ] as const;
 
 const featuredSituations = featuredSituationIds.map(
@@ -67,19 +66,11 @@ export function SellerSituations() {
           ))}
         </div>
 
-        <div className="mt-10 text-center">
-          <Link
-            href="#offer-form"
-            className="font-secondary inline-flex items-center justify-center gap-2 rounded-full bg-teal px-8 py-3.5 text-[0.95rem] font-bold text-white transition-all duration-200 hover:bg-teal-dark hover:shadow-[0_4px_20px_rgba(43,188,212,0.4)]"
-          >
-            Get Cash Offer
-            <span aria-hidden>→</span>
-          </Link>
-          <p className="font-secondary mt-3 text-[0.82rem] text-slate">
-            Share what&apos;s going on with your Tuscaloosa property and get honest
-            feedback — not a sales pitch.
-          </p>
-        </div>
+        <p className="font-secondary mx-auto mt-10 max-w-[620px] text-center text-[0.9rem] leading-relaxed text-slate">
+          If you see your situation in this list—or even if you&apos;re not
+          sure—Joe will walk you through options so you can decide what feels
+          right.
+        </p>
       </div>
     </section>
   );

@@ -24,10 +24,10 @@ export default function Home() {
       <Testimonials />
       <ComparisonTable />
       <SellerSituations />
-      <TransparentPricing />
-      <MeetJoe />
       <LocalMarket />
       <ServiceArea />
+      <MeetJoe />
+      <TransparentPricing />
       <FAQ />
       <FinalCTA />
     </>
