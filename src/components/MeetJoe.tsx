@@ -62,7 +62,7 @@ export function MeetJoe() {
           </div>
 
           <div>
-            <p className="font-secondary mb-3 text-[0.72rem] font-bold tracking-[0.14em] text-teal uppercase">
+            <p className="font-secondary mb-3 text-eyebrow font-bold tracking-[0.14em] text-teal uppercase">
               Your Local Buyer
             </p>
             <h2
@@ -110,7 +110,7 @@ export function MeetJoe() {
                   <p className="font-primary mb-1 text-[1.1rem] font-extrabold text-teal sm:text-[1.25rem]">
                     {fact.value}
                   </p>
-                  <p className="font-secondary text-[0.62rem] font-semibold tracking-[0.08em] text-slate uppercase sm:text-[0.68rem]">
+                  <p className="font-secondary text-eyebrow font-semibold tracking-[0.08em] text-slate uppercase sm:text-eyebrow">
                     {fact.label}
                   </p>
                 </div>

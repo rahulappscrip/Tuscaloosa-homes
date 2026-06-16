@@ -57,7 +57,7 @@ export function OfferCalculatorWidget() {
         <h3 className="font-primary text-[1.2rem] font-bold text-white">
           Estimate your cash offer
         </h3>
-        <p className="font-secondary mt-1 text-[0.82rem] leading-relaxed text-white/65">
+        <p className="font-secondary mt-1 text-base leading-relaxed text-white/65">
           A quick ballpark — your real offer comes from Joe after a walkthrough.
         </p>
       </div>
@@ -128,7 +128,7 @@ export function OfferCalculatorWidget() {
       </div>
 
       <div className="bg-navy px-6 py-6 sm:px-7 sm:py-7">
-        <p className="font-secondary mb-2 text-[0.68rem] font-bold tracking-[0.12em] text-teal uppercase">
+        <p className="font-secondary mb-2 text-eyebrow font-bold tracking-[0.12em] text-teal uppercase">
           Estimated cash offer range
         </p>
         <p
@@ -137,7 +137,7 @@ export function OfferCalculatorWidget() {
         >
           {formatCurrency(low)} – {formatCurrency(high)}
         </p>
-        <p className="font-secondary mb-5 text-[0.78rem] leading-relaxed text-white/60">
+        <p className="font-secondary mb-5 text-fine leading-relaxed text-white/60">
           No fees or commissions deducted. Joe covers standard closing costs.
         </p>
         <Link

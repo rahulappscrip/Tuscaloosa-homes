@@ -27,7 +27,7 @@ export function StatsRibbon() {
                   {stat.unit}
                 </span>
               </div>
-              <p className="font-secondary mt-2 text-[0.72rem] font-semibold tracking-[0.1em] text-slate uppercase">
+              <p className="font-secondary mt-2 text-eyebrow font-semibold tracking-[0.1em] text-slate uppercase">
                 {stat.label}
               </p>
             </div>

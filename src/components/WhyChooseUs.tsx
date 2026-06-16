@@ -136,7 +136,7 @@ function CashSaleVideoCard() {
         Your browser does not support embedded video.
       </video>
 
-      <div className="font-secondary flex items-center justify-center gap-2 border-t border-mist bg-ice px-4 py-3 text-[0.82rem] font-medium text-navy">
+      <div className="font-secondary flex items-center justify-center gap-2 border-t border-mist bg-ice px-4 py-3 text-fine font-medium text-navy">
         <PlayIcon />
         Why sell your Tuscaloosa home for cash to a local buyer?
       </div>
@@ -154,7 +154,7 @@ export function WhyChooseUs() {
       <div className="mx-auto max-w-[1300px] px-6">
         <div className="grid items-start gap-10 lg:grid-cols-2 lg:gap-14 xl:gap-16">
           <div>
-            <p className="font-secondary mb-3 flex items-center gap-2 text-[0.68rem] font-bold tracking-[0.14em] text-teal uppercase">
+            <p className="font-secondary mb-3 flex items-center gap-2 text-eyebrow font-bold tracking-[0.14em] text-teal uppercase">
               <span className="h-px w-5 bg-teal" aria-hidden />
               Why a local cash sale
             </p>
@@ -167,7 +167,7 @@ export function WhyChooseUs() {
               <em className="text-teal italic">Local Buyer?</em>
             </h2>
 
-            <p className="font-secondary max-w-xl text-[0.95rem] leading-relaxed text-slate">
+            <p className="font-secondary max-w-xl text-base leading-relaxed text-slate">
             Selling your Tuscaloosa home for cash to a local buyer like Joe means a fast, as-is home sale with no repairs, showings, or open houses. Instead of waiting the typical 30+ days it can take for a traditional buyer's loan and inspections, you move straight to a simple, certain closing.
             </p>
 
@@ -190,7 +190,7 @@ export function WhyChooseUs() {
                   <h3 className="font-primary mb-1 text-[0.95rem] font-bold text-navy">
                     {benefit.title}
                   </h3>
-                  <p className="font-secondary text-[0.85rem] leading-relaxed text-slate">
+                  <p className="font-secondary text-base leading-relaxed text-slate">
                     {benefit.description}
                   </p>
                 </div>
@@ -201,11 +201,11 @@ export function WhyChooseUs() {
 
         <div className="mt-10 grid gap-5 lg:grid-cols-2 lg:gap-6">
           <div className="rounded-xl border border-mist bg-teal-tint/40 p-6 sm:p-7">
-            <p className="font-secondary mb-3 flex items-center gap-2 text-[0.68rem] font-bold tracking-[0.14em] text-teal uppercase">
+            <p className="font-secondary mb-3 flex items-center gap-2 text-eyebrow font-bold tracking-[0.14em] text-teal uppercase">
               <span className="h-px w-5 bg-teal" aria-hidden />
               A simple example
             </p>
-            <p className="font-secondary text-[0.9rem] leading-relaxed text-slate">
+            <p className="font-secondary text-base leading-relaxed text-slate">
               If you sold a{" "}
               <strong className="font-semibold text-charcoal">$270,000</strong>{" "}
               Tuscaloosa house with an agent at 6% commission, you could pay
@@ -218,11 +218,11 @@ export function WhyChooseUs() {
           </div>
 
           <div className="flex flex-col justify-center rounded-xl bg-navy p-6 sm:p-7">
-            <p className="font-secondary mb-3 flex items-center gap-2 text-[0.68rem] font-bold tracking-[0.14em] text-teal uppercase">
+            <p className="font-secondary mb-3 flex items-center gap-2 text-eyebrow font-bold tracking-[0.14em] text-teal uppercase">
               <span className="h-px w-5 bg-teal" aria-hidden />
               No pressure, ever
             </p>
-            <p className="font-primary mb-5 text-[1.05rem] font-bold leading-snug text-white sm:text-[1.1rem]">
+            <p className="font-primary mb-5 text-base font-bold leading-snug text-white sm:text-base">
               If you&apos;re comparing options, Joe&apos;s goal is simple: give you
               a clear, fair cash offer so you can decide what&apos;s right for you
               without any pressure.
@@ -234,7 +234,7 @@ export function WhyChooseUs() {
               See What My Tuscaloosa Home Could Sell for in Cash
               <span aria-hidden>→</span>
             </Link>
-            <p className="font-secondary mt-4 text-center text-[0.82rem] text-white/60">
+            <p className="font-secondary mt-4 text-center text-base text-white/60">
               or call Joe at{" "}
               <a
                 href={PHONE_HREF}

@@ -331,7 +331,7 @@ export function Header() {
                 onOpen={setOpenDropdown}
                 onClose={closeDropdown}
               >
-                <p className="font-secondary px-4 pt-3 pb-1 text-[0.68rem] font-semibold tracking-[0.1em] text-slate uppercase">
+                <p className="font-secondary px-4 pt-3 pb-1 text-eyebrow font-semibold tracking-[0.1em] text-slate uppercase">
                   Cities We Serve
                 </p>
                 <div className="pb-2">

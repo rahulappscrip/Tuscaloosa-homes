@@ -83,7 +83,7 @@ export function HowItWorks() {
     >
       <div className="mx-auto max-w-[1300px] px-6">
         <div className="mx-auto mb-10 max-w-3xl text-center sm:mb-12">
-          <p className="font-secondary mb-3 text-[0.72rem] font-bold tracking-[0.14em] text-teal uppercase">
+          <p className="font-secondary mb-3 text-eyebrow font-bold tracking-[0.14em] text-teal uppercase">
             The Process
           </p>
           <h2
@@ -93,7 +93,7 @@ export function HowItWorks() {
             How selling your Tuscaloosa home{" "}
             <em className="text-teal italic">for cash works.</em>
           </h2>
-          <p className="font-secondary mx-auto max-w-[540px] text-[0.95rem] leading-relaxed text-slate">
+          <p className="font-secondary mx-auto max-w-[540px] text-base leading-relaxed text-slate">
             Selling your Tuscaloosa home for cash with Joe is a simple, four-step
             process: contact Joe, get a quick walkthrough, receive a fair cash offer,
             and close on your timeline.
@@ -126,7 +126,7 @@ export function HowItWorks() {
                 <h3 className="font-primary mb-2.5 text-[1.05rem] font-bold text-navy">
                   {step.title}
                 </h3>
-                <p className="font-secondary text-[0.88rem] leading-relaxed text-slate">
+                <p className="font-secondary text-base leading-relaxed text-slate">
                   {step.description}
                 </p>
               </article>

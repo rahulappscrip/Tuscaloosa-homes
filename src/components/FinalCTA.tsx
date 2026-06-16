@@ -42,7 +42,7 @@ export function FinalCTA() {
       <div className="relative mx-auto max-w-[1300px] px-6">
         <div className="grid items-center gap-8 lg:grid-cols-[1fr_minmax(260px,360px)] lg:gap-10 xl:gap-12">
           <div className="text-center lg:text-left">
-            <p className="font-secondary mb-2 text-[0.68rem] font-bold tracking-[0.14em] text-white/55 uppercase">
+            <p className="font-secondary mb-2 text-eyebrow font-bold tracking-[0.14em] text-white/55 uppercase">
               Ready When You Are
             </p>
 
@@ -54,7 +54,7 @@ export function FinalCTA() {
               <em className="text-teal italic">Tuscaloosa Home?</em>
             </h2>
 
-            <p className="font-secondary mx-auto mb-4 max-w-xl text-[0.9rem] leading-relaxed text-white/75 lg:mx-0">
+            <p className="font-secondary mx-auto mb-4 max-w-xl text-base leading-relaxed text-white/75 lg:mx-0">
               Joe buys homes for cash in Tuscaloosa and can make you a clear,
               local offer—often within 24 hours.
             </p>
@@ -76,7 +76,7 @@ export function FinalCTA() {
               ))}
             </ul>
 
-            <p className="font-secondary mx-auto mb-5 max-w-xl text-[0.82rem] text-white/55 lg:mx-0">
+            <p className="font-secondary mx-auto mb-5 max-w-xl text-base text-white/55 lg:mx-0">
               No repairs. No commissions. No closing costs.
             </p>
 
@@ -96,7 +96,7 @@ export function FinalCTA() {
               </Link>
             </div>
 
-            <p className="font-secondary mt-4 text-[0.78rem] text-white/50">
+            <p className="font-secondary mt-4 text-fine text-white/50">
               Talk with Joe at{" "}
               <a
                 href={PHONE_HREF}
@@ -118,10 +118,10 @@ export function FinalCTA() {
                 className="mx-auto block h-auto max-h-[340px] w-full object-cover object-top sm:max-h-[380px] lg:max-h-[420px]"
               />
               <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-navy/80 to-transparent px-4 py-3">
-                <p className="font-primary text-[0.95rem] font-bold text-white">
+                <p className="font-primary text-base font-bold text-white">
                   Joe LeBlanc
                 </p>
-                <p className="font-secondary text-[0.72rem] text-white/70">
+                <p className="font-secondary text-fine text-white/70">
                   Your local Tuscaloosa cash home buyer
                 </p>
               </div>

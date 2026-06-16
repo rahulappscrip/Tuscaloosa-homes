@@ -120,7 +120,7 @@ function TextPanel({
           <p className={`${signatureFont.className} text-2xl text-white`}>
             ~ {signature}
           </p>
-          <p className="font-secondary mt-0.5 text-[0.8rem] text-white/65">
+          <p className="font-secondary mt-0.5 text-base text-white/65">
             {meta}
           </p>
         </div>
@@ -159,7 +159,7 @@ export function Testimonials() {
     >
       <div className="mx-auto max-w-[1300px] px-6">
         <div className="mx-auto mb-10 max-w-3xl text-center sm:mb-12">
-          <p className="font-secondary mb-3 text-[0.72rem] font-bold tracking-[0.14em] text-teal uppercase">
+          <p className="font-secondary mb-3 text-eyebrow font-bold tracking-[0.14em] text-teal uppercase">
             Social Proof
           </p>
           <h2
@@ -168,7 +168,7 @@ export function Testimonials() {
           >
             What Tuscaloosa homeowners say about selling to Joe.
           </h2>
-          <p className="font-secondary mx-auto max-w-[540px] text-[0.95rem] leading-relaxed text-slate">
+          <p className="font-secondary mx-auto max-w-[540px] text-base leading-relaxed text-slate">
             5.0 out of 5.0 average rating from 103+ reviews for the parent brand,
             High Noon Home Buyers.
           </p>
@@ -218,7 +218,7 @@ export function Testimonials() {
                     <div className="mb-5 text-[1rem] tracking-wide text-gold">
                       ★★★★★
                     </div>
-                    <p className="font-secondary mb-6 text-[1rem] leading-relaxed text-charcoal italic sm:text-[1.05rem] sm:leading-loose">
+                    <p className="font-secondary mb-6 text-base leading-relaxed text-charcoal italic sm:text-base sm:leading-loose">
                       &ldquo;{item.quote}&rdquo;
                     </p>
                     <p
@@ -226,7 +226,7 @@ export function Testimonials() {
                     >
                       ~ {item.signature}
                     </p>
-                    <p className="font-secondary mt-2 text-[0.85rem] text-slate">
+                    <p className="font-secondary mt-2 text-base text-slate">
                       {item.meta}
                     </p>
                   </div>

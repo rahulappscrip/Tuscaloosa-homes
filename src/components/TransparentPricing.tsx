@@ -55,7 +55,7 @@ export function TransparentPricing() {
     >
       <div className="mx-auto max-w-[1300px] px-6">
         <div className="mx-auto mb-10 max-w-3xl text-center sm:mb-12">
-          <p className="font-secondary mb-3 text-[0.72rem] font-bold tracking-[0.14em] text-teal uppercase">
+          <p className="font-secondary mb-3 text-eyebrow font-bold tracking-[0.14em] text-teal uppercase">
             Transparent Pricing
           </p>
           <h2
@@ -65,7 +65,7 @@ export function TransparentPricing() {
             How we decide on your{" "}
             <em className="text-teal italic">cash offer in Tuscaloosa</em>
           </h2>
-          <p className="font-secondary mx-auto max-w-[540px] text-[0.95rem] leading-relaxed text-white/65">
+          <p className="font-secondary mx-auto max-w-[540px] text-base leading-relaxed text-white/65">
           We decide on your cash offer by looking at your home's after-repair value, subtracting repair and holding costs, and leaving a reasonable profit — without adding commissions or hidden fees.
           </p>
         </div>
@@ -74,7 +74,7 @@ export function TransparentPricing() {
           <OfferCalculatorWidget />
 
           <div className="flex flex-col gap-5">
-            <p className="font-secondary text-[0.95rem] leading-relaxed text-white/90">
+            <p className="font-secondary text-base leading-relaxed text-white/90">
               Unlike a traditional sale where you might pay around 5–6% in
               commissions plus closing costs and repairs, Joe&apos;s offers include:
             </p>
@@ -109,7 +109,7 @@ export function TransparentPricing() {
                     <h3 className="font-primary mb-1 text-[0.95rem] font-semibold text-white">
                       {point.title}
                     </h3>
-                    <p className="font-secondary text-[0.84rem] leading-relaxed text-white/80">
+                    <p className="font-secondary text-base leading-relaxed text-white/80">
                       {point.description}
                     </p>
                   </div>

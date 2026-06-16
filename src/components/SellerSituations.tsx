@@ -23,7 +23,7 @@ export function SellerSituations() {
     >
       <div className="mx-auto max-w-[1300px] px-6">
         <div className="mx-auto mb-10 max-w-3xl text-center sm:mb-12">
-          <p className="font-secondary mb-3 text-[0.72rem] font-bold tracking-[0.14em] text-teal uppercase">
+          <p className="font-secondary mb-3 text-eyebrow font-bold tracking-[0.14em] text-teal uppercase">
           Who Joe helps
           </p>
           <h2
@@ -33,7 +33,7 @@ export function SellerSituations() {
             Who We Help When We Buy Homes for Cash in {" "}
             <em className="text-teal italic">Tuscaloosa</em>
           </h2>
-          <p className="font-secondary mx-auto max-w-[540px] text-[0.95rem] leading-relaxed text-slate">
+          <p className="font-secondary mx-auto max-w-[540px] text-base leading-relaxed text-slate">
           Joe helps a wide range of Tuscaloosa homeowners who need to sell quickly and want a straightforward path to the closing table. Here are some of the people We Buy Tuscaloosa Homes is built to serve:
           </p>
         </div>
@@ -58,7 +58,7 @@ export function SellerSituations() {
                 <h3 className="font-primary mb-2 text-[1rem] font-bold text-navy">
                   {situation.title}
                 </h3>
-                <p className="font-secondary text-[0.84rem] leading-relaxed text-slate">
+                <p className="font-secondary text-base leading-relaxed text-slate">
                   {situation.description}
                 </p>
               </div>
@@ -66,7 +66,7 @@ export function SellerSituations() {
           ))}
         </div>
 
-        <p className="font-secondary mx-auto mt-10 max-w-[620px] text-center text-[0.9rem] leading-relaxed text-slate">
+        <p className="font-secondary mx-auto mt-10 max-w-[620px] text-center text-base leading-relaxed text-slate">
           If you see your situation in this list—or even if you&apos;re not
           sure—Joe will walk you through options so you can decide what feels
           right.

@@ -139,7 +139,7 @@ export function FAQ() {
         <div className="mx-auto mb-10 max-w-3xl text-center sm:mb-12">
           <div className="mb-3 flex items-center justify-center gap-2.5">
             <span className="h-px w-6 bg-teal" aria-hidden />
-            <p className="font-secondary text-[0.72rem] font-bold tracking-[0.14em] text-teal uppercase">
+            <p className="font-secondary text-eyebrow font-bold tracking-[0.14em] text-teal uppercase">
               Questions
             </p>
             <span className="h-px w-6 bg-teal" aria-hidden />
@@ -151,7 +151,7 @@ export function FAQ() {
             Tuscaloosa Cash Home Buyer{" "}
             <span className="text-teal">FAQs</span>
           </h2>
-          <p className="font-secondary mx-auto max-w-[540px] text-[0.95rem] leading-relaxed text-slate">
+          <p className="font-secondary mx-auto max-w-[540px] text-base leading-relaxed text-slate">
             Below are answers to common questions homeowners ask before selling to
             a cash home buyer in Tuscaloosa.
           </p>
@@ -193,7 +193,7 @@ export function FAQ() {
                   }`}
                 >
                   <div className="overflow-hidden">
-                    <p className="font-secondary text-[0.9rem] leading-relaxed text-slate">
+                    <p className="font-secondary text-base leading-relaxed text-slate">
                       {faq.answer}
                     </p>
                   </div>
@@ -203,7 +203,7 @@ export function FAQ() {
           })}
         </div>
 
-        <p className="font-secondary mx-auto mt-8 max-w-2xl text-center text-[0.88rem] leading-relaxed text-slate">
+        <p className="font-secondary mx-auto mt-8 max-w-2xl text-center text-base leading-relaxed text-slate">
           For broader context about how buyers and sellers behave nationally, you
           can also review{" "}
           <a

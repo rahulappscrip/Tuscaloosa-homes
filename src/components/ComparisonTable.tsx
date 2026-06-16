@@ -101,7 +101,7 @@ export function ComparisonTable() {
     >
       <div className="mx-auto max-w-[1300px] px-6">
         <div className="mx-auto mb-10 max-w-3xl text-center sm:mb-12">
-          <p className="font-secondary mb-3 text-[0.72rem] font-bold tracking-[0.14em] text-teal uppercase">
+          <p className="font-secondary mb-3 text-eyebrow font-bold tracking-[0.14em] text-teal uppercase">
           Compare your options
           </p>
           <h2
@@ -111,7 +111,7 @@ export function ComparisonTable() {
             Selling to Joe vs. Listing With an Agent vs.{" "}
             <em className="text-teal italic">Other Cash Buyers</em>
           </h2>
-          <p className="font-secondary mx-auto max-w-[600px] text-[0.95rem] leading-relaxed text-slate">
+          <p className="font-secondary mx-auto max-w-[600px] text-base leading-relaxed text-slate">
           Selling to Joe, listing with an agent, and working with other cash buyers each have tradeoffs. Joe focuses on speed, simplicity, and clear, no-obligation offers so you can compare options and choose what's best for you.
           </p>
         </div>
@@ -164,7 +164,7 @@ export function ComparisonTable() {
         </div>
 
         <div className="mt-8 text-center sm:mt-10">
-          <p className="font-secondary mx-auto mb-5 max-w-xl text-[0.9rem] leading-relaxed text-slate">
+          <p className="font-secondary mx-auto mb-5 max-w-xl text-base leading-relaxed text-slate">
             When you know exactly what each option looks like, it&apos;s easier to
             choose with confidence instead of guessing.
           </p>

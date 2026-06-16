@@ -36,7 +36,7 @@ export function LocalMarket() {
           <div>
             <div className="mb-4 flex items-center gap-2.5">
               <span className="h-px w-6 bg-teal" aria-hidden />
-              <p className="font-secondary text-[0.72rem] font-bold tracking-[0.14em] text-teal uppercase">
+              <p className="font-secondary text-eyebrow font-bold tracking-[0.14em] text-teal uppercase">
                 Tuscaloosa Market · 2026
               </p>
             </div>
@@ -88,13 +88,13 @@ export function LocalMarket() {
               ))}
             </ul>
 
-            <p className="font-secondary mb-5 text-[0.98rem] leading-relaxed text-charcoal">
+            <p className="font-secondary mb-5 text-base leading-relaxed text-charcoal">
               For some Tuscaloosa homeowners, the best outcome isn&apos;t squeezing out
               the highest theoretical price — it&apos;s choosing the path that gets them
               out from under payments, repairs, or stress on a clear timeline.
             </p>
 
-            <p className="font-secondary text-[0.88rem] leading-relaxed text-slate">
+            <p className="font-secondary text-base leading-relaxed text-slate">
               For deeper market data, visit the{" "}
               <a
                 href="https://data.tuscaloosanews.com/real-estate-market-report/"
@@ -143,7 +143,7 @@ export function LocalMarket() {
                 >
                   {stat.value}
                 </p>
-                <p className="font-secondary text-[0.8rem] leading-snug text-slate">
+                <p className="font-secondary text-base leading-snug text-slate">
                   {stat.label}
                 </p>
               </div>

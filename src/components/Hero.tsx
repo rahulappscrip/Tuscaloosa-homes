@@ -60,16 +60,16 @@ function JoeProfileCard() {
         </div>
 
         <div className="min-w-0 flex-1 text-center sm:text-left">
-          <p className="font-secondary mb-1 text-[0.68rem] font-bold tracking-[0.12em] text-teal uppercase">
+          <p className="font-secondary mb-1 text-eyebrow font-bold tracking-[0.12em] text-teal uppercase">
             Your Local Buyer
           </p>
           <h2 className="font-primary text-[1.35rem] font-extrabold text-navy sm:text-[1.5rem]">
             Joe LeBlanc
           </h2>
-          <p className="font-secondary mt-0.5 text-[0.88rem] font-semibold text-teal">
+          <p className="font-secondary mt-0.5 text-base font-semibold text-teal">
             Founder, We Buy Tuscaloosa Homes
           </p>
-          <p className="font-secondary mt-2 text-[0.84rem] leading-relaxed text-slate">
+          <p className="font-secondary mt-2 text-base leading-relaxed text-slate">
             Local cash buyer serving Tuscaloosa &amp; West Alabama — you talk
             directly with Joe, not a call center.
           </p>
@@ -136,7 +136,7 @@ export function Hero() {
               <span className="text-teal">Tuscaloosa, Alabama</span>
             </h1>
 
-            <p className="font-secondary mb-4 max-w-xl text-[0.95rem] leading-relaxed text-slate">
+            <p className="font-secondary mb-4 max-w-xl text-base leading-relaxed text-slate">
             We buy homes for cash in Tuscaloosa, Alabama, as-is, and can close in as little as 7 days on the timeline that works for you. When you work with We Buy Tuscaloosa Homes and Joe LeBlanc, you skip listings, showings, repairs, and real estate commissions and go straight to a guaranteed cash buyer.
             </p>
 
@@ -169,7 +169,7 @@ export function Hero() {
               <h2 className="font-primary mb-3 text-[clamp(1.35rem,2.5vw,1.75rem)] leading-tight font-extrabold text-charcoal">
                 Get Your <span className="text-teal">Cash Offer</span> Today
               </h2>
-              <p className="font-secondary mb-5 text-[0.875rem] leading-relaxed text-slate">
+              <p className="font-secondary mb-5 text-base leading-relaxed text-slate">
                 Share a few details about your property and get a fair local cash
                 offer in 24 hours. No obligation. No pressure.
               </p>
@@ -247,7 +247,7 @@ export function Hero() {
                   Get My Fair Cash Offer →
                 </button>
 
-                <p className="font-secondary mb-0 text-[0.72rem] leading-snug text-slate">
+                <p className="font-secondary mb-0 text-fine leading-snug text-slate">
                   By submitting you agree to receive SMS, calls, and emails about
                   your property inquiry from We Buy Tuscaloosa Homes. Reply STOP
                   to opt out. Your info is never sold.

@@ -58,7 +58,7 @@ export function Footer() {
                 className="h-12 w-auto max-w-[320px] sm:h-14 sm:max-w-[360px]"
               />
             </Link>
-            <p className="max-w-[280px] text-[0.84rem] leading-relaxed">
+            <p className="max-w-[280px] text-base leading-relaxed">
               A local cash home buyer serving Tuscaloosa and West Alabama.
               Operating under High Noon Home Buyers. BBB A+ Accredited. 5.0
               rating from 103+ reviews.

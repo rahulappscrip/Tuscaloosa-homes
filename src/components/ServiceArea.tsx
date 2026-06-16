@@ -190,7 +190,7 @@ function ServiceMap({
             />
           </svg>
         </span>
-        <p className="font-secondary text-[0.68rem] leading-snug text-charcoal">
+        <p className="font-secondary text-fine leading-snug text-charcoal">
           Proudly serving{" "}
           <strong className="font-semibold text-navy">
             Tuscaloosa &amp; surrounding areas
@@ -268,10 +268,10 @@ function ServiceMap({
 
       {/* Active area label */}
       <div className="absolute right-3 bottom-3 z-20 max-w-[calc(50%-0.75rem)] rounded-xl border border-teal/30 bg-navy/90 px-3 py-2 shadow-lg backdrop-blur-sm sm:right-4 sm:bottom-4 sm:max-w-none sm:px-4 sm:py-2.5">
-        <p className="font-secondary text-[0.65rem] tracking-wide text-white/60 uppercase">
+        <p className="font-secondary text-eyebrow tracking-wide text-white/60 uppercase">
           Selected area
         </p>
-        <p className="font-primary text-[0.9rem] font-bold text-white">
+        <p className="font-primary text-base font-bold text-white">
           {activeArea.name}
         </p>
       </div>
@@ -290,7 +290,7 @@ export function ServiceArea() {
     >
       <div className="mx-auto max-w-[1300px] px-6">
         <div className="mx-auto mb-10 max-w-3xl text-center sm:mb-12">
-          <p className="font-secondary mb-3 text-[0.72rem] font-bold tracking-[0.14em] text-teal uppercase">
+          <p className="font-secondary mb-3 text-eyebrow font-bold tracking-[0.14em] text-teal uppercase">
             Service Area
           </p>
           <h2
@@ -300,7 +300,7 @@ export function ServiceArea() {
             Areas of Tuscaloosa where{" "}
             <em className="text-teal italic">we buy houses for cash</em>
           </h2>
-          <p className="font-secondary mx-auto max-w-[540px] text-[0.95rem] leading-relaxed text-slate">
+          <p className="font-secondary mx-auto max-w-[540px] text-base leading-relaxed text-slate">
             Joe buys houses for cash across Tuscaloosa and the greater Tuscaloosa
             area, focusing on residential neighborhoods where owners want a fast,
             certain sale. Select an area to see it on the map.
