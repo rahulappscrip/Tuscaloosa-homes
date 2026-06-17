@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Epilogue, Plus_Jakarta_Sans } from "next/font/google";
 import { Footer } from "@/components/Footer";
+import { GoogleAnalytics } from "@/components/GoogleAnalytics";
 import { Header } from "@/components/Header";
 import "./globals.css";
 
@@ -47,6 +48,7 @@ export default function RootLayout({
       className={`${epilogue.variable} ${plusJakarta.variable} antialiased`}
     >
       <body className="flex min-h-screen flex-col">
+        <GoogleAnalytics />
         <Header />
         <main className="flex-1">{children}</main>
         <Footer />
