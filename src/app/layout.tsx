@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Epilogue, Plus_Jakarta_Sans } from "next/font/google";
+import { RudderAnalyticsProvider } from "@/components/analytics/RudderAnalyticsProvider";
 import { Footer } from "@/components/Footer";
 import { GoogleAnalytics } from "@/components/GoogleAnalytics";
 import { Header } from "@/components/Header";
@@ -49,9 +50,11 @@ export default function RootLayout({
     >
       <body className="flex min-h-screen flex-col">
         <GoogleAnalytics />
-        <Header />
-        <main className="flex-1">{children}</main>
-        <Footer />
+        <RudderAnalyticsProvider>
+          <Header />
+          <main className="flex-1">{children}</main>
+          <Footer />
+        </RudderAnalyticsProvider>
       </body>
     </html>
   );
