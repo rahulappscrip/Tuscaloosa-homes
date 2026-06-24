@@ -23,7 +23,30 @@ function PhoneIcon() {
   );
 }
 
-export function FinalCTA() {
+type FinalCTAProps = {
+  eyebrow?: string;
+  heading?: React.ReactNode;
+  description?: string;
+  checklist?: readonly string[];
+  subtext?: string;
+  primaryCtaLabel?: string;
+  secondaryCtaLabel?: string;
+  consentText?: string;
+  showImage?: boolean;
+};
+
+export function FinalCTA({
+  eyebrow = "Ready When You Are",
+  heading = "Ready to Get a Cash Offer? We Buy Tuscaloosa Homes Fast.",
+  description =
+    "Joe buys homes for cash in Tuscaloosa and can make you a clear, local offer — often within 24 hours.",
+  checklist = steps,
+  subtext = "No repairs. No commissions. No closing costs.",
+  primaryCtaLabel = "Get My Free Cash Offer Now",
+  secondaryCtaLabel = `Call Joe Directly — ${PHONE}`,
+  consentText,
+  showImage = true,
+}: FinalCTAProps) {
   return (
     <section
       id="contact"
@@ -43,24 +66,22 @@ export function FinalCTA() {
         <div className="grid items-center gap-8 lg:grid-cols-[1fr_minmax(260px,360px)] lg:gap-10 xl:gap-12">
           <div className="text-center lg:text-left">
             <p className="font-secondary mb-2 text-eyebrow font-bold tracking-[0.14em] text-white/55 uppercase">
-              Ready When You Are
+              {eyebrow}
             </p>
 
             <h2
               id="final-cta-heading"
               className="font-primary mb-3 text-[clamp(1.5rem,3.5vw,2.1rem)] font-extrabold leading-tight tracking-tight text-white"
             >
-              Ready to Get a Cash Offer for Your{" "}
-              <em className="text-teal italic">Tuscaloosa Home?</em>
+              {heading}
             </h2>
 
             <p className="font-secondary mx-auto mb-4 max-w-xl text-base leading-relaxed text-white/75 lg:mx-0">
-              Joe buys homes for cash in Tuscaloosa and can make you a clear,
-              local offer—often within 24 hours.
+              {description}
             </p>
 
             <ul className="mx-auto mb-4 max-w-md space-y-2 text-left lg:mx-0">
-              {steps.map((step) => (
+              {checklist.map((step) => (
                 <li
                   key={step}
                   className="font-secondary flex items-start gap-2.5 text-[0.84rem] leading-snug text-white/85"
@@ -76,40 +97,49 @@ export function FinalCTA() {
               ))}
             </ul>
 
-            <p className="font-secondary mx-auto mb-5 max-w-xl text-base text-white/55 lg:mx-0">
-              No repairs. No commissions. No closing costs.
-            </p>
+            {subtext ? (
+              <p className="font-secondary mx-auto mb-5 max-w-xl text-base text-white/55 lg:mx-0">
+                {subtext}
+              </p>
+            ) : null}
 
             <div className="flex flex-col items-center gap-2.5 sm:flex-row sm:justify-center lg:justify-start">
               <Link
                 href="#offer-form"
                 className="font-secondary inline-flex w-full items-center justify-center rounded-full bg-teal px-6 py-3 text-[0.9rem] font-bold text-white shadow-[0_6px_24px_rgba(43,188,212,0.35)] transition-all duration-200 hover:bg-teal-dark sm:w-auto"
               >
-                Get My Free Cash Offer Now
+                {primaryCtaLabel}
               </Link>
               <Link
                 href={PHONE_HREF}
                 className="font-secondary inline-flex w-full items-center justify-center gap-2 rounded-full border border-white/25 bg-white/5 px-6 py-3 text-[0.9rem] font-bold text-white transition-all duration-200 hover:border-white/40 hover:bg-white/10 sm:w-auto"
               >
                 <PhoneIcon />
-                Call Joe Directly
+                {secondaryCtaLabel}
               </Link>
             </div>
 
-            <p className="font-secondary mt-4 text-fine text-white/50">
-              Talk with Joe at{" "}
-              <a
-                href={PHONE_HREF}
-                className="font-semibold text-white transition-colors hover:text-teal"
-              >
-                {PHONE}
-              </a>{" "}
-              · No obligation, no pressure
-            </p>
+            {consentText ? (
+              <p className="font-secondary mt-4 text-fine leading-relaxed text-white/40">
+                {consentText}
+              </p>
+            ) : (
+              <p className="font-secondary mt-4 text-fine text-white/50">
+                Talk with Joe at{" "}
+                <a
+                  href={PHONE_HREF}
+                  className="font-semibold text-white transition-colors hover:text-teal"
+                >
+                  {PHONE}
+                </a>{" "}
+                · No obligation, no pressure
+              </p>
+            )}
           </div>
 
-          <div className="relative mx-auto w-full max-w-[320px] lg:mx-0 lg:max-w-none">
-            <div className="relative overflow-hidden rounded-2xl border border-white/10 bg-teal-tint/20 shadow-[0_12px_40px_rgba(0,0,0,0.25)]">
+          {showImage ? (
+            <div className="relative mx-auto w-full max-w-[320px] lg:mx-0 lg:max-w-none">
+              <div className="relative overflow-hidden rounded-2xl border border-white/10 bg-teal-tint/20 shadow-[0_12px_40px_rgba(0,0,0,0.25)]">
               <Image
                 src="/assets/joe.png"
                 alt="Joe LeBlanc, local Tuscaloosa cash home buyer"
@@ -125,8 +155,9 @@ export function FinalCTA() {
                   Your local Tuscaloosa cash home buyer
                 </p>
               </div>
+              </div>
             </div>
-          </div>
+          ) : null}
         </div>
       </div>
     </section>

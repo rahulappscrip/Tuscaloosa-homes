@@ -1,9 +1,9 @@
 import Link from "next/link";
 import { OfferCalculatorWidget } from "@/components/CashOfferCalculator";
 
-const includes = [
-  "0% commission paid to Joe",
-  "Standard closing costs paid by Joe",
+const defaultIncludes = [
+  "0% commission — we charge nothing to buy your home",
+  "Standard closing costs paid by us, not you",
   "No fees to receive or review an offer",
 ] as const;
 
@@ -46,7 +46,29 @@ const points = [
   },
 ] as const;
 
-export function TransparentPricing() {
+type TransparentPricingProps = {
+  eyebrow?: string;
+  heading?: React.ReactNode;
+  description?: string;
+  includes?: readonly string[];
+  ctaLabel?: string;
+  ctaHref?: string;
+};
+
+export function TransparentPricing({
+  eyebrow = "Transparent Pricing",
+  heading = (
+    <>
+      How we decide on your{" "}
+      <em className="text-teal italic">cash offer in Tuscaloosa</em>
+    </>
+  ),
+  description =
+    "We decide on your cash offer by looking at your home's after-repair value, subtracting repair and holding costs, and leaving a reasonable profit — without adding commissions or hidden fees.",
+  includes = defaultIncludes,
+  ctaLabel = "Request a Transparent Cash Offer Breakdown",
+  ctaHref = "#offer-form",
+}: TransparentPricingProps) {
   return (
     <section
       id="offer-math"
@@ -56,17 +78,16 @@ export function TransparentPricing() {
       <div className="mx-auto max-w-[1300px] px-6">
         <div className="mx-auto mb-10 max-w-3xl text-center sm:mb-12">
           <p className="font-secondary mb-3 text-eyebrow font-bold tracking-[0.14em] text-teal uppercase">
-            Transparent Pricing
+            {eyebrow}
           </p>
           <h2
             id="transparent-pricing-heading"
             className="font-primary mb-4 text-[clamp(1.65rem,3.5vw,2.35rem)] font-extrabold tracking-tight text-white"
           >
-            How we decide on your{" "}
-            <em className="text-teal italic">cash offer in Tuscaloosa</em>
+            {heading}
           </h2>
           <p className="font-secondary mx-auto max-w-[540px] text-base leading-relaxed text-white/65">
-          We decide on your cash offer by looking at your home's after-repair value, subtracting repair and holding costs, and leaving a reasonable profit — without adding commissions or hidden fees.
+            {description}
           </p>
         </div>
 
@@ -76,7 +97,7 @@ export function TransparentPricing() {
           <div className="flex flex-col gap-5">
             <p className="font-secondary text-base leading-relaxed text-white/90">
               Unlike a traditional sale where you might pay around 5–6% in
-              commissions plus closing costs and repairs, Joe&apos;s offers include:
+              commissions plus closing costs and repairs, our offers include:
             </p>
 
             <ul className="flex flex-col gap-2.5">
@@ -118,10 +139,10 @@ export function TransparentPricing() {
             </div>
 
             <Link
-              href="#offer-form"
+              href={ctaHref}
               className="font-secondary mt-1 inline-flex w-full items-center justify-center gap-2 rounded-[5px] bg-teal px-5 py-3.5 text-center text-[0.9rem] font-bold text-white transition-all duration-200 hover:bg-teal-dark hover:shadow-[0_4px_20px_rgba(43,188,212,0.4)] sm:text-[0.95rem]"
             >
-              Request a Transparent Cash Offer Breakdown
+              {ctaLabel}
               <span aria-hidden>→</span>
             </Link>
           </div>

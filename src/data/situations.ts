@@ -20,7 +20,7 @@ export const sellerSituations = [
     footerLabel: "Divorce",
     title: "People going through divorce or separation",
     description:
-      "When you need to move on without a long sale process, a cash offer can help both parties reach a faster resolution.",
+      "When you need to move on without a long sale process, a fast cash offer can help both parties reach a faster resolution.",
     image: "/assets/Divorce.webp",
   },
   {
@@ -76,7 +76,7 @@ export const sellerSituations = [
     footerLabel: "Relocating",
     title: "Relocating for work or life changes",
     description:
-      "If you're moving out of Tuscaloosa and don't have months to wait, a local cash buyer can shorten your timeline and remove uncertainty.",
+      "If you're moving out of Tuscaloosa and don't have months to wait, we buy Tuscaloosa homes fast so you can stay on schedule.",
     image: "/assets/Speed.webp",
   },
   {
@@ -84,7 +84,7 @@ export const sellerSituations = [
     footerLabel: "Sell As-Is",
     title: "Owners of houses needing major repairs",
     description:
-      "From fire or water damage to long-deferred maintenance, Joe buys houses that may not be ready for a traditional listing.",
+      "From fire or water damage to long-deferred maintenance, we buy Tuscaloosa homes that aren't ready for a traditional listing — as-is, no repairs needed.",
     image: "/assets/Repairs.webp",
   },
   {

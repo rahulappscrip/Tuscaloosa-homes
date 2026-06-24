@@ -3,11 +3,11 @@ import Link from "next/link";
 import { sellerSituations, situationHref } from "@/data/situations";
 
 const quickLinks = [
-  { label: "How It Works", href: "#how-it-works" },
+  { label: "How It Works", href: "/how-it-works" },
   { label: "Get Cash Offer", href: "#offer-form" },
   { label: "Reviews", href: "#reviews" },
-  { label: "About Joe", href: "#meet-joe" },
-  { label: "FAQ", href: "#faq" },
+  { label: "About Joe", href: "/about" },
+  { label: "FAQ", href: "/faq" },
 ];
 
 const cities = [

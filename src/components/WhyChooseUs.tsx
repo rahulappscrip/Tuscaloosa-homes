@@ -39,7 +39,7 @@ const benefits = [
   {
     title: "No closing costs",
     description:
-      "We Buy Tuscaloosa Homes covers standard closing costs, so you're not writing checks at the closing table.",
+      "Joe covers standard closing costs, so you're not writing checks at the closing table.",
     icon: (
       <svg viewBox="0 0 24 24" fill="none" className="h-5 w-5" aria-hidden>
         <circle cx="12" cy="12" r="8.5" stroke="currentColor" strokeWidth="1.75" />
@@ -55,7 +55,7 @@ const benefits = [
   {
     title: "Sell without repairs",
     description:
-      "Sell without repairs, updates, or cleaning. Joe factors the work into his offer and handles improvements later.",
+      "Sell without repairs, updates, or cleaning. Joe factors the work into his offer and handles improvements after closing.",
     icon: (
       <svg viewBox="0 0 24 24" fill="none" className="h-5 w-5" aria-hidden>
         <path
@@ -99,7 +99,7 @@ const benefits = [
   {
     title: "Direct access to the decision-maker",
     description:
-      "You deal directly with Joe, your local cash home buyer in Alabama, not a call center or anonymous fund.",
+      "You deal directly with Joe, your local cash home buyer in Alabama — not a call center or anonymous fund.",
     icon: (
       <svg viewBox="0 0 24 24" fill="none" className="h-5 w-5" aria-hidden>
         <circle cx="12" cy="8" r="3.5" stroke="currentColor" strokeWidth="1.75" />
@@ -168,7 +168,7 @@ export function WhyChooseUs() {
             </h2>
 
             <p className="font-secondary max-w-xl text-base leading-relaxed text-slate">
-            Selling your Tuscaloosa home for cash to a local buyer like Joe means a fast, as-is home sale with no repairs, showings, or open houses. Instead of waiting the typical 30+ days it can take for a traditional buyer's loan and inspections, you move straight to a simple, certain closing.
+            We buy Tuscaloosa homes for cash as-is — meaning no repairs, no showings, and no open houses. Instead of waiting the typical 30+ days it can take for a traditional buyer's loan and inspections, you move straight to a simple, certain closing.
             </p>
 
             <CashSaleVideoCard />
@@ -206,14 +206,10 @@ export function WhyChooseUs() {
               A simple example
             </p>
             <p className="font-secondary text-base leading-relaxed text-slate">
-              If you sold a{" "}
+            If you sold a{" "}
               <strong className="font-semibold text-charcoal">$270,000</strong>{" "}
-              Tuscaloosa house with an agent at 6% commission, you could pay
-              around{" "}
-              <strong className="font-semibold text-charcoal">$16,000</strong> in
-              commissions plus closing costs and repairs. With Joe, you trade a
-              bit of price for speed, certainty, no repairs, and no upfront
-              costs—often a better fit when time and simplicity matter most.
+              Tuscaloosa house with an agent at 6% commission, you could pay around {" "}
+              <strong className="font-semibold text-charcoal">$16,000</strong> in commissions plus closing costs and repairs. When you sell to us, you trade a bit of price for speed, certainty, no repairs, and no upfront costs — often a better fit when time and simplicity matter most.
             </p>
           </div>
 

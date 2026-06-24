@@ -11,7 +11,7 @@ const signatureFont = Caveat({
 const YOUTUBE_VIDEO_ID = "Ee1N4-K1rFQ";
 const YOUTUBE_URL = `https://www.youtube.com/watch?v=${YOUTUBE_VIDEO_ID}`;
 
-const slides = [
+const defaultSlides = [
   {
     kind: "video" as const,
     quote:
@@ -129,7 +129,114 @@ function TextPanel({
   );
 }
 
-export function Testimonials() {
+type TextSlide = {
+  kind: "text";
+  quote: string;
+  signature: string;
+  meta: string;
+  initial: string;
+  source?: string;
+};
+
+type VideoSlide = {
+  kind: "video";
+  quote: string;
+  signature: string;
+  meta: string;
+  youtubeId: string;
+};
+
+type TestimonialSlide = TextSlide | VideoSlide;
+
+type TestimonialsProps = {
+  slides?: readonly TestimonialSlide[];
+  eyebrow?: string;
+  heading?: string;
+  description?: React.ReactNode;
+  display?: "carousel" | "grid";
+};
+
+function TestimonialsGrid({
+  slides,
+  eyebrow,
+  heading,
+  description,
+}: {
+  slides: readonly TestimonialSlide[];
+  eyebrow: string;
+  heading: string;
+  description: React.ReactNode;
+}) {
+  const gridSlides = slides.filter(
+    (slide): slide is TextSlide => slide.kind === "text",
+  );
+
+  return (
+    <section
+      id="reviews"
+      className="bg-ice py-10"
+      aria-labelledby="testimonials-heading"
+    >
+      <div className="mx-auto max-w-[1300px] px-6">
+        <div className="mx-auto mb-10 max-w-3xl text-center sm:mb-12">
+          <p className="font-secondary mb-3 text-eyebrow font-bold tracking-[0.14em] text-teal uppercase">
+            {eyebrow}
+          </p>
+          <h2
+            id="testimonials-heading"
+            className="font-primary mb-4 text-[clamp(1.65rem,3.5vw,2.35rem)] font-extrabold tracking-tight text-navy"
+          >
+            {heading}
+          </h2>
+          {description ? (
+            <p className="font-secondary mx-auto max-w-[640px] text-base leading-relaxed text-slate">
+              {description}
+            </p>
+          ) : null}
+        </div>
+
+        <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
+          {gridSlides.map((item) => (
+            <article
+              key={item.signature}
+              className="rounded-lg border border-mist border-l-[3px] border-l-teal bg-white p-5 sm:p-6"
+            >
+              <div className="mb-2.5 text-[0.82rem] tracking-wide text-gold">
+                ★★★★★
+              </div>
+              <p className="font-secondary mb-3 text-[0.84rem] leading-relaxed text-slate italic">
+                &ldquo;{item.quote}&rdquo;
+              </p>
+              <p className="font-primary text-[0.75rem] font-bold text-navy">
+                {item.signature}
+              </p>
+              <p className="font-secondary mt-0.5 text-[0.68rem] text-slate/70">
+                {item.meta}
+              </p>
+              {item.source ? (
+                <span className="font-secondary mt-2 inline-flex rounded bg-teal-tint px-2 py-1 text-[0.62rem] font-bold tracking-[0.08em] text-teal-dark uppercase">
+                  {item.source}
+                </span>
+              ) : null}
+            </article>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
+
+function TestimonialsCarousel({
+  slides,
+  eyebrow,
+  heading,
+  description,
+}: {
+  slides: readonly TestimonialSlide[];
+  eyebrow: string;
+  heading: string;
+  description: React.ReactNode;
+}) {
   const [active, setActive] = useState(0);
   const total = slides.length;
 
@@ -160,17 +267,16 @@ export function Testimonials() {
       <div className="mx-auto max-w-[1300px] px-6">
         <div className="mx-auto mb-10 max-w-3xl text-center sm:mb-12">
           <p className="font-secondary mb-3 text-eyebrow font-bold tracking-[0.14em] text-teal uppercase">
-            Social Proof
+            {eyebrow}
           </p>
           <h2
             id="testimonials-heading"
             className="font-primary mb-4 text-[clamp(1.65rem,3.5vw,2.35rem)] font-extrabold tracking-tight text-navy"
           >
-            What Tuscaloosa homeowners say about selling to Joe.
+            {heading}
           </h2>
           <p className="font-secondary mx-auto max-w-[540px] text-base leading-relaxed text-slate">
-            5.0 out of 5.0 average rating from 103+ reviews for the parent brand,
-            High Noon Home Buyers.
+            {description}
           </p>
         </div>
 
@@ -274,5 +380,34 @@ export function Testimonials() {
         </div>
       </div>
     </section>
+  );
+}
+
+export function Testimonials({
+  slides = defaultSlides,
+  eyebrow = "Social Proof",
+  heading = "What Tuscaloosa homeowners say about selling to Joe",
+  description =
+    "5.0 out of 5.0 average rating from 103+ reviews. We buy Tuscaloosa homes every month — here's what sellers say about working with Joe.",
+  display = "carousel",
+}: TestimonialsProps) {
+  if (display === "grid") {
+    return (
+      <TestimonialsGrid
+        slides={slides}
+        eyebrow={eyebrow}
+        heading={heading}
+        description={description}
+      />
+    );
+  }
+
+  return (
+    <TestimonialsCarousel
+      slides={slides}
+      eyebrow={eyebrow}
+      heading={heading}
+      description={description}
+    />
   );
 }

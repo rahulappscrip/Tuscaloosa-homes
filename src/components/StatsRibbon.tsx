@@ -1,11 +1,21 @@
-const stats = [
+const defaultStats = [
   { value: "24", unit: "hr", label: "Cash Offer Turnaround" },
   { value: "7", unit: "days", label: "Minimum Close Time" },
   { value: "5.0", unit: "★", label: "Rating · 103 Reviews" },
   { value: "BBB", unit: "A+", label: "Accredited Business" },
 ] as const;
 
-export function StatsRibbon() {
+type StatItem = {
+  value: string;
+  unit: string;
+  label: string;
+};
+
+type StatsRibbonProps = {
+  stats?: readonly StatItem[];
+};
+
+export function StatsRibbon({ stats = defaultStats }: StatsRibbonProps) {
   return (
     <section className="border-b border-mist bg-white" aria-label="Company stats">
       <div className="mx-auto max-w-[1300px] px-6">
@@ -23,9 +33,11 @@ export function StatsRibbon() {
                 <span className="font-primary text-[2.75rem] font-extrabold text-navy sm:text-[3.25rem]">
                   {stat.value}
                 </span>
-                <span className="font-secondary mt-1 ml-0.5 text-[0.8rem] font-bold text-teal sm:text-[0.9rem]">
-                  {stat.unit}
-                </span>
+                {stat.unit ? (
+                  <span className="font-secondary mt-1 ml-0.5 text-[0.8rem] font-bold text-teal sm:text-[0.9rem]">
+                    {stat.unit}
+                  </span>
+                ) : null}
               </div>
               <p className="font-secondary mt-2 text-eyebrow font-semibold tracking-[0.1em] text-slate uppercase">
                 {stat.label}

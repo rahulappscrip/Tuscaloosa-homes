@@ -6,43 +6,75 @@ import { useState } from "react";
 const PHONE = "(803) 784-7672";
 const PHONE_HREF = "tel:8037847672";
 
-const faqs = [
+type FaqItem = {
+  id: string;
+  question: string;
+  answer: string;
+};
+
+const defaultFaqs: FaqItem[] = [
   {
     id: "how-it-works",
-    question: "How does selling my house for cash in Tuscaloosa work?",
+    question: "How does selling my house for cash work in Tuscaloosa?",
     answer:
-      "The process is simple. You tell a local Tuscaloosa cash home buyer about your property, they review the house, then make you a no-obligation cash offer. If you like the number, you pick the closing date and sign standard sale paperwork with a title company in Alabama. You can usually sell as-is without repairs, open houses, or long listings.",
+      "The process is simple. You tell Joe about your property, he reviews the house, then makes you a no-obligation cash offer. If you like the number, you pick the closing date and sign standard sale paperwork with a title company in Alabama. We buy Tuscaloosa homes as-is — no repairs, no open houses, no long listings.",
   },
   {
     id: "fair-price",
     question: "Will I get a fair price if I sell my Tuscaloosa house for cash?",
     answer:
-      "Yes. A fair cash price comes from your Tuscaloosa home's after-repair value, minus needed repairs, holding costs, and a reasonable profit for the cash home buyer. You avoid paying agent commissions, which traditional sales often include, and you do not wait through showings or buyer financing. The right cash offer balances speed, certainty, and what you walk away with.",
+      "Joe bases every offer on your home's after-repair value using real recent Tuscaloosa sales — then subtracts repair costs, holding costs, and a reasonable profit. The result is a fair, transparent number. He explains every line so you can compare it with other options before deciding.",
   },
   {
     id: "repairs-as-is",
     question:
       "Do I have to make repairs before selling my house as-is in Tuscaloosa?",
     answer:
-      "No. When you work with a local Tuscaloosa cash home buyer, you can usually sell the house as-is without doing repairs or upgrades first. The buyer looks at the home's condition and subtracts expected repair costs when deciding on a cash offer. This can save you time, stress, and upfront money compared to fixing the property before listing.",
+      "No. We buy Tuscaloosa homes as-is in any condition — you do not need to make repairs, clean, stage, or update anything. Joe factors the work into his offer and handles all improvements after closing.",
   },
   {
     id: "how-fast",
-    question: "How fast can you buy my house for cash in Tuscaloosa?",
+    question: "How fast can you close on my Tuscaloosa house?",
     answer:
-      "A local Tuscaloosa cash home buyer can often close significantly faster than a traditional agent sale. Once you accept a cash offer, the timeline mainly depends on the title work and your move-out needs. Some sellers choose a very quick closing, while others prefer more time. The key benefit is flexibility, not waiting on buyer loan approvals or multiple showings.",
+      "Joe can close in as little as 7 days from accepted offer, or on whatever timeline works for you. Because we use private cash — not bank financing — there are no lender delays, appraisals, or financing contingencies to slow things down.",
   },
   {
     id: "fees-commissions",
-    question: "What fees or commissions do you charge when you buy my house?",
+    question: "What fees or commissions do you charge?",
     answer:
-      "A genuine local cash home buyer does not charge you real estate commissions for buying your house. In a traditional sale, sellers often pay agent commissions on top of other closing costs. With a direct cash buyer, you are selling straight to the buyer, so there is no listing commission, and any other costs or credits are spelled out clearly in the purchase agreement.",
+      "None. We charge no agent commissions and no buyer fees. We cover standard closing costs. The offer you accept is what you receive at closing, minus any existing mortgage balance or liens that are paid off through the title company.",
   },
   {
     id: "legit-buyer",
-    question: "How can I tell if a cash home buyer in Tuscaloosa is legit?",
+    question: "How can I tell if you're a legitimate cash buyer in Tuscaloosa?",
     answer:
-      "You can check legitimacy by asking for proof of funds, looking up the cash buyer's business registration, and reading reviews from other Alabama sellers. A real cash home buyer will also close through a trusted title company, not ask for upfront fees, and answer questions about their offer in plain language. It is reasonable to vet any buyer before you sign.",
+      "Joe operates under High Noon Home Buyers, which is BBB A+ Accredited and holds a 5.0 Google rating from 103+ verified reviews. Every closing goes through a licensed Alabama title company. Joe provides written proof of funds on request and never asks for upfront fees or deposits before closing.",
+  },
+  {
+    id: "foreclosure",
+    question:
+      "Can you still buy my house if I'm facing foreclosure in Tuscaloosa?",
+    answer:
+      "Yes. We buy Tuscaloosa homes even when foreclosure is looming — as long as there's time before the sale date. Contact Joe as early as possible. The more time available, the more options remain open. The mortgage is paid off at closing from the sale proceeds.",
+  },
+  {
+    id: "inherited-probate",
+    question: "Do you buy inherited or probate houses in Tuscaloosa?",
+    answer:
+      "Yes. We buy Tuscaloosa homes that are tied up in probate or inherited estates regularly. We work directly with personal representatives, executors, and estate attorneys. No cleanout, no repairs required before closing.",
+  },
+  {
+    id: "house-types",
+    question: "What types of houses do you buy in Tuscaloosa?",
+    answer:
+      "We buy Tuscaloosa homes of most types — single-family, small multifamily, and rentals — whether owner-occupied, vacant, or tenant-occupied. We buy move-in ready homes and properties needing major repairs. If you're unsure whether yours qualifies, call Joe and he'll let you know quickly.",
+  },
+  {
+    id: "service-area",
+    question:
+      "Do you only buy in Tuscaloosa or other parts of Alabama too?",
+    answer:
+      "We buy Tuscaloosa homes and properties across West Alabama — including Northport, Cottondale, Brookwood, Coaling, Gordo, Moundville, and surrounding communities. If you're unsure whether your property is in our service area, call Joe directly at (803) 784-7672.",
   },
   {
     id: "market-value",
@@ -51,46 +83,24 @@ const faqs = [
     answer:
       "Cash home buyers pay less than full market value because they cover repairs, holding costs, and the risk of owning the property. Instead of a fixed percentage for every house, the offer depends on after-repair value, condition, and location. A transparent local buyer in Tuscaloosa will walk you through their numbers so you understand how they arrived at the amount.",
   },
-  {
-    id: "foreclosure",
-    question:
-      "Can you still buy my house if I'm facing foreclosure in Tuscaloosa?",
-    answer:
-      "Yes. A local Tuscaloosa cash home buyer may be able to purchase your house before a foreclosure, but timing is critical. The buyer and title company must have enough time to clear title and close before any sale date. While no specific outcome is guaranteed, reaching out early gives you more options than waiting until the last minute.",
-  },
-  {
-    id: "inherited-probate",
-    question: "Do you buy inherited or probate houses in Tuscaloosa?",
-    answer:
-      "Yes. Local Tuscaloosa cash home buyers often purchase inherited or probate houses, even if they need work. All legal owners or heirs usually need to agree to the sale, and a title company or attorney in Alabama helps handle the paperwork. Selling for cash can simplify splitting proceeds and avoid months of repairs, showings, or landlord duties.",
-  },
-  {
-    id: "house-types",
-    question: "What types of houses do you buy in Tuscaloosa?",
-    answer:
-      "Local Tuscaloosa cash home buyers typically purchase single-family houses, small rental homes, and other residential properties in a wide range of conditions. That can include move-in ready homes, rentals with tenants, or places needing major repairs. If you own a house in or around Tuscaloosa, it is usually worth asking whether it fits their buying criteria.",
-  },
-  {
-    id: "service-area",
-    question:
-      "Do you only buy houses in Tuscaloosa, or other parts of Alabama too?",
-    answer:
-      "Local cash home buyers focus on houses in Tuscaloosa and the greater Tuscaloosa area, since that is the market they know best. Some will also buy in nearby Alabama towns, depending on the property and situation. If your house is outside city limits, it is still worth reaching out to confirm whether it falls inside their service area.",
-  },
-] as const;
+] ;
 
-const faqSchema = {
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  mainEntity: faqs.map((faq) => ({
-    "@type": "Question",
-    name: faq.question,
-    acceptedAnswer: {
-      "@type": "Answer",
-      text: faq.answer,
-    },
-  })),
-};
+function buildFaqSchema(faqs: FaqItem[]) {
+  return {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: faqs.map((faq) => ({
+      "@type": "Question",
+      name: faq.question,
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: faq.answer,
+      },
+    })),
+  };
+}
+
+const defaultFaqSchema = buildFaqSchema(defaultFaqs);
 
 function ToggleIcon({ open }: { open: boolean }) {
   if (open) {
@@ -122,8 +132,34 @@ function ToggleIcon({ open }: { open: boolean }) {
   );
 }
 
-export function FAQ() {
-  const [openId, setOpenId] = useState<string | null>("how-it-works");
+type FAQProps = {
+  faqs?: FaqItem[];
+  eyebrow?: string;
+  heading?: React.ReactNode;
+  description?: string;
+  defaultOpenId?: string | null;
+  includeSchema?: boolean;
+  showNarLink?: boolean;
+  footerText?: string;
+};
+
+export function FAQ({
+  faqs = defaultFaqs,
+  eyebrow = "Questions",
+  heading = (
+    <>
+      Tuscaloosa Cash Home Buyer —{" "}
+      <span className="text-teal">Frequently Asked Questions</span>
+    </>
+  ),
+  description =
+    "Below are answers to common questions homeowners ask before selling to a cash home buyer in Tuscaloosa.",
+  defaultOpenId = "how-it-works",
+  includeSchema = true,
+  showNarLink = true,
+  footerText,
+}: FAQProps) {
+  const [openId, setOpenId] = useState<string | null>(defaultOpenId);
 
   return (
     <section
@@ -131,16 +167,18 @@ export function FAQ() {
       className="bg-hero-surface py-10"
       aria-labelledby="faq-heading"
     >
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
-      />
+      {includeSchema ? (
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(defaultFaqSchema) }}
+        />
+      ) : null}
       <div className="mx-auto max-w-[1300px] px-6">
         <div className="mx-auto mb-10 max-w-3xl text-center sm:mb-12">
           <div className="mb-3 flex items-center justify-center gap-2.5">
             <span className="h-px w-6 bg-teal" aria-hidden />
             <p className="font-secondary text-eyebrow font-bold tracking-[0.14em] text-teal uppercase">
-              Questions
+              {eyebrow}
             </p>
             <span className="h-px w-6 bg-teal" aria-hidden />
           </div>
@@ -148,13 +186,13 @@ export function FAQ() {
             id="faq-heading"
             className="font-primary mb-4 text-[clamp(1.65rem,3.5vw,2.35rem)] font-extrabold tracking-tight text-navy"
           >
-            Tuscaloosa Cash Home Buyer{" "}
-            <span className="text-teal">FAQs</span>
+            {heading}
           </h2>
-          <p className="font-secondary mx-auto max-w-[540px] text-base leading-relaxed text-slate">
-            Below are answers to common questions homeowners ask before selling to
-            a cash home buyer in Tuscaloosa.
-          </p>
+          {description ? (
+            <p className="font-secondary mx-auto max-w-[540px] text-base leading-relaxed text-slate">
+              {description}
+            </p>
+          ) : null}
         </div>
 
         <div className="mx-auto max-w-3xl rounded-2xl border border-mist bg-white px-5 sm:px-8">
@@ -203,19 +241,25 @@ export function FAQ() {
           })}
         </div>
 
-        <p className="font-secondary mx-auto mt-8 max-w-2xl text-center text-base leading-relaxed text-slate">
-          For broader context about how buyers and sellers behave nationally, you
-          can also review{" "}
-          <a
-            href="https://www.nar.realtor/research-and-statistics/research-reports/highlights-from-the-profile-of-home-buyers-and-sellers"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="font-semibold text-teal underline decoration-teal/30 underline-offset-2 transition-colors hover:text-teal-dark hover:decoration-teal"
-          >
-            home buyers and sellers insights
-          </a>{" "}
-          from the National Association of Realtors.
-        </p>
+        {showNarLink ? (
+          <p className="font-secondary mx-auto mt-8 max-w-2xl text-center text-base leading-relaxed text-slate">
+            For broader context about how buyers and sellers behave nationally, you
+            can also review{" "}
+            <a
+              href="https://www.nar.realtor/research-and-statistics/research-reports/highlights-from-the-profile-of-home-buyers-and-sellers"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="font-semibold text-teal underline decoration-teal/30 underline-offset-2 transition-colors hover:text-teal-dark hover:decoration-teal"
+            >
+              home buyers and sellers insights
+            </a>{" "}
+            from the National Association of Realtors.
+          </p>
+        ) : footerText ? (
+          <p className="font-secondary mx-auto mt-8 max-w-2xl text-center text-base leading-relaxed text-slate">
+            {footerText}
+          </p>
+        ) : null}
 
         <div className="mt-8 flex justify-center">
           <Link
