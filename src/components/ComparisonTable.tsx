@@ -10,43 +10,43 @@ const columns = [
 const rows = [
   {
     label: "Time to close",
-    joe: { text: "Close in as little as 7–21 days, on your schedule" },
+    joe: { text: "7–21 days, on your schedule", positive: true },
     agent: { text: "Often 30–60+ days from listing to closing" },
-    other: { text: "Varies widely; some promise speed but may still rely on loans" },
+    other: { text: "Varies; some still rely on loans" },
   },
   {
-    label: "Repairs and cleaning",
+    label: "Repairs & cleaning",
     joe: { text: "None — sell as-is", positive: true },
-    agent: { text: "Often need repairs and deep cleaning before listing" },
-    other: { text: "Many buy as-is, but terms and expectations vary" },
+    agent: { text: "Often need repairs and deep cleaning" },
+    other: { text: "Many buy as-is, but terms vary" },
   },
   {
-    label: "Showings and open houses",
+    label: "Showings",
     joe: { text: "None — one quick visit", positive: true },
     agent: { text: "Multiple showings and open houses" },
-    other: { text: "Usually minimal showings, but process can be unclear" },
+    other: { text: "Usually minimal, but unclear process" },
   },
   {
-    label: "Commissions to agents",
+    label: "Commissions",
     joe: { text: "0% commission", positive: true },
-    agent: { text: "Typically around 5–6% of sale price" },
-    other: { text: 'Usually 0%, but some charge service or "program" fees' },
+    agent: { text: "Typically 5–6% of sale price" },
+    other: { text: "Usually 0%, but some charge fees" },
   },
   {
     label: "Closing costs",
     joe: { text: "Joe pays standard closing costs", positive: true },
-    agent: { text: "Seller often pays a portion of closing costs" },
-    other: { text: "Depends on the buyer; some shift more costs to you" },
+    agent: { text: "Seller often pays a portion" },
+    other: { text: "Depends on the buyer" },
   },
   {
     label: "Certainty of closing",
-    joe: { text: "High — Joe uses cash, not financing", positive: true },
-    agent: { text: "Subject to financing, appraisal & inspection risk" },
-    other: { text: "Varies; some investors wholesale or assign contracts" },
+    joe: { text: "High — cash, no financing", positive: true },
+    agent: { text: "Subject to financing & appraisal risk" },
+    other: { text: "Varies; some wholesale/assign" },
   },
   {
     label: "Who you deal with",
-    joe: { text: "Directly with Joe, a local Tuscaloosa buyer" },
+    joe: { text: "Directly with Joe, local Tuscaloosa buyer", positive: true },
     agent: { text: "Listing agent, buyer's agent & third parties" },
     other: { text: "Could be local or a national call center" },
   },
@@ -54,7 +54,7 @@ const rows = [
     label: "Stress level",
     joe: { text: "Low — simple, no-pressure steps", positive: true },
     agent: { text: "Higher — longer timeline, more moving parts" },
-    other: { text: "Varies widely by company and experience" },
+    other: { text: "Varies widely by company" },
   },
 ] as const;
 
@@ -112,7 +112,7 @@ export function ComparisonTable() {
             <em className="text-teal italic">Other Cash Buyers</em>
           </h2>
           <p className="font-secondary mx-auto max-w-[600px] text-base leading-relaxed text-slate">
-          Selling to Joe, listing with an agent, and working with other cash buyers each have tradeoffs. Joe focuses on speed, simplicity, and clear, no-obligation offers so you can compare options and choose what's best for you.
+          We buy Tuscaloosa homes with speed, simplicity, and clear no-obligation offers — so you can compare options and choose what&apos;s best for you.
           </p>
         </div>
 

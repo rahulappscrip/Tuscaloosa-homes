@@ -301,9 +301,9 @@ export function ServiceArea() {
             <em className="text-teal italic">we buy houses for cash</em>
           </h2>
           <p className="font-secondary mx-auto max-w-[540px] text-base leading-relaxed text-slate">
-            Joe buys houses for cash across Tuscaloosa and the greater Tuscaloosa
-            area, focusing on residential neighborhoods where owners want a fast,
-            certain sale. Select an area to see it on the map.
+            We buy Tuscaloosa homes for cash across the city and the greater
+            surrounding area, focusing on residential neighborhoods where owners want a
+            fast, certain sale. Select an area to see it on the map.
           </p>
         </div>
 

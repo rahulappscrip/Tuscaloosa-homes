@@ -20,8 +20,8 @@ const locations = [
 ];
 
 const companyLinks = [
-  { label: "About Joe", href: "#meet-joe" },
-  { label: "FAQ", href: "#faq" },
+  { label: "About Joe", href: "/about" },
+  { label: "FAQ", href: "/faq" },
   { label: "Blog", href: "#" },
   { label: "Contact", href: "#contact" },
 ];
@@ -318,7 +318,7 @@ export function Header() {
             {/* Desktop nav */}
             <ul className="hidden items-center gap-1 lg:flex">
               <li>
-                <NavLink href="#how-it-works">How It Works</NavLink>
+                <NavLink href="/how-it-works">How It Works</NavLink>
               </li>
               <li>
                 <NavLink href="#reviews">Reviews</NavLink>
@@ -448,10 +448,10 @@ export function Header() {
         >
           <div className="mx-auto max-h-[calc(100dvh-70px)] max-w-[1300px] overflow-y-auto px-6 py-2">
             {[
-              { label: "How It Works", href: "#how-it-works" },
+              { label: "How It Works", href: "/how-it-works" },
               { label: "Reviews", href: "#reviews" },
-              { label: "About Joe", href: "#meet-joe" },
-              { label: "FAQ", href: "#faq" },
+              { label: "About Joe", href: "/about" },
+              { label: "FAQ", href: "/faq" },
               { label: "Contact", href: "#contact" },
             ].map((item) => (
               <Link
