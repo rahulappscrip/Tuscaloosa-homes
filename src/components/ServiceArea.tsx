@@ -279,7 +279,11 @@ function ServiceMap({
   );
 }
 
-export function ServiceArea() {
+type ServiceAreaProps = {
+  ctaHref?: string;
+};
+
+export function ServiceArea({ ctaHref = "#offer-form" }: ServiceAreaProps) {
   const [activeId, setActiveId] = useState<AreaId>("central");
 
   return (
@@ -360,7 +364,7 @@ export function ServiceArea() {
 
         <div className="mt-6 flex justify-center">
           <Link
-            href="#offer-form"
+            href={ctaHref}
             className="font-secondary inline-flex items-center gap-2 rounded-full bg-teal px-6 py-3 text-[0.9rem] font-bold text-white transition-all hover:bg-teal-dark hover:shadow-[0_4px_20px_rgba(43,188,212,0.4)]"
           >
             Get a cash offer in {areas.find((a) => a.id === activeId)?.name}

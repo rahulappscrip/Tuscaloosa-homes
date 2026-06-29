@@ -39,6 +39,8 @@ type HowItWorksProps = {
   steps?: readonly ProcessStep[];
   footnote?: string | null;
   variant?: "default" | "about";
+  className?: string;
+  sectionId?: string;
 };
 
 export function HowItWorks({
@@ -48,20 +50,22 @@ export function HowItWorks({
   steps = defaultSteps,
   footnote = null,
   variant = "default",
+  className = "bg-white",
+  sectionId = "how-it-works",
 }: HowItWorksProps) {
   if (variant === "about") {
     return (
       <section
-        id="how-it-works"
-        className="bg-white py-10"
-        aria-labelledby="how-it-works-heading"
+        id={sectionId}
+        className={`py-10 ${className}`}
+        aria-labelledby={`${sectionId}-heading`}
       >
         <div className="mx-auto max-w-[1300px] px-6">
           <p className="font-secondary mb-3 text-eyebrow font-bold tracking-[0.14em] text-teal uppercase">
             {eyebrow}
           </p>
           <h2
-            id="how-it-works-heading"
+            id={`${sectionId}-heading`}
             className="font-primary mb-4 max-w-3xl text-[clamp(1.65rem,3.2vw,2.2rem)] font-extrabold leading-tight tracking-tight text-navy"
           >
             {heading}
@@ -112,9 +116,9 @@ export function HowItWorks({
 
   return (
     <section
-      id="how-it-works"
-      className="bg-white py-10"
-      aria-labelledby="how-it-works-heading"
+      id={sectionId}
+      className={`py-10 ${className}`}
+      aria-labelledby={`${sectionId}-heading`}
     >
       <div className="mx-auto max-w-[1300px] px-6">
         <div className="mx-auto mb-10 max-w-3xl text-center sm:mb-12">
@@ -122,7 +126,7 @@ export function HowItWorks({
             {eyebrow}
           </p>
           <h2
-            id="how-it-works-heading"
+            id={`${sectionId}-heading`}
             className="font-primary mb-4 text-[clamp(1.65rem,3.5vw,2.35rem)] font-extrabold tracking-tight text-navy"
           >
             {heading}

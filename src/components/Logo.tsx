@@ -3,7 +3,7 @@ import Image from "next/image";
 export function Logo({ className }: { className?: string }) {
   return (
     <Image
-      src="/assets/logo.png"
+      src="/assets/logo.svg"
       alt="We Buy Tuscaloosa Homes"
       width={1061}
       height={235}

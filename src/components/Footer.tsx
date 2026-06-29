@@ -4,10 +4,15 @@ import { sellerSituations, situationHref } from "@/data/situations";
 
 const quickLinks = [
   { label: "How It Works", href: "/how-it-works" },
-  { label: "Get Cash Offer", href: "#offer-form" },
+  {
+    label: "Home Value",
+    href: "/how-much-is-my-house-worth-tuscaloosa-al",
+  },
+  { label: "Get Cash Offer", href: "/contact" },
   { label: "Reviews", href: "#reviews" },
   { label: "About Joe", href: "/about" },
   { label: "FAQ", href: "/faq" },
+  { label: "Contact", href: "/contact" },
 ];
 
 const cities = [
@@ -51,7 +56,7 @@ export function Footer() {
           <div>
             <Link href="/" className="mb-4 inline-block">
               <Image
-                src="/assets/logo-bg.png"
+                src="/assets/logo-white.svg"
                 alt="We Buy Tuscaloosa Homes"
                 width={2812}
                 height={624}

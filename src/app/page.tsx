@@ -12,6 +12,10 @@ import { StatsRibbon } from "@/components/StatsRibbon";
 import { Testimonials } from "@/components/Testimonials";
 import { TransparentPricing } from "@/components/TransparentPricing";
 import { WhyChooseUs } from "@/components/WhyChooseUs";
+import {
+  homepageComparisonColumns,
+  homepageComparisonRows,
+} from "@/data/comparison";
 
 export default function Home() {
   return (
@@ -22,7 +26,10 @@ export default function Home() {
       <WhyChooseUs />
       <HowItWorks />
       <Testimonials />
-      <ComparisonTable />
+      <ComparisonTable
+        columns={homepageComparisonColumns}
+        rows={homepageComparisonRows}
+      />
       <SellerSituations />
       <LocalMarket />
       <ServiceArea />

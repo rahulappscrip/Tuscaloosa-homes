@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
+import { OfferCalculatorWidget } from "@/components/CashOfferCalculator";
 import { OfferForm } from "@/components/OfferForm";
 
 const PHONE_HREF = "tel:8037847672";
@@ -26,6 +27,10 @@ type HeroProps = {
   badges?: readonly string[];
   joeQuote?: string;
   joeCredentials?: readonly string[];
+  showBenefits?: boolean;
+  showJoeCard?: boolean;
+  rightPanel?: "form" | "calculator";
+  calculatorCtaHref?: string;
 };
 
 function PhoneIcon() {
@@ -74,7 +79,7 @@ function JoeProfileCard() {
             Joe LeBlanc
           </h2>
           <p className="font-secondary mt-0.5 text-base font-semibold text-teal">
-            Founder, We Buy Tuscaloosa Homes
+            Founder, We Buy Tuscaloosa Homes 
           </p>
           <p className="font-secondary mt-2 text-base leading-relaxed text-slate">
             Local cash buyer serving Tuscaloosa &amp; West Alabama — you talk
@@ -180,6 +185,10 @@ export function Hero({
   badges,
   joeQuote,
   joeCredentials = [],
+  showBenefits = true,
+  showJoeCard = true,
+  rightPanel = "form",
+  calculatorCtaHref = "#offer-form",
 }: HeroProps) {
   if (variant === "about") {
     return (
@@ -246,7 +255,7 @@ export function Hero({
 
             {steps && steps.length > 0 ? (
               <HeroSteps steps={steps} />
-            ) : (
+            ) : showBenefits ? (
               <ul className="mb-4 flex flex-wrap gap-2 lg:flex-nowrap">
                 {benefits.map((benefit) => (
                   <li
@@ -261,20 +270,30 @@ export function Hero({
                   </li>
                 ))}
               </ul>
-            )}
+            ) : null}
 
-            <div className="hidden lg:block">
-              <JoeProfileCard />
-            </div>
+            {showJoeCard ? (
+              <div className="hidden lg:block">
+                <JoeProfileCard />
+              </div>
+            ) : null}
           </div>
 
           <div className="order-2 flex w-full flex-col items-center lg:col-start-2 lg:row-start-1 lg:items-end lg:self-start">
-            <OfferForm />
+            {rightPanel === "calculator" ? (
+              <div className="w-full max-w-[450px]">
+                <OfferCalculatorWidget ctaHref={calculatorCtaHref} />
+              </div>
+            ) : (
+              <OfferForm />
+            )}
           </div>
 
-          <div className="order-3 mb-8 w-full lg:hidden">
-            <JoeProfileCard />
-          </div>
+          {showJoeCard ? (
+            <div className="order-3 mb-8 w-full lg:hidden">
+              <JoeProfileCard />
+            </div>
+          ) : null}
         </div>
       </div>
     </section>

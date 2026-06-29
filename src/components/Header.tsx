@@ -23,7 +23,7 @@ const companyLinks = [
   { label: "About Joe", href: "/about" },
   { label: "FAQ", href: "/faq" },
   { label: "Blog", href: "#" },
-  { label: "Contact", href: "#contact" },
+  { label: "Contact", href: "/contact" },
 ];
 
 function ChevronDown({ className }: { className?: string }) {
@@ -408,7 +408,7 @@ export function Header() {
               </NavIconButton>
 
               <Link
-                href="#offer-form"
+                href="/contact"
                 className="font-secondary hidden items-center justify-center rounded-[5px] bg-teal px-5 py-2 text-[0.875rem] font-bold whitespace-nowrap text-white transition-all duration-200 hover:bg-teal-dark hover:shadow-[0_4px_16px_rgba(43,188,212,0.35)] lg:inline-flex"
               >
                 Get Cash Offer
@@ -452,7 +452,7 @@ export function Header() {
               { label: "Reviews", href: "#reviews" },
               { label: "About Joe", href: "/about" },
               { label: "FAQ", href: "/faq" },
-              { label: "Contact", href: "#contact" },
+              { label: "Contact", href: "/contact" },
             ].map((item) => (
               <Link
                 key={item.href}
@@ -534,7 +534,7 @@ export function Header() {
 
             <div className="pt-4 pb-6">
               <Link
-                href="#offer-form"
+                href="/contact"
                 className="font-secondary flex w-full items-center justify-center rounded-[5px] bg-teal px-5 py-3.5 text-[0.9rem] font-bold text-white transition-colors hover:bg-teal-dark"
                 onClick={() => setMobileOpen(false)}
               >

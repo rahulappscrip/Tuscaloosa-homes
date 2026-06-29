@@ -38,7 +38,11 @@ function formatCompactCurrency(value: number) {
   return formatCurrency(value);
 }
 
-export function OfferCalculatorWidget() {
+export function OfferCalculatorWidget({
+  ctaHref = "#offer-form",
+}: {
+  ctaHref?: string;
+}) {
   const [arv, setArv] = useState(ARV_DEFAULT);
   const [condition, setCondition] = useState<ConditionId>("move-in");
 
@@ -141,7 +145,7 @@ export function OfferCalculatorWidget() {
           No fees or commissions deducted. Joe covers standard closing costs.
         </p>
         <Link
-          href="#offer-form"
+          href={ctaHref}
           className="font-secondary flex w-full items-center justify-center rounded-lg bg-teal px-5 py-3.5 text-[0.92rem] font-bold text-white transition-colors hover:bg-teal-dark"
         >
           Get My Real Cash Offer

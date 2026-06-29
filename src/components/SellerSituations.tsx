@@ -451,7 +451,7 @@ export function SellerSituations({
   return (
     <section
       id={sectionId}
-      className="bg-hero-surface py-10"
+      className={sectionClassName ?? "bg-hero-surface py-10"}
       aria-labelledby="seller-situations-heading"
     >
       <div className="mx-auto max-w-[1300px] px-6">

@@ -24,22 +24,71 @@ const defaultBenefits = [
   "Often move from first contact to closing in about 7–21 days instead of months.",
 ] as const;
 
+type MarketStat = {
+  value: string;
+  label: string;
+  accent?: "teal" | "gold";
+};
+
 type LocalMarketProps = {
+  layout?: "sidebar" | "overview";
   eyebrow?: string;
   heading?: React.ReactNode;
   paragraphs?: readonly string[];
+  columns?: readonly [string, string];
   benefits?: readonly string[] | null;
-  stats?: readonly {
-    value: string;
-    label: string;
-    accent: "teal" | "gold";
-  }[];
+  stats?: readonly MarketStat[];
   footnote?: string;
+  footerNote?: React.ReactNode;
   showResourceLinks?: boolean;
+  showSidebarCta?: boolean;
   ctaHref?: string;
+  className?: string;
+  sectionId?: string;
 };
 
+function StatCard({ stat, variant }: { stat: MarketStat; variant: "sidebar" | "overview" }) {
+  if (variant === "overview") {
+    return (
+      <div className="rounded-xl border border-mist bg-white p-5">
+        <p className="font-primary mb-1.5 text-[clamp(1.5rem,3vw,1.9rem)] font-extrabold leading-none text-navy">
+          {stat.value}
+        </p>
+        <p className="font-secondary text-[0.92rem] leading-snug text-slate">
+          {stat.label}
+        </p>
+      </div>
+    );
+  }
+
+  const accent = stat.accent ?? "teal";
+
+  return (
+    <div
+      className={`group rounded-xl border border-mist bg-white p-5 transition-all duration-200 hover:-translate-y-1 hover:border-teal/40 hover:shadow-[0_12px_32px_rgba(26,35,50,0.08)] ${
+        accent === "gold" ? "hover:border-gold/50" : "hover:border-teal/40"
+      }`}
+    >
+      <div
+        className={`mb-1 h-1 w-10 rounded-full transition-all duration-200 group-hover:w-14 ${
+          accent === "gold" ? "bg-gold" : "bg-teal"
+        }`}
+        aria-hidden
+      />
+      <p
+        className={`font-primary mb-1.5 text-[1.75rem] font-extrabold leading-none transition-colors duration-200 sm:text-[1.9rem] ${
+          accent === "gold" ? "text-navy group-hover:text-teal" : "text-teal"
+        }`}
+      >
+        {stat.value}
+      </p>
+      <p className="font-secondary text-base leading-snug text-slate">{stat.label}</p>
+    </div>
+  );
+}
+
 export function LocalMarket({
+  layout = "sidebar",
   eyebrow = "Tuscaloosa Market · 2026",
   heading = (
     <>
@@ -53,17 +102,80 @@ export function LocalMarket({
     "A traditional listing often looks like this: you clean and repair the house, hire an agent, host showings and open houses, negotiate repairs after inspection, and then wait for the buyer's loan to clear before closing. That path can make sense if your home is in great shape and you have time.",
     "When you work with a local cash home buyer in Tuscaloosa, you can:",
   ],
+  columns,
   benefits = defaultBenefits,
   stats = defaultStats,
   footnote,
+  footerNote,
   showResourceLinks = true,
+  showSidebarCta = true,
   ctaHref = "#offer-form",
+  className = "bg-white",
+  sectionId = "market",
 }: LocalMarketProps) {
+  if (layout === "overview") {
+    const columnCopy = columns ?? [paragraphs[0] ?? "", paragraphs[1] ?? ""];
+
+    return (
+      <section
+        id={sectionId}
+        className={`py-10 ${className}`}
+        aria-labelledby={`${sectionId}-heading`}
+      >
+        <div className="mx-auto max-w-[1300px] px-6">
+          <div className="mb-8 max-w-4xl">
+            <div className="mb-4 flex items-center gap-2.5">
+              <span className="h-px w-6 bg-teal" aria-hidden />
+              <p className="font-secondary text-eyebrow font-bold tracking-[0.14em] text-teal uppercase">
+                {eyebrow}
+              </p>
+            </div>
+            <h2
+              id={`${sectionId}-heading`}
+              className="font-primary text-[clamp(1.65rem,3.2vw,2.15rem)] font-extrabold leading-tight tracking-tight text-navy"
+            >
+              {heading}
+            </h2>
+          </div>
+
+          <div className="mb-8 grid grid-cols-1 gap-4 sm:grid-cols-2 xl:grid-cols-4">
+            {stats.map((stat) => (
+              <StatCard key={stat.label} stat={stat} variant="overview" />
+            ))}
+          </div>
+
+          <div className="grid gap-6 lg:grid-cols-2 lg:gap-10">
+            {columnCopy.map((paragraph) => (
+              <p
+                key={paragraph.slice(0, 48)}
+                className="font-secondary text-[0.98rem] leading-relaxed text-charcoal"
+              >
+                {paragraph}
+              </p>
+            ))}
+          </div>
+
+          {footnote ? (
+            <p className="font-secondary mt-6 text-[0.82rem] leading-relaxed text-slate">
+              {footnote}
+            </p>
+          ) : null}
+
+          {footerNote ? (
+            <p className="font-secondary mt-6 text-base leading-relaxed text-slate">
+              {footerNote}
+            </p>
+          ) : null}
+        </div>
+      </section>
+    );
+  }
+
   return (
     <section
-      id="market"
-      className="bg-white py-10"
-      aria-labelledby="local-market-heading"
+      id={sectionId}
+      className={`py-10 ${className}`}
+      aria-labelledby={`${sectionId}-heading`}
     >
       <div className="mx-auto max-w-[1300px] px-6">
         <div className="grid items-start gap-10 lg:grid-cols-[1fr_300px] lg:gap-12 xl:grid-cols-[1fr_320px] xl:gap-16">
@@ -76,7 +188,7 @@ export function LocalMarket({
             </div>
 
             <h2
-              id="local-market-heading"
+              id={`${sectionId}-heading`}
               className="font-primary mb-6 text-[clamp(1.65rem,3.2vw,2.15rem)] font-extrabold leading-tight tracking-tight text-navy"
             >
               {heading}
@@ -122,6 +234,12 @@ export function LocalMarket({
               </p>
             ) : null}
 
+            {footerNote ? (
+              <p className="font-secondary text-base leading-relaxed text-slate">
+                {footerNote}
+              </p>
+            ) : null}
+
             {showResourceLinks ? (
               <p className="font-secondary text-base leading-relaxed text-slate">
                 For deeper market data, visit the{" "}
@@ -150,41 +268,17 @@ export function LocalMarket({
 
           <aside className="flex flex-col gap-4 lg:sticky lg:top-28">
             {stats.map((stat) => (
-              <div
-                key={stat.label}
-                className={`group rounded-xl border border-mist bg-white p-5 transition-all duration-200 hover:-translate-y-1 hover:border-teal/40 hover:shadow-[0_12px_32px_rgba(26,35,50,0.08)] ${
-                  stat.accent === "gold"
-                    ? "hover:border-gold/50"
-                    : "hover:border-teal/40"
-                }`}
-              >
-                <div
-                  className={`mb-1 h-1 w-10 rounded-full transition-all duration-200 group-hover:w-14 ${
-                    stat.accent === "gold" ? "bg-gold" : "bg-teal"
-                  }`}
-                  aria-hidden
-                />
-                <p
-                  className={`font-primary mb-1.5 text-[1.75rem] font-extrabold leading-none transition-colors duration-200 sm:text-[1.9rem] ${
-                    stat.accent === "gold"
-                      ? "text-navy group-hover:text-teal"
-                      : "text-teal"
-                  }`}
-                >
-                  {stat.value}
-                </p>
-                <p className="font-secondary text-base leading-snug text-slate">
-                  {stat.label}
-                </p>
-              </div>
+              <StatCard key={stat.label} stat={stat} variant="sidebar" />
             ))}
 
-            <Link
-              href={ctaHref}
-              className="font-secondary mt-1 hidden rounded-xl border border-mist bg-hero-surface px-5 py-4 text-center text-[0.88rem] font-semibold text-navy transition-all duration-200 hover:border-teal hover:bg-teal-tint/40 hover:text-teal lg:block"
-            >
-              See if a cash sale fits your timeline →
-            </Link>
+            {showSidebarCta ? (
+              <Link
+                href={ctaHref}
+                className="font-secondary mt-1 hidden rounded-xl border border-mist bg-hero-surface px-5 py-4 text-center text-[0.88rem] font-semibold text-navy transition-all duration-200 hover:border-teal hover:bg-teal-tint/40 hover:text-teal lg:block"
+              >
+                See if a cash sale fits your timeline →
+              </Link>
+            ) : null}
           </aside>
         </div>
       </div>
