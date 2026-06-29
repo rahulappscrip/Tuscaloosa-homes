@@ -264,11 +264,8 @@ export function Header() {
               <span className="shrink-0 tracking-[1px] text-gold">★★★★★</span>
               <span>Rated 5.0 by 103+ Tuscaloosa homeowners</span>
             </div>
-            <div className="flex flex-wrap items-center justify-center gap-1.5 text-xs text-white/75">
-              <span className="font-secondary shrink-0 rounded-[2px] bg-gold px-1.5 py-0.5 text-[0.65rem] font-bold tracking-wide text-navy">
-                BBB A+
-              </span>
-              <span>Accredited Business (High Noon Home Buyers)</span>
+            <div className="text-xs text-white/75">
+              Locally owned · High Noon Home Buyers
             </div>
           </div>
 
@@ -279,11 +276,8 @@ export function Header() {
               <span>Rated 5.0 by 103+ Tuscaloosa homeowners</span>
             </div>
 
-            <div className="flex items-center gap-1.5 text-white/75">
-              <span className="font-secondary shrink-0 rounded-[2px] bg-gold px-1.5 py-0.5 text-[0.65rem] font-bold tracking-wide text-navy">
-                BBB A+
-              </span>
-              <span>Accredited Business (High Noon Home Buyers)</span>
+            <div className="text-white/75">
+              Locally owned
             </div>
 
             <div className="flex shrink-0 items-center gap-5">
@@ -312,16 +306,13 @@ export function Header() {
           <div className="flex h-[78px] items-center justify-between gap-6">
             {/* Logo */}
             <Link href="/" className="flex shrink-0 items-center">
-              <Logo className="h-12 w-auto max-w-[300px] sm:h-14 sm:max-w-[380px]" />
+              <Logo className="h-auto w-[168px] sm:w-[220px]" />
             </Link>
 
             {/* Desktop nav */}
             <ul className="hidden items-center gap-1 lg:flex">
               <li>
                 <NavLink href="/how-it-works">How It Works</NavLink>
-              </li>
-              <li>
-                <NavLink href="#reviews">Reviews</NavLink>
               </li>
 
               <NavDropdown
@@ -449,7 +440,6 @@ export function Header() {
           <div className="mx-auto max-h-[calc(100dvh-70px)] max-w-[1300px] overflow-y-auto px-6 py-2">
             {[
               { label: "How It Works", href: "/how-it-works" },
-              { label: "Reviews", href: "#reviews" },
               { label: "About Joe", href: "/about" },
               { label: "FAQ", href: "/faq" },
               { label: "Contact", href: "/contact" },

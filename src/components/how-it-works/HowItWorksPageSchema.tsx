@@ -22,7 +22,7 @@ export function HowItWorksPageSchema() {
           reviewCount: "103",
         },
         founder: { "@type": "Person", name: "Joe LeBlanc" },
-        sameAs: ["https://www.bbb.org/"],
+        sameAs: ["https://maps.app.goo.gl/NkdfHYX1ww7PasLR9"],
       },
       {
         "@type": "HowTo",

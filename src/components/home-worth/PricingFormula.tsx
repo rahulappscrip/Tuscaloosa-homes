@@ -164,17 +164,24 @@ export function PricingFormula({
         </div>
 
         {includes && includes.length > 0 ? (
-          <p className="font-secondary mx-auto mt-10 max-w-[760px] text-center text-[0.9rem] leading-relaxed text-slate sm:text-base">
-            {includes.map((item, index) => (
-              <span key={item}>
-                <span className="font-bold text-teal" aria-hidden>
-                  ✓{" "}
+          <ul className="mt-10 grid gap-4 sm:grid-cols-2">
+            {includes.map((item) => (
+              <li
+                key={item}
+                className="flex items-start gap-3 rounded-xl border border-mist bg-hero-surface px-5 py-4 shadow-[0_2px_8px_rgba(26,35,50,0.04)]"
+              >
+                <span
+                  className="font-primary mt-0.5 flex h-6 w-6 shrink-0 items-center justify-center rounded-md bg-teal/10 text-[0.8rem] font-bold text-teal"
+                  aria-hidden
+                >
+                  ✓
                 </span>
-                {item}
-                {index < includes.length - 1 ? " · " : ""}
-              </span>
+                <span className="font-secondary text-[0.9rem] leading-relaxed text-charcoal sm:text-[0.92rem]">
+                  {item}
+                </span>
+              </li>
             ))}
-          </p>
+          </ul>
         ) : null}
       </div>
     </section>

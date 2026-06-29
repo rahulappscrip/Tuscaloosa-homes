@@ -41,7 +41,7 @@ export default function HowItWorksPage() {
         eyebrow="How to Sell Your House Fast for Cash in Tuscaloosa, AL"
         heading={
           <>
-            Sell Your Tuscaloosa House Fast for Cash in{" "}
+            Sell Your Tuscaloosa House Fast For Cash In{" "}
             <span className="text-teal">3 Simple Steps</span>
           </>
         }
@@ -115,7 +115,7 @@ export default function HowItWorksPage() {
         ]}
         credentials={[
           "University of South Carolina Graduate · 10+ Years Real Estate & Business Experience",
-          "BBB A+ Accredited · 5.0 Google Rating from 103+ Verified Reviews",
+          "5.0 Google Rating from 103+ Verified Reviews",
         ]}
       />
       <SellerSituations

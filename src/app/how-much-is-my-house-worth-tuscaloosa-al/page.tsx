@@ -96,8 +96,8 @@ export default function HomeWorthPage() {
         eyebrow="How Much Is My House Worth? · Tuscaloosa, AL"
         heading={
           <>
-            What Is My Home Worth
-            in <span className="text-teal">Tuscaloosa, AL</span>
+            What Is My Home Worth In{" "}
+            <span className="text-teal">Tuscaloosa, AL</span>
           </>
         }
         description="Get a real, as-is estimate for your Tuscaloosa home — based on local 2026 sales data and your property's actual condition. Then get a written cash offer within 48 hours."

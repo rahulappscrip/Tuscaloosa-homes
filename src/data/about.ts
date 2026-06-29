@@ -1,6 +1,6 @@
 export const aboutPageStats = [
   { value: "5.0", unit: "★", label: "Google rating · 103+ verified reviews" },
-  { value: "BBB", unit: "A+", label: "Accredited since 2018 · High Noon Home Buyers" },
+  { value: "$0", unit: "", label: "Fees charged to sellers" },
   { value: "7", unit: "days", label: "Minimum close time from accepted offer" },
   { value: "48", unit: "hrs", label: "Written offer delivered after walkthrough" },
 ] as const;
@@ -19,7 +19,7 @@ export const whySellersTrustContent = {
     "Closes through a licensed Alabama title company every time",
     "No upfront fees — you are never asked to pay anything to receive a written offer",
     "No renegotiation after offer is accepted",
-    "BBB A+ Accredited · 5.0 Google rating · 103+ reviews",
+    "5.0 Google rating · 103+ reviews",
   ],
   considerTitle: 'Typical National "We Buy Houses" Brand',
   considerItems: [
@@ -204,7 +204,7 @@ export const aboutFaqs = [
     id: "legitimate",
     question: "How do I know you're a legitimate cash home buyer in Tuscaloosa?",
     answer:
-      "We Buy Tuscaloosa Homes operates under the High Noon Home Buyers family, BBB A+ Accredited since 2018 with a 5.0 Google rating from 103+ reviews. We close every transaction through a licensed Alabama title company, provide written proof of funds on request, and charge zero upfront fees before closing. Joe LeBlanc handles every deal personally — call him at (803) 784-7672 and he'll answer.",
+      "We Buy Tuscaloosa Homes operates under the High Noon Home Buyers family with a 5.0 Google rating from 103+ reviews. We close every transaction through a licensed Alabama title company, provide written proof of funds on request, and charge zero upfront fees before closing. Joe LeBlanc handles every deal personally — call him at (803) 784-7672 and he'll answer.",
   },
   {
     id: "who-owns",
@@ -286,7 +286,6 @@ export const aboutMeetJoeContent = {
   cardCredentials: [
     "University of South Carolina Graduate",
     "10+ Years Business Experience",
-    "BBB A+ Accredited",
     "5.0 ★ · 103+ Google Reviews",
     "Handles Every Deal Personally",
   ],
@@ -305,9 +304,9 @@ export const aboutHeroContent = {
   description:
     "We Buy Tuscaloosa Homes is a local, founder-led cash home buying company. Joe LeBlanc personally handles every call, every walkthrough, and every offer — no call centers, no franchise operators, no pressure.",
   badges: [
-    "BBB A+ Accredited",
     "5.0 ★ · 103+ Reviews",
     "Close in 7 Days",
+    "Locally Owned",
   ],
   joeQuote:
     "I started this company because selling a house shouldn't add more stress to an already hard situation. Call me directly — I'll give you a fair number and honest advice, even if that means recommending a realtor.",
@@ -323,7 +322,7 @@ export const aboutCtaBands = [
   {
     title: "Want to verify we're the real deal before you call?",
     subtitle:
-      "Ask Joe for written proof of funds, check our BBB profile, or read our Google reviews. We encourage it.",
+      "Ask Joe for written proof of funds or read our Google reviews. We encourage it.",
     primaryLabel: "Get My Free Cash Offer →",
     secondaryLabel: "Call Joe Directly",
   },

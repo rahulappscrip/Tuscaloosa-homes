@@ -29,10 +29,7 @@ export function FaqPageSchema() {
           ratingValue: "5.0",
           reviewCount: "103",
         },
-        sameAs: [
-          "https://maps.app.goo.gl/NkdfHYX1ww7PasLR9",
-          "https://www.bbb.org/",
-        ],
+        sameAs: ["https://maps.app.goo.gl/NkdfHYX1ww7PasLR9"],
       },
       {
         "@type": "Person",

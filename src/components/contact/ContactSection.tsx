@@ -48,10 +48,10 @@ function PinIcon() {
 }
 
 const trustPoints = [
-  "BBB A+ Accredited",
   "5.0 ★ · 103+ Google reviews",
   "Written offer within 48 hours",
   "No obligation · No pressure",
+  "Locally owned · High Noon Home Buyers",
 ] as const;
 
 export function ContactSection() {
@@ -71,8 +71,8 @@ export function ContactSection() {
               id="contact-heading"
               className="font-primary mb-4 max-w-xl text-[clamp(1.85rem,4vw,2.75rem)] font-extrabold leading-tight tracking-tight text-navy"
             >
-              Talk directly with{" "}
-              <span className="text-teal">Joe LeBlanc</span> — no call center
+              Talk Directly With{" "}
+              <span className="text-teal">Joe LeBlanc</span> — No Call Center
             </h1>
             <p className="font-secondary mb-8 max-w-lg text-base leading-relaxed text-slate">
               Whether you want a free home value estimate, a written cash offer,

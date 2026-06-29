@@ -33,7 +33,6 @@ export const faqPageHero = {
   badges: [
     "Written by Joe LeBlanc, Founder",
     "5.0 ★ · 103+ verified reviews",
-    "BBB A+ Accredited",
     "Updated 2026",
   ],
 } as const;
@@ -145,7 +144,7 @@ export const faqMarketStats = [
   { value: "$271,050", label: "Median Tuscaloosa sale price, 2025–2026" },
   { value: "~33 days", label: "Typical days to pending on MLS" },
   { value: "7–21 days", label: "Typical close with We Buy Tuscaloosa Homes" },
-  { value: "BBB A+", label: "We Buy Tuscaloosa Homes accreditation" },
+  { value: "5.0", unit: "★", label: "Google rating · 103+ reviews" },
 ] as const;
 
 export const faqTopicTabs = [
@@ -617,7 +616,7 @@ export const faqCategories: readonly FaqCategory[] = [
             items: [
               "Local physical address — not a P.O. box or a virtual mailbox. We Buy Tuscaloosa Homes is at 1520 Stillwater Dr, Tuscaloosa, AL 35406.",
               "Confirmed DBA with Alabama Secretary of State — you can verify our registration in state business records.",
-              "BBB accreditation — High Noon Home Buyers (our parent brand) has held a BBB A+ rating since 2018. Verify at bbb.org before calling.",
+              "Verified Google reviews — read what local sellers say about working with Joe before you call.",
               "Written proof of funds — any legitimate buyer can show they have the cash available. Joe provides this on request.",
               "No upfront fees — you should never be asked to pay anything before a closing. Red flag if a buyer asks for a deposit or \"processing fee.\"",
             ],
@@ -643,7 +642,7 @@ export const faqCategories: readonly FaqCategory[] = [
               "Pressure to sign quickly without time to review the contract",
               "Asking for upfront fees or a deposit before closing",
               "Can't provide a local address or proof of funds on request",
-              "No verifiable reviews or BBB record",
+              "No verifiable reviews or local business presence",
               "Contract contains language about assigning the deal to a third party",
             ],
           },
@@ -684,7 +683,7 @@ export const faqCategories: readonly FaqCategory[] = [
           },
           {
             type: "paragraph",
-            text: "We Buy Tuscaloosa Homes operates under the High Noon Home Buyers family of brands, BBB A+ Accredited since 2018 with a 5.0 Google rating from 103+ verified reviews.",
+            text: "We Buy Tuscaloosa Homes operates under the High Noon Home Buyers family of brands with a 5.0 Google rating from 103+ verified reviews.",
           },
         ],
       },
@@ -760,7 +759,7 @@ export const faqPageMainFaqs = [
     id: "main-legitimate",
     question: "How do I know if a cash home buyer in Tuscaloosa is legitimate?",
     answer:
-      "Look for a local business address, a confirmed DBA with the Alabama Secretary of State, a verifiable BBB accreditation, and a written offer with proof of funds available on request. We Buy Tuscaloosa Homes operates under High Noon Home Buyers — BBB A+ Accredited since 2018, 5.0 Google rating from 103+ reviews.",
+      "Look for a local business address, a confirmed DBA with the Alabama Secretary of State, verified Google reviews, and a written offer with proof of funds available on request. We Buy Tuscaloosa Homes operates under High Noon Home Buyers with a 5.0 Google rating from 103+ reviews.",
   },
   {
     id: "main-change-mind",
@@ -796,7 +795,7 @@ export const faqPageMainFaqs = [
     id: "main-about",
     question: "Who is behind We Buy Tuscaloosa Homes?",
     answer:
-      "Joe LeBlanc is the Founder, Owner, and CEO — a University of South Carolina graduate with 10+ years of business experience. Joe personally handles every call, walkthrough, and offer. We Buy Tuscaloosa Homes operates under the High Noon Home Buyers family, BBB A+ Accredited since 2018.",
+      "Joe LeBlanc is the Founder, Owner, and CEO — a University of South Carolina graduate with 10+ years of business experience. Joe personally handles every call, walkthrough, and offer. We Buy Tuscaloosa Homes operates under the High Noon Home Buyers family.",
   },
 ] as const;
 
@@ -816,6 +815,6 @@ export const faqCtaBands = [
 ] as const;
 
 export const faqJoeStrip =
-  "Joe LeBlanc — Founder, Owner, and CEO. University of South Carolina graduate with 10+ years of business experience. Joe answers his own phone, visits properties personally, and handles every offer and closing. We Buy Tuscaloosa Homes operates under High Noon Home Buyers — BBB A+ Accredited since 2018, 5.0 Google rating from 103+ verified reviews.";
+  "Joe LeBlanc — Founder, Owner, and CEO. University of South Carolina graduate with 10+ years of business experience. Joe answers his own phone, visits properties personally, and handles every offer and closing. We Buy Tuscaloosa Homes operates under High Noon Home Buyers with a 5.0 Google rating from 103+ verified reviews.";
 
 export const faqWhereWeBuyAreas = aboutWhereWeBuyAreas;

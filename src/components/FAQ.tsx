@@ -48,7 +48,7 @@ const defaultFaqs: FaqItem[] = [
     id: "legit-buyer",
     question: "How can I tell if you're a legitimate cash buyer in Tuscaloosa?",
     answer:
-      "Joe operates under High Noon Home Buyers, which is BBB A+ Accredited and holds a 5.0 Google rating from 103+ verified reviews. Every closing goes through a licensed Alabama title company. Joe provides written proof of funds on request and never asks for upfront fees or deposits before closing.",
+      "Joe operates under High Noon Home Buyers and holds a 5.0 Google rating from 103+ verified reviews. Every closing goes through a licensed Alabama title company. Joe provides written proof of funds on request and never asks for upfront fees or deposits before closing.",
   },
   {
     id: "foreclosure",

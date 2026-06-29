@@ -48,8 +48,8 @@ export default function AboutPage() {
         eyebrow={aboutHeroContent.eyebrow}
         heading={
           <>
-            We buy <span className="text-teal">Tuscaloosa</span> homes — with
-            Joe personally on every deal.
+            We Buy <span className="text-teal">Tuscaloosa</span> Homes — With
+            Joe Personally On Every Deal.
           </>
         }
         description={aboutHeroContent.description}
@@ -92,7 +92,7 @@ export default function AboutPage() {
           { value: "7 days", label: "Fastest close" },
           { value: "48 hrs", label: "Written offer turnaround" },
           { value: "5.0 ★", label: "Google rating (103+)" },
-          { value: "BBB A+", label: "Accredited since 2018" },
+          { value: "Local", label: "Tuscaloosa-based buyer" },
         ]}
       />
       <Testimonials
@@ -101,8 +101,8 @@ export default function AboutPage() {
         heading="What Tuscaloosa homeowners say about working with us"
         description={
           <>
-            5.0 out of 5.0 · 103+ verified Google reviews · BBB A+ Accredited
-            under High Noon Home Buyers. Read our reviews at{" "}
+            5.0 out of 5.0 · 103+ verified Google reviews under High
+            Noon Home Buyers. Read our reviews at{" "}
             <Link
               href={GOOGLE_REVIEWS_URL}
               target="_blank"

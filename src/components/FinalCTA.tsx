@@ -50,33 +50,29 @@ export function FinalCTA({
   return (
     <section
       id="contact"
-      className="relative overflow-hidden bg-gradient-to-br from-navy via-[#152030] to-[#0f1a28] py-10"
+      className="relative overflow-hidden border-b border-mist bg-hero-surface py-12 sm:py-14"
       aria-labelledby="final-cta-heading"
     >
       <div
-        className="pointer-events-none absolute -top-20 -right-20 h-56 w-56 rounded-full bg-teal/10 blur-3xl"
-        aria-hidden
-      />
-      <div
-        className="pointer-events-none absolute -bottom-24 -left-16 h-64 w-64 rounded-full bg-gold/8 blur-3xl"
+        className="pointer-events-none absolute -top-20 -right-20 h-56 w-56 rounded-full bg-teal/8 blur-3xl"
         aria-hidden
       />
 
       <div className="relative mx-auto max-w-[1300px] px-6">
         <div className="grid items-center gap-8 lg:grid-cols-[1fr_minmax(260px,360px)] lg:gap-10 xl:gap-12">
           <div className="text-center lg:text-left">
-            <p className="font-secondary mb-2 text-eyebrow font-bold tracking-[0.14em] text-white/55 uppercase">
+            <p className="font-secondary mb-2 text-eyebrow font-bold tracking-[0.14em] text-teal uppercase">
               {eyebrow}
             </p>
 
             <h2
               id="final-cta-heading"
-              className="font-primary mb-3 text-[clamp(1.5rem,3.5vw,2.1rem)] font-extrabold leading-tight tracking-tight text-white"
+              className="font-primary mb-3 text-[clamp(1.5rem,3.5vw,2.1rem)] font-extrabold leading-tight tracking-tight text-navy"
             >
               {heading}
             </h2>
 
-            <p className="font-secondary mx-auto mb-4 max-w-xl text-base leading-relaxed text-white/75 lg:mx-0">
+            <p className="font-secondary mx-auto mb-4 max-w-xl text-base leading-relaxed text-slate lg:mx-0">
               {description}
             </p>
 
@@ -84,7 +80,7 @@ export function FinalCTA({
               {checklist.map((step) => (
                 <li
                   key={step}
-                  className="font-secondary flex items-start gap-2.5 text-[0.84rem] leading-snug text-white/85"
+                  className="font-secondary flex items-start gap-2.5 text-[0.84rem] leading-snug text-charcoal"
                 >
                   <span
                     className="mt-0.5 shrink-0 font-bold text-teal"
@@ -98,21 +94,21 @@ export function FinalCTA({
             </ul>
 
             {subtext ? (
-              <p className="font-secondary mx-auto mb-5 max-w-xl text-base text-white/55 lg:mx-0">
+              <p className="font-secondary mx-auto mb-5 max-w-xl text-base text-slate lg:mx-0">
                 {subtext}
               </p>
             ) : null}
 
             <div className="flex flex-col items-center gap-2.5 sm:flex-row sm:justify-center lg:justify-start">
               <Link
-                href="#offer-form"
+                href="/contact"
                 className="font-secondary inline-flex w-full items-center justify-center rounded-full bg-teal px-6 py-3 text-[0.9rem] font-bold text-white shadow-[0_6px_24px_rgba(43,188,212,0.35)] transition-all duration-200 hover:bg-teal-dark sm:w-auto"
               >
                 {primaryCtaLabel}
               </Link>
               <Link
                 href={PHONE_HREF}
-                className="font-secondary inline-flex w-full items-center justify-center gap-2 rounded-full border border-white/25 bg-white/5 px-6 py-3 text-[0.9rem] font-bold text-white transition-all duration-200 hover:border-white/40 hover:bg-white/10 sm:w-auto"
+                className="font-secondary inline-flex w-full items-center justify-center gap-2 rounded-full border border-mist bg-white px-6 py-3 text-[0.9rem] font-bold text-navy transition-all duration-200 hover:border-teal/40 hover:bg-teal-tint/40 sm:w-auto"
               >
                 <PhoneIcon />
                 {secondaryCtaLabel}
@@ -120,15 +116,15 @@ export function FinalCTA({
             </div>
 
             {consentText ? (
-              <p className="font-secondary mt-4 text-fine leading-relaxed text-white/40">
+              <p className="font-secondary mt-4 text-fine leading-relaxed text-slate">
                 {consentText}
               </p>
             ) : (
-              <p className="font-secondary mt-4 text-fine text-white/50">
+              <p className="font-secondary mt-4 text-fine text-slate">
                 Talk with Joe at{" "}
                 <a
                   href={PHONE_HREF}
-                  className="font-semibold text-white transition-colors hover:text-teal"
+                  className="font-semibold text-teal transition-colors hover:text-teal-dark"
                 >
                   {PHONE}
                 </a>{" "}
@@ -139,7 +135,7 @@ export function FinalCTA({
 
           {showImage ? (
             <div className="relative mx-auto w-full max-w-[320px] lg:mx-0 lg:max-w-none">
-              <div className="relative overflow-hidden rounded-2xl border border-white/10 bg-teal-tint/20 shadow-[0_12px_40px_rgba(0,0,0,0.25)]">
+              <div className="relative overflow-hidden rounded-2xl border border-mist bg-white shadow-[0_12px_40px_rgba(26,35,50,0.08)]">
               <Image
                 src="/assets/joe.png"
                 alt="Joe LeBlanc, local Tuscaloosa cash home buyer"
@@ -147,7 +143,7 @@ export function FinalCTA({
                 height={2094}
                 className="mx-auto block h-auto max-h-[340px] w-full object-cover object-top sm:max-h-[380px] lg:max-h-[420px]"
               />
-              <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-navy/80 to-transparent px-4 py-3">
+              <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-navy/85 to-transparent px-4 py-3">
                 <p className="font-primary text-base font-bold text-white">
                   Joe LeBlanc
                 </p>

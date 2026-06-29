@@ -26,15 +26,14 @@ export default function FaqPage() {
         eyebrow="Tuscaloosa, AL · Honest Answers"
         heading={
           <>
-            FAQ About Selling Your House in{" "}
-            <span className="text-teal">Tuscaloosa for Cash</span>
+            FAQ About Selling Your House In{" "}
+            <span className="text-teal">Tuscaloosa For Cash</span>
           </>
         }
         description="Straight answers to the questions Tuscaloosa sellers ask most — about the process, pricing, foreclosure, repairs, and how We Buy Tuscaloosa Homes works. Use the category buttons below to jump to what matters most to you."
         benefits={[
           "Written by Joe LeBlanc, Founder",
           "5.0 ★ · 103+ verified reviews",
-          "BBB A+ Accredited",
           "Updated 2026",
         ]}
       />

@@ -327,7 +327,7 @@ export const homeWorthTestimonialsContent = {
   eyebrow: "Social Proof",
   heading: "What Tuscaloosa homeowners say about getting a cash offer from Joe",
   description:
-    "5.0 out of 5.0 average rating from 103+ verified Google reviews · BBB A+ Accredited. Here's what sellers say after seeing their real home value and closing on Joe's timeline.",
+    "5.0 out of 5.0 average rating from 103+ verified Google reviews. Here's what sellers say after seeing their real home value and closing on Joe's timeline.",
 } as const;
 
 export const homeWorthPricingRows = [
@@ -461,7 +461,6 @@ export const homeWorthMeetTheBuyerContent = {
   credentials: [
     "University of South Carolina Graduate",
     "10+ Years Real Estate Experience",
-    "BBB A+ Accredited",
     "5.0 ★ · 103+ Reviews",
   ],
 } as const;

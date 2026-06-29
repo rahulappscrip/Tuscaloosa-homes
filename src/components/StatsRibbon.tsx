@@ -2,7 +2,7 @@ const defaultStats = [
   { value: "24", unit: "hr", label: "Cash Offer Turnaround" },
   { value: "7", unit: "days", label: "Minimum Close Time" },
   { value: "5.0", unit: "★", label: "Rating · 103 Reviews" },
-  { value: "BBB", unit: "A+", label: "Accredited Business" },
+  { value: "0%", unit: "", label: "Commission to You" },
 ] as const;
 
 type StatItem = {

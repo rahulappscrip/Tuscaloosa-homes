@@ -91,7 +91,7 @@ function JoeProfileCard() {
       <div className="flex flex-col gap-3 border-t border-mist bg-navy px-5 py-4 sm:flex-row sm:items-center sm:justify-between sm:px-6">
         <div className="font-secondary text-center text-[0.78rem] leading-snug text-white/75 sm:text-left">
           <span className="block font-semibold text-white">
-            103+ verified reviews · BBB A+ Rated
+            103+ verified Google reviews
           </span>
           No obligation, no pressure
         </div>
@@ -175,7 +175,7 @@ export function Hero({
   eyebrow = "Tuscaloosa, Alabama",
   heading = (
     <>
-      We Buy <span className="text-teal">Tuscaloosa Homes </span>  for Cash — Fast
+      We Buy <span className="text-teal">Tuscaloosa Homes </span> For Cash — Fast
       &amp; As-Is
     </>
   ),
