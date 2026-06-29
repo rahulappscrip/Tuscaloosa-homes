@@ -175,7 +175,7 @@ export function Hero({
   eyebrow = "Tuscaloosa, Alabama",
   heading = (
     <>
-      We Buy <span className="text-teal">Tuscaloosa Homes</span> for Cash — Fast
+      We Buy <span className="text-teal">Tuscaloosa Homes </span>  for Cash — Fast
       &amp; As-Is
     </>
   ),
