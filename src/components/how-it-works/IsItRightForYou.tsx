@@ -106,6 +106,11 @@ export function IsItRightForYou({
             considerTitle={considerTitle}
             considerItems={considerItems}
           />
+          {footnote ? (
+            <p className="font-secondary mt-6 text-center text-[0.88rem] leading-relaxed text-slate">
+              {footnote}
+            </p>
+          ) : null}
         </div>
       </section>
     );

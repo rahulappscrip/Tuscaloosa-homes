@@ -16,12 +16,14 @@ const quickLinks = [
 ];
 
 const cities = [
-  { label: "Tuscaloosa", href: "#" },
-  { label: "Northport", href: "#" },
-  { label: "Cottondale", href: "#" },
-  { label: "Brookwood", href: "#" },
-  { label: "Coaling", href: "#" },
-  { label: "West Alabama", href: "#" },
+  { label: "Tuscaloosa", href: "/sell-my-house-fast-tuscaloosa" },
+  { label: "Northport", href: "/we-buy-houses-northport-al" },
+  { label: "Cottondale", href: "/we-buy-houses-cottondale-al" },
+  { label: "Brookwood", href: "/sell-my-house-fast-brookwood-al" },
+  { label: "Alberta City", href: "/sell-my-house-fast-alberta-city-tuscaloosa" },
+  { label: "Woodland Forrest", href: "/sell-my-house-fast-woodland-forrest-tuscaloosa" },
+  { label: "Hillcrest", href: "/we-buy-houses-in-hillcrest-tuscaloosa-al" },
+  { label: "University of Alabama", href: "/sell-house-near-university-of-alabama" },
 ];
 
 const situationsSplitIndex = Math.ceil(sellerSituations.length / 2);

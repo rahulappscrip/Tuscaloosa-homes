@@ -11,20 +11,26 @@ const EMAIL = "joe@webuytuscaloosahomes.com";
 const EMAIL_HREF = `mailto:${EMAIL}`;
 
 const locations = [
-  "Tuscaloosa",
-  "Northport",
-  "Cottondale",
-  "Brookwood",
-  "Coaling",
-  "West Alabama Area",
-];
+  { label: "Tuscaloosa", href: "/sell-my-house-fast-tuscaloosa" },
+  { label: "Northport", href: "/we-buy-houses-northport-al" },
+  { label: "Cottondale", href: "/we-buy-houses-cottondale-al" },
+  { label: "Brookwood", href: "/sell-my-house-fast-brookwood-al" },
+  { label: "Alberta City", href: "/sell-my-house-fast-alberta-city-tuscaloosa" },
+  { label: "Woodland Forrest", href: "/sell-my-house-fast-woodland-forrest-tuscaloosa" },
+  { label: "Hillcrest", href: "/we-buy-houses-in-hillcrest-tuscaloosa-al" },
+  { label: "University of Alabama", href: "/sell-house-near-university-of-alabama" },
+] as const;
 
 const companyLinks = [
   { label: "About Joe", href: "/about" },
+  {
+    label: "Home Value",
+    href: "/how-much-is-my-house-worth-tuscaloosa-al",
+  },
   { label: "FAQ", href: "/faq" },
   { label: "Blog", href: "#" },
   { label: "Contact", href: "/contact" },
-];
+] as const;
 
 function ChevronDown({ className }: { className?: string }) {
   return (
@@ -327,8 +333,8 @@ export function Header() {
                 </p>
                 <div className="pb-2">
                   {locations.map((city) => (
-                    <DropdownLink key={city} href="#">
-                      {city}
+                    <DropdownLink key={city.label} href={city.href}>
+                      {city.label}
                     </DropdownLink>
                   ))}
                 </div>
@@ -441,6 +447,10 @@ export function Header() {
             {[
               { label: "How It Works", href: "/how-it-works" },
               { label: "About Joe", href: "/about" },
+              {
+                label: "Home Value",
+                href: "/how-much-is-my-house-worth-tuscaloosa-al",
+              },
               { label: "FAQ", href: "/faq" },
               { label: "Contact", href: "/contact" },
             ].map((item) => (
@@ -455,7 +465,9 @@ export function Header() {
             ))}
 
             {(
-              [{ id: "locations", label: "Locations", items: locations }] as const
+              [
+                { id: "locations", label: "Locations", items: locations },
+              ] as const
             ).map((section) => (
               <div key={section.id} className="border-b border-border/70">
                 <button
@@ -477,12 +489,12 @@ export function Header() {
                   <div className="bg-teal-tint/60 px-4 pb-3">
                     {section.items.map((item) => (
                       <Link
-                        key={item}
-                        href="#"
+                        key={item.label}
+                        href={item.href}
                         className="font-secondary block py-2 text-[0.88rem] text-slate"
                         onClick={() => setMobileOpen(false)}
                       >
-                        {item}
+                        {item.label}
                       </Link>
                     ))}
                   </div>

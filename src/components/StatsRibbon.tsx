@@ -30,7 +30,7 @@ export function StatsRibbon({ stats = defaultStats }: StatsRibbonProps) {
               }`}
             >
               <div className="inline-flex items-start justify-center leading-none">
-                <span className="font-primary text-[2.75rem] font-extrabold text-navy sm:text-[3.25rem]">
+                <span className="font-primary text-[22px] font-extrabold leading-tight text-navy">
                   {stat.value}
                 </span>
                 {stat.unit ? (
