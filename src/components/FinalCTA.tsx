@@ -33,6 +33,8 @@ type FinalCTAProps = {
   secondaryCtaLabel?: string;
   consentText?: string;
   showImage?: boolean;
+  imageAlt?: string;
+  imageTitle?: string;
 };
 
 export function FinalCTA({
@@ -46,6 +48,8 @@ export function FinalCTA({
   secondaryCtaLabel = `Call Joe Directly — ${PHONE}`,
   consentText,
   showImage = true,
+  imageAlt = "Joe LeBlanc, local Tuscaloosa cash home buyer",
+  imageTitle = "Joe LeBlanc — your local cash home buyer",
 }: FinalCTAProps) {
   return (
     <section
@@ -138,7 +142,8 @@ export function FinalCTA({
               <div className="relative overflow-hidden rounded-2xl border border-mist bg-white shadow-[0_12px_40px_rgba(26,35,50,0.08)]">
               <Image
                 src="/assets/joe.png"
-                alt="Joe LeBlanc, local Tuscaloosa cash home buyer"
+                alt={imageAlt}
+                title={imageTitle}
                 width={1286}
                 height={2094}
                 className="mx-auto block h-auto max-h-[340px] w-full object-cover object-top sm:max-h-[380px] lg:max-h-[420px]"

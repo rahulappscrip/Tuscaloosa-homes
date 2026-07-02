@@ -4,6 +4,7 @@ import { RudderAnalyticsProvider } from "@/components/analytics/RudderAnalyticsP
 import { Footer } from "@/components/Footer";
 import { GoogleAnalytics } from "@/components/GoogleAnalytics";
 import { Header } from "@/components/Header";
+import { MobileStickyCTA } from "@/components/MobileStickyCTA";
 import "./globals.css";
 
 const epilogue = Epilogue({
@@ -52,8 +53,9 @@ export default function RootLayout({
         <GoogleAnalytics />
         <RudderAnalyticsProvider>
           <Header />
-          <main className="flex-1">{children}</main>
+          <main className="flex-1 pb-20 lg:pb-0">{children}</main>
           <Footer />
+          <MobileStickyCTA />
         </RudderAnalyticsProvider>
       </body>
     </html>

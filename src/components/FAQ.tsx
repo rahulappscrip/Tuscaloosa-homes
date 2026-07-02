@@ -100,8 +100,6 @@ function buildFaqSchema(faqs: FaqItem[]) {
   };
 }
 
-const defaultFaqSchema = buildFaqSchema(defaultFaqs);
-
 function ToggleIcon({ open }: { open: boolean }) {
   if (open) {
     return (
@@ -161,6 +159,8 @@ export function FAQ({
 }: FAQProps) {
   const [openId, setOpenId] = useState<string | null>(defaultOpenId);
 
+  const faqSchema = buildFaqSchema(faqs);
+
   return (
     <section
       id="faq"
@@ -170,7 +170,7 @@ export function FAQ({
       {includeSchema ? (
         <script
           type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(defaultFaqSchema) }}
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
         />
       ) : null}
       <div className="mx-auto max-w-[1300px] px-6">

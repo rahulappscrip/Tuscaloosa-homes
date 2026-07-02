@@ -50,6 +50,7 @@ type LocalMarketProps = {
   sectionId?: string;
   imageSrc?: string;
   imageAlt?: string;
+  imageTitle?: string;
   imageCaption?: string;
 };
 
@@ -76,13 +77,13 @@ function StatCard({ stat, variant }: { stat: MarketStat; variant: "sidebar" | "o
       }`}
     >
       <div
-        className={`mb-1 h-1 w-10 rounded-full transition-all duration-200 group-hover:w-14 ${
+        className={`mb-3 h-1 w-10 rounded-full transition-all duration-200 group-hover:w-14 ${
           accent === "gold" ? "bg-gold" : "bg-teal"
         }`}
         aria-hidden
       />
       <p
-        className={`font-primary mb-1.5 text-[1.75rem] font-extrabold leading-none transition-colors duration-200 sm:text-[1.9rem] ${
+        className={`font-primary mb-2 text-[1.75rem] font-extrabold leading-tight transition-colors duration-200 sm:text-[1.9rem] ${
           accent === "gold" ? "text-navy group-hover:text-teal" : "text-teal"
         }`}
       >
@@ -122,6 +123,7 @@ export function LocalMarket({
   sectionId = "market",
   imageSrc,
   imageAlt = "",
+  imageTitle,
   imageCaption,
 }: LocalMarketProps) {
   const hasImage = Boolean(imageSrc);
@@ -301,6 +303,10 @@ export function LocalMarket({
                     <Image
                       src={imageSrc}
                       alt={imageAlt}
+                      title={
+                        (imageTitle ?? imageAlt) ||
+                        "We Buy Tuscaloosa Homes — local market"
+                      }
                       fill
                       className="object-cover"
                       sizes="(max-width: 1024px) 100vw, 50vw"

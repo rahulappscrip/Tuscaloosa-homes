@@ -6,7 +6,7 @@ import { LocalMarket } from "@/components/LocalMarket";
 import { MeetJoe } from "@/components/MeetJoe";
 import { StatsRibbon } from "@/components/StatsRibbon";
 import { Testimonials } from "@/components/Testimonials";
-import { SellerSituations } from "@/components/SellerSituations";
+import { TransparentPricing } from "@/components/TransparentPricing";
 import { CtaBand } from "@/components/how-it-works/CtaBand";
 import { HowItWorksBreadcrumb } from "@/components/how-it-works/HowItWorksBreadcrumb";
 import { HowItWorksPageSchema } from "@/components/how-it-works/HowItWorksPageSchema";
@@ -18,6 +18,7 @@ import {
   howItWorksFaqs,
   howItWorksHeroSteps,
   howItWorksPageStats,
+  howItWorksPricingFormulaSteps,
   howItWorksTestimonialSlides,
 } from "@/data/how-it-works";
 
@@ -118,10 +119,17 @@ export default function HowItWorksPage() {
           "5.0 Google Rating from 103+ Verified Reviews",
         ]}
       />
-      <SellerSituations
-        layout="pricing"
-        sectionId="offer-math"
-        sectionClassName="bg-white py-10"
+      <TransparentPricing
+        eyebrow="Transparent Pricing"
+        heading={
+          <>
+            What it really costs to sell your house for cash in{" "}
+            <em className="text-teal italic">Tuscaloosa</em>
+          </>
+        }
+        description="The offer is based on a simple, transparent formula. Here's exactly how it works — and what's included."
+        formulaSteps={howItWorksPricingFormulaSteps}
+        ctaLabel="Get My Cash Offer →"
         ctaHref="#contact"
       />
       <FAQ
@@ -135,7 +143,6 @@ export default function HowItWorksPage() {
         }
         description=""
         defaultOpenId="process"
-        includeSchema={false}
         showNarLink={false}
       />
       <FinalCTA

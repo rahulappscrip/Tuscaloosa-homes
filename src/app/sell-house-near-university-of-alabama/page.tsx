@@ -13,7 +13,6 @@ import { SellerSituations } from "@/components/SellerSituations";
 import { StatsRibbon } from "@/components/StatsRibbon";
 import { Testimonials } from "@/components/Testimonials";
 import { TransparentPricing } from "@/components/TransparentPricing";
-import { situationImages } from "@/data/situationImages";
 import {
   uaComparisonColumns,
   uaComparisonRows,
@@ -80,7 +79,7 @@ export default function UniversityOfAlabamaPage() {
         ]}
         benefits={uaWhyCashBenefits}
         stats={[]}
-        imageSrc={situationImages["tired-landlord"]}
+        imageSrc="/assets/sell_house_near_university_of_alabama.webp"
         imageAlt="Student rental home near the University of Alabama in Tuscaloosa"
         footnote="When you talk with We Buy Tuscaloosa Homes, you're talking with neighbors who know the difference between a quiet Northport street and a high-turnover student block near campus — and we build that understanding into every cash offer."
         showResourceLinks={false}
@@ -207,7 +206,6 @@ export default function UniversityOfAlabamaPage() {
         }
         description="Selling fast for cash raises a lot of understandable questions. These answers focus on how the process usually works near UA in Tuscaloosa."
         defaultOpenId="how-fast"
-        includeSchema={false}
         showNarLink={false}
         footerText={`Didn't See Your Question? Ask Us Directly — ${PHONE}`}
       />

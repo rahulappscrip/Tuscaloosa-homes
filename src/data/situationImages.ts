@@ -6,21 +6,23 @@ export const situationImages = {
   "tired-landlord": "/assets/tired_landlord_.webp",
   "sell-as-is": "/assets/house_that_needs_major_repair.webp",
   relocating: "/assets/relocation_for_work_.webp",
+  "property-taxes": "/assets/behind_on_property_taxes_.webp",
+  "behind-on-payments-life-changes":
+    "/assets/behind_on_payments_or_dealing.webp",
+  "parent-seller": "/assets/_parents_who_bought_for_their_student.webp",
+  "out-of-town-parents": "/assets/out_of_town_parents.webp",
 } as const;
 
 export type SituationImageKey = keyof typeof situationImages;
 
 const situationImageAliases: Record<string, SituationImageKey> = {
   "facing-foreclosure": "foreclosure",
-  "property-taxes": "foreclosure",
   "behind-on-taxes": "foreclosure",
   inherited: "inherited-probate",
   "major-repairs": "sell-as-is",
   "relocation-vacant": "relocating",
   "out-of-town-owner": "relocating",
-  "parent-seller": "inherited-probate",
   "student-rental": "tired-landlord",
-  "out-of-town-parents": "inherited-probate",
   "faculty-residents": "relocating",
   "cash-home-buyers": "relocating",
   "fire-damage": "sell-as-is",

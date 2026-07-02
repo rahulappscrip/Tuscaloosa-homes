@@ -35,6 +35,8 @@ type MeetJoeProps = {
   blockquote?: string;
   ctaLabel?: string;
   showCta?: boolean;
+  imageAlt?: string;
+  imageTitle?: string;
 };
 
 export function MeetJoe({
@@ -58,6 +60,8 @@ export function MeetJoe({
   blockquote,
   ctaLabel = "Talk Directly With Joe — Skip the Call Center",
   showCta = true,
+  imageAlt = "Joe LeBlanc, founder of We Buy Tuscaloosa Homes",
+  imageTitle = "Joe LeBlanc — Tuscaloosa cash home buyer",
 }: MeetJoeProps) {
   if (variant === "about") {
     const [firstParagraph, ...restParagraphs] = paragraphs;
@@ -132,7 +136,8 @@ export function MeetJoe({
             <div className="relative overflow-hidden rounded-2xl bg-teal-tint">
               <Image
                 src="/assets/joe.png"
-                alt="Joe LeBlanc, founder of We Buy Tuscaloosa Homes"
+                alt={imageAlt}
+                title={imageTitle}
                 width={1286}
                 height={2094}
                 className="mx-auto block h-auto w-full max-h-[540px] object-contain object-bottom"

@@ -105,7 +105,9 @@ export default function NorthportPage() {
         description={northportGiveGainDescription}
         benefits={northportGiveGainRows}
         media="image"
-        imageAlt="Northport homeowner reviewing paperwork and considering a fast cash house sale"
+        imageSrc="/assets/we_buy_houses_northport_al.webp"
+        imageAlt="We buy houses Northport AL — foreclosure notice and keys for homeowners behind on payments"
+        imageTitle="We buy houses Northport AL — sell my house fast Northport"
         imageCaption="A local cash offer lets you run the numbers and decide if a quick, as-is sale is the calmer path."
         showFooterCards={false}
         ctaHref="#offer-form"
@@ -238,7 +240,6 @@ export default function NorthportPage() {
         }
         description="Below are answers to the questions Northport homeowners ask most often about selling to a local cash buyer."
         defaultOpenId="how-it-works"
-        includeSchema={false}
         showNarLink={false}
         footerText={`Didn't see your question? Ask Joe — ${PHONE}`}
       />

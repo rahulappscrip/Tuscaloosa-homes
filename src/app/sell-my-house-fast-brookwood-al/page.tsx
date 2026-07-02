@@ -142,8 +142,9 @@ export default function BrookwoodPage() {
         benefits={brookwoodWhoWeHelpItems}
         showBenefitsOutro={false}
         stats={[]}
-        imageSrc="/assets/joe.png"
-        imageAlt="Joe LeBlanc, local Brookwood and Tuscaloosa County cash home buyer"
+        imageSrc="/assets/sell_my_house_fast_brookwood_al%201.webp"
+        imageAlt="Sell my house fast Brookwood AL — local cash buyer for homeowners who qualify"
+        imageTitle="Sell my house fast Brookwood AL — who qualifies"
         showResourceLinks={false}
         showSidebarCta={false}
       />
@@ -178,8 +179,9 @@ export default function BrookwoodPage() {
         description={`If you're searching "sell my house fast near me" anywhere around Brookwood, there's a good chance we can help. Brookwood is our focus, but we buy houses across much of Tuscaloosa County. Not sure if we cover your exact neighborhood? Call Joe — if you're in Brookwood or Tuscaloosa County, we almost certainly do.`}
         benefits={brookwoodNeighborhoodDetailBenefits}
         media="image"
-        imageSrc="/assets/tuscaloosa-map.jpg"
-        imageAlt="Map of Brookwood and nearby Tuscaloosa County communities we buy houses in"
+        imageSrc="/assets/sell_my_house_fast_brookwood_al.webp"
+        imageAlt="Map of Brookwood and Tuscaloosa County areas where we buy houses for cash"
+        imageTitle="Sell my house fast Brookwood AL — service areas"
         imageCaption="Brookwood and nearby Tuscaloosa County areas where we buy houses for cash."
         showFooterCards={false}
         ctaHref="#contact"
@@ -219,7 +221,6 @@ export default function BrookwoodPage() {
           'Common questions Brookwood and Tuscaloosa County homeowners ask when they\'re thinking, "I need to sell my house fast in Brookwood, AL."'
         }
         defaultOpenId="how-fast"
-        includeSchema={false}
         showNarLink={false}
         footerText={`Still Have Questions About Selling in Brookwood? Call ${PHONE}`}
       />

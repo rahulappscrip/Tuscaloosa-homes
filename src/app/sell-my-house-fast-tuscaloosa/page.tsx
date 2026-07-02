@@ -178,7 +178,6 @@ export default function TuscaloosaPage() {
         }
         description="Common questions Tuscaloosa homeowners ask when considering a fast cash sale. Each answer starts with a direct, clear response you can rely on."
         defaultOpenId="how-fast"
-        includeSchema={false}
         showNarLink={false}
         footerText={`Still have questions about how to sell my house fast in Tuscaloosa? Call Joe directly at ${PHONE}.`}
       />

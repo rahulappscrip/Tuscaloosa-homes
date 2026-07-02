@@ -264,7 +264,6 @@ export default function HomeWorthPage() {
         heading="Tuscaloosa home value & cash offer — frequently asked questions"
         description=""
         defaultOpenId="how-find-worth"
-        includeSchema={false}
         showNarLink={false}
         footerText={`Still wondering what your home is worth? Call Joe — ${PHONE}`}
       />

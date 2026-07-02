@@ -56,6 +56,7 @@ function JoeProfileCard() {
             <Image
               src="/assets/joe.png"
               alt="Joe LeBlanc, founder of We Buy Tuscaloosa Homes"
+              title="Joe LeBlanc — founder of We Buy Tuscaloosa Homes"
               width={1286}
               height={2094}
               className="h-full w-full object-cover object-top"

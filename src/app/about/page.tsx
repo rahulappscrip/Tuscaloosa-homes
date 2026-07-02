@@ -159,7 +159,6 @@ export default function AboutPage() {
         heading="About We Buy Tuscaloosa Homes — frequently asked questions"
         description=""
         defaultOpenId="legitimate"
-        includeSchema={false}
         showNarLink={false}
         footerText={`Have a question not listed here? Ask Joe directly — ${PHONE}`}
       />

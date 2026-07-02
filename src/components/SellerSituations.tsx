@@ -25,6 +25,8 @@ type SituationItem = {
   title: string;
   description: string;
   image: string;
+  imageAlt?: string;
+  imageTitle?: string;
 };
 
 type PricingOperatorVariant = "arv" | "minus" | "equals";
@@ -105,12 +107,14 @@ function SituationCard({
   description,
   image,
   imageAlt,
+  imageTitle,
 }: {
   id: string;
   title: string;
   description: string;
   image: string;
   imageAlt: string;
+  imageTitle?: string;
 }) {
   return (
     <article
@@ -121,6 +125,7 @@ function SituationCard({
         <Image
           src={image}
           alt={imageAlt}
+          title={imageTitle ?? imageAlt}
           fill
           className="object-cover transition-transform duration-300 group-hover:scale-[1.02]"
           sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
@@ -480,7 +485,8 @@ export function SellerSituations({
               title={situation.title}
               description={situation.description}
               image={situation.image}
-              imageAlt={situation.title}
+              imageAlt={situation.imageAlt ?? situation.title}
+              imageTitle={situation.imageTitle}
             />
           ))}
         </div>

@@ -355,8 +355,10 @@ export const tuscaloosaPageSchema = [
     "@type": "LocalBusiness",
     name: "We Buy Tuscaloosa Homes",
     url: "https://www.webuytuscaloosahomes.com/",
-    telephone: "(803) 784-7672",
+    telephone: "+18037847672",
     email: "joe@webuytuscaloosahomes.com",
+    description:
+      "We buy houses in Tuscaloosa, AL in any condition for a fair cash offer. Close in 7 days or on your schedule.",
     address: {
       "@type": "PostalAddress",
       streetAddress: "1520 Stillwater Dr",
@@ -365,7 +367,12 @@ export const tuscaloosaPageSchema = [
       postalCode: "35406",
       addressCountry: "US",
     },
-    areaServed: "Tuscaloosa, AL",
+    areaServed: {
+      "@type": "City",
+      name: "Tuscaloosa",
+    },
+    serviceArea: { "@type": "GeoCircle", geoRadius: "50000" },
+    brand: "We Buy Tuscaloosa Homes",
     founder: {
       "@type": "Person",
       name: "Joe LeBlanc",
@@ -374,114 +381,46 @@ export const tuscaloosaPageSchema = [
   },
   {
     "@context": "https://schema.org",
-    "@type": "FAQPage",
-    mainEntity: [
-      {
-        "@type": "Question",
-        name: "How fast can I sell my house for cash in Tuscaloosa?",
-        acceptedAnswer: {
-          "@type": "Answer",
-          text: "In many cases, you can sell to a cash home buyer in Tuscaloosa in just a couple of weeks. A local cash buyer can often move much faster than a traditional sale because there is no mortgage approval or repair process. The exact timing depends on title work and your schedule, so closing can often be set around when you are ready to move.",
-        },
-      },
-      {
-        "@type": "Question",
-        name: "Is it better to sell my house fast for cash or list with an agent in Tuscaloosa?",
-        acceptedAnswer: {
-          "@type": "Answer",
-          text: "Neither option is always better; it depends on your goals in Tuscaloosa. A cash home buyer can offer speed, certainty, and no repairs, but the price is usually below full retail. Listing with an agent can bring a higher price, yet you may face repairs, showings, commissions, and a longer wait.",
-        },
-      },
-      {
-        "@type": "Question",
-        name: "How do you decide what my Tuscaloosa house is worth for a cash offer?",
-        acceptedAnswer: {
-          "@type": "Answer",
-          text: "Cash buyers usually base your Tuscaloosa offer on after-repair value, condition, and repair costs. A local cash home buyer looks at recent Tuscaloosa sales, estimates what your house could sell for after repairs, then subtracts the cost of those repairs, holding costs, and a profit margin.",
-        },
-      },
-      {
-        "@type": "Question",
-        name: "Can I sell my house fast in Tuscaloosa if I'm facing foreclosure?",
-        acceptedAnswer: {
-          "@type": "Answer",
-          text: "Yes. Many homeowners in foreclosure can still sell fast to a cash buyer in Tuscaloosa. If your lender has not completed the foreclosure sale, a local cash home buyer may be able to close quickly enough to pay off the loan.",
-        },
-      },
-      {
-        "@type": "Question",
-        name: "Will you still buy my Tuscaloosa house if it needs a lot of repairs?",
-        acceptedAnswer: {
-          "@type": "Answer",
-          text: "Yes. Cash home buyers in Tuscaloosa regularly buy houses that need major repairs. They purchase properties as-is, so you do not have to fix foundation issues, roof problems, outdated kitchens, or general wear and tear before selling.",
-        },
-      },
-      {
-        "@type": "Question",
-        name: "Do I have to pay any fees or commissions when I sell my house fast for cash?",
-        acceptedAnswer: {
-          "@type": "Answer",
-          text: "No. When you sell directly to a cash home buyer, you typically avoid real estate commissions. In a direct cash sale, there is no listing agent, so the usual percentage-based commission is not charged.",
-        },
-      },
-      {
-        "@type": "Question",
-        name: "Can I sell an inherited house in Tuscaloosa without fixing it up first?",
-        acceptedAnswer: {
-          "@type": "Answer",
-          text: "Yes. Inherited houses in Tuscaloosa are often sold as-is to a cash buyer. A local cash home buyer can usually make an offer even if the property still needs cleaning, updates, or repairs.",
-        },
-      },
-      {
-        "@type": "Question",
-        name: "What types of properties do you buy in Tuscaloosa?",
-        acceptedAnswer: {
-          "@type": "Answer",
-          text: "Most cash home buyers in Tuscaloosa focus on residential properties including single-family houses, townhomes, condos, and small multi-unit rentals within the Tuscaloosa, Alabama area.",
-        },
-      },
-      {
-        "@type": "Question",
-        name: "What happens if I need to stay in my house for a little while after closing?",
-        acceptedAnswer: {
-          "@type": "Answer",
-          text: "In many cases, you can work out timing or short post-closing occupancy with a cash buyer. Some cash home buyers will set a later closing date so you have time to move, or agree in writing to let you stay briefly after closing.",
-        },
-      },
-      {
-        "@type": "Question",
-        name: "Am I obligated to accept a cash offer on my Tuscaloosa house?",
-        acceptedAnswer: {
-          "@type": "Answer",
-          text: "No. You are never obligated to accept a cash offer on your Tuscaloosa house. Reputable cash home buyers expect you to review their offer, compare it with other options, and only move forward if it fits your situation.",
-        },
-      },
-    ],
-  },
-  {
-    "@context": "https://schema.org",
     "@type": "HowTo",
     name: "How to Sell Your House Fast in Tuscaloosa, Alabama",
     description:
-      "A simple 3-step process to sell your house fast for cash in Tuscaloosa with We Buy Tuscaloosa Homes.",
-    step: [
+      "A simple process to sell your house fast for cash in Tuscaloosa with We Buy Tuscaloosa Homes.",
+    step: tuscaloosaProcessSteps.map((step, index) => ({
+      "@type": "HowToStep",
+      position: index + 1,
+      name: step.title,
+      text: step.description,
+    })),
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    name: "Joe LeBlanc",
+    jobTitle: "Founder, Owner, and CEO",
+    description:
+      "Joe LeBlanc is the Founder, Owner, and CEO of We Buy Tuscaloosa Homes; he personally handles every deal.",
+    url: "https://webuytuscaloosahomes.com/about",
+    worksFor: {
+      "@type": "LocalBusiness",
+      name: "We Buy Tuscaloosa Homes",
+      url: "https://webuytuscaloosahomes.com",
+    },
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
       {
-        "@type": "HowToStep",
-        position: "1",
-        name: "Share Your Property Details",
-        text: "Call (803) 784-7672 or fill out the short form with your address, basic property info, and situation.",
+        "@type": "ListItem",
+        position: 1,
+        name: "Home",
+        item: "https://webuytuscaloosahomes.com/",
       },
       {
-        "@type": "HowToStep",
-        position: "2",
-        name: "Quick Walk-Through",
-        text: "We schedule a quick visit or virtual walk-through to confirm condition. No cleaning, repairs, or staging needed.",
-      },
-      {
-        "@type": "HowToStep",
-        position: "3",
-        name: "Get Your Cash Offer and Close",
-        text: "We explain your cash offer in plain language. You pick a closing date and get funds at closing through a local attorney.",
+        "@type": "ListItem",
+        position: 2,
+        name: "Tuscaloosa",
+        item: "https://webuytuscaloosahomes.com/sell-my-house-fast-tuscaloosa",
       },
     ],
   },

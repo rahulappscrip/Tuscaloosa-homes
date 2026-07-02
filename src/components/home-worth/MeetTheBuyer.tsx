@@ -26,6 +26,7 @@ export function MeetTheBuyer() {
               <Image
                 src={imageSrc}
                 alt={imageAlt}
+                title="Joe LeBlanc — your local Tuscaloosa cash home buyer"
                 width={1286}
                 height={2094}
                 className="mx-auto block h-auto w-full max-h-[540px] object-contain object-bottom"
