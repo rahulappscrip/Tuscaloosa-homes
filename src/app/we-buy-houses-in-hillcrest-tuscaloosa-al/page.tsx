@@ -100,7 +100,7 @@ export default function HillcrestPage() {
         sectionId="how-it-works"
         eyebrow="Simple Process"
         heading="How Does Our Hillcrest Cash Home Buying Process Work?"
-        description="Selling your Hillcrest house to We Buy Tuscaloosa Homes takes just three simple steps: tell us about the property, review your cash offer, and choose your closing date."
+        description="Selling your Hillcrest house to We Buy Tuscaloosa Homes takes just four simple steps: tell us about the property, schedule a walkthrough, review your cash offer, and choose your closing date."
         steps={hillcrestProcessSteps}
         footnote="Start with step one — share a few details about your Hillcrest property and we'll reach out with next steps."
         className="bg-hero-surface"
@@ -138,7 +138,11 @@ export default function HillcrestPage() {
         ctaHref="#contact"
         ctaLabel="Ask Us How Today's Hillcrest Market Affects Your Home"
       />
-      <ServiceArea ctaHref="#contact" />
+      <ServiceArea
+        ctaHref="#contact"
+        mapImageAlt="Map showing Hillcrest Tuscaloosa and West Alabama areas where we buy houses in Hillcrest Tuscaloosa AL for cash"
+        mapImageTitle="We buy houses in Hillcrest Tuscaloosa AL — service area map"
+      />
       <MeetJoe
         eyebrow="Local & Founder-Led"
         heading="Meet Joe LeBlanc – Your Local Hillcrest Cash Home Buyer"
@@ -146,6 +150,8 @@ export default function HillcrestPage() {
         paragraphs={hillcrestMeetJoeParagraphs}
         credentials={hillcrestMeetJoeCredentials}
         ctaLabel={`Talk with Joe About Your Hillcrest House — ${PHONE}`}
+        imageAlt="Joe LeBlanc, local cash home buyer who we buy houses in Hillcrest Tuscaloosa AL"
+        imageTitle="Joe LeBlanc — we buy houses in Hillcrest Tuscaloosa AL"
       />
       <TransparentPricing
         eyebrow="Transparent Offer Math"
@@ -181,7 +187,6 @@ export default function HillcrestPage() {
         }
         description="Tap any question below to expand the answer about selling your Hillcrest house for cash."
         defaultOpenId="legitimate"
-        includeSchema={false}
         showNarLink={false}
         footerText={`Still Have Questions? Ask Joe — ${PHONE}`}
       />
@@ -198,6 +203,8 @@ export default function HillcrestPage() {
         primaryCtaLabel="Get My Free Hillcrest Cash Offer"
         secondaryCtaLabel={`${PHONE} — Call or Text`}
         consentText="By contacting us you agree to receive communications from We Buy Tuscaloosa Homes. No obligation."
+        imageAlt="Joe LeBlanc, Hillcrest Tuscaloosa cash home buyer — we buy houses in Hillcrest Tuscaloosa AL"
+        imageTitle="We buy houses in Hillcrest Tuscaloosa AL — get your cash offer"
       />
     </>
   );

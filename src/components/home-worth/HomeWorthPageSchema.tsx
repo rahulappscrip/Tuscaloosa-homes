@@ -1,5 +1,3 @@
-import { homeWorthFaqs } from "@/data/home-worth";
-
 export function HomeWorthPageSchema() {
   const schema = {
     "@context": "https://schema.org",
@@ -10,17 +8,6 @@ export function HomeWorthPageSchema() {
         description:
           "Wondering what your home is worth in Tuscaloosa, AL? See real 2026 market data and get a fast, no-obligation cash offer from a local buyer — no repairs, no fees.",
         url: "https://www.webuytuscaloosahomes.com/how-much-is-my-house-worth-tuscaloosa-al",
-      },
-      {
-        "@type": "FAQPage",
-        mainEntity: homeWorthFaqs.map((faq) => ({
-          "@type": "Question",
-          name: faq.question,
-          acceptedAnswer: {
-            "@type": "Answer",
-            text: faq.answer,
-          },
-        })),
       },
       {
         "@type": "BreadcrumbList",

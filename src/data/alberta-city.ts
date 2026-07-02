@@ -363,19 +363,7 @@ export const albertaCityPageSchema = [
       "Local cash home buyers serving Tuscaloosa, Alabama and surrounding areas including Alberta City.",
     founder: { "@type": "Person", name: "Joe LeBlanc" },
   },
-  {
-    "@context": "https://schema.org",
-    "@type": "FAQPage",
-    mainEntity: albertaCityFaqs.map((faq) => ({
-      "@type": "Question",
-      name: faq.question,
-      acceptedAnswer: {
-        "@type": "Answer",
-        text: faq.answer,
-      },
-    })),
-  },
-  {
+    {
     "@context": "https://schema.org",
     "@type": "BreadcrumbList",
     itemListElement: [

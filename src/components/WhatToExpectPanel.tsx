@@ -18,6 +18,7 @@ type WhatToExpectPanelProps = {
   footnote?: string;
   imageSrc?: string;
   imageAlt?: string;
+  imageTitle?: string;
   imageCaption?: string;
   ctaHref?: string;
   ctaLabel?: string;
@@ -35,6 +36,7 @@ export function WhatToExpectPanel({
   footnote,
   imageSrc = situationImages["inherited-probate"],
   imageAlt = "Woodland Forrest homeowner working through a local cash home sale",
+  imageTitle = "Sell my house fast Woodland Forrest Tuscaloosa",
   imageCaption,
   ctaHref = "#contact",
   ctaLabel = "Schedule a No-Pressure Walk-Through",
@@ -73,6 +75,7 @@ export function WhatToExpectPanel({
                 <Image
                   src={imageSrc}
                   alt={imageAlt}
+                  title={imageTitle ?? imageAlt}
                   fill
                   className="object-cover"
                   sizes="(max-width: 1024px) 100vw, 50vw"

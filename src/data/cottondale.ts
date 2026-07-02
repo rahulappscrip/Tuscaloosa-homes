@@ -134,11 +134,11 @@ export const cottondaleSituations = [
     image: getSituationImage("inherited-probate"),
   },
   {
-    id: "foreclosure",
+    id: "behind-on-payments-life-changes",
     title: "Behind on Payments or Dealing With Life Changes",
     description:
       "Job loss, medical bills, divorce, or other major life events can make a traditional sale feel overwhelming. A fast cash offer in Cottondale can simplify things by giving you one clear path forward without lenders, showings, or months of uncertainty.",
-    image: getSituationImage("foreclosure"),
+    image: getSituationImage("behind-on-payments-life-changes"),
   },
   {
     id: "tired-landlord",
@@ -246,93 +246,7 @@ export const cottondaleFaqs = [
 ] as const;
 
 export const cottondalePageSchema = [
-  {
-    "@context": "https://schema.org",
-    "@type": "FAQPage",
-    mainEntity: [
-      {
-        "@type": "Question",
-        name: "How does your cash home buying process work in Cottondale, AL?",
-        acceptedAnswer: {
-          "@type": "Answer",
-          text: "Our cash home buying process has three steps. You share some details about your Cottondale house, We Buy Tuscaloosa Homes makes a no-obligation cash offer, and then a local title company handles the paperwork so you can close on the date that works for you.",
-        },
-      },
-      {
-        "@type": "Question",
-        name: "How fast can I sell my house for cash in Cottondale?",
-        acceptedAnswer: {
-          "@type": "Answer",
-          text: "You can sell your house for cash as quickly as the title work is finished. We Buy Tuscaloosa Homes is a direct home buyer, so there is no bank financing delay. Once you accept our offer, we work with a local title company to schedule the closing date that fits your timeline.",
-        },
-      },
-      {
-        "@type": "Question",
-        name: "Do I need to make repairs or clean before I sell my Cottondale house to a cash buyer?",
-        acceptedAnswer: {
-          "@type": "Answer",
-          text: "No. You do not need to make repairs or deep clean before selling. We Buy Tuscaloosa Homes buys Cottondale houses as-is, so you can skip staging, showings, and contractor work and simply take the belongings that matter most before closing.",
-        },
-      },
-      {
-        "@type": "Question",
-        name: "How do you decide what my Cottondale house cash offer will be?",
-        acceptedAnswer: {
-          "@type": "Answer",
-          text: "Your cash offer is based on your home's condition, the Cottondale market, and recent comparable sales. We Buy Tuscaloosa Homes reviews local sales, needed repairs, and your timeline, then calculates a fair cash price with no obligation to accept.",
-        },
-      },
-      {
-        "@type": "Question",
-        name: "Are there any fees, commissions, or closing costs when you buy my house?",
-        acceptedAnswer: {
-          "@type": "Answer",
-          text: "No. You do not pay real estate commissions when We Buy Tuscaloosa Homes buys your house for cash. As a direct home buyer, we avoid listing fees and hidden service charges, and we structure offers so your net amount at closing is easy to understand.",
-        },
-      },
-      {
-        "@type": "Question",
-        name: "What is the Cottondale, AL housing market like if I need to sell fast?",
-        acceptedAnswer: {
-          "@type": "Answer",
-          text: "The Cottondale market supports both traditional listings and fast cash sales. If you need to sell quickly, a local cash buyer like We Buy Tuscaloosa Homes can help you avoid showings, financing delays, and contingencies by giving you a predictable cash offer.",
-        },
-      },
-      {
-        "@type": "Question",
-        name: "Can I sell my Cottondale house as-is if it needs a lot of work?",
-        acceptedAnswer: {
-          "@type": "Answer",
-          text: "Yes. You can sell your Cottondale house as-is even if it needs major repairs. We Buy Tuscaloosa Homes is a local cash home buyer and will factor needed work into your offer so you can move on without fixing anything first.",
-        },
-      },
-      {
-        "@type": "Question",
-        name: "How can I tell if a cash home buyer in Cottondale is legitimate?",
-        acceptedAnswer: {
-          "@type": "Answer",
-          text: "A legitimate cash home buyer will be transparent and easy to verify. Look for a clear website, local Tuscaloosa presence, and reviews. Serious buyers like We Buy Tuscaloosa Homes explain their process and close through a reputable local title company.",
-        },
-      },
-      {
-        "@type": "Question",
-        name: "What happens if I get a cash offer for my Cottondale house and I am not sure if it is fair?",
-        acceptedAnswer: {
-          "@type": "Answer",
-          text: "If you are not sure a cash offer is fair, compare it with local info. Check recent Cottondale sales, talk with a Tuscaloosa agent, and request a second written offer from We Buy Tuscaloosa Homes so you can choose what feels right.",
-        },
-      },
-      {
-        "@type": "Question",
-        name: "Do you only buy houses in Cottondale, or across the Tuscaloosa area too?",
-        acceptedAnswer: {
-          "@type": "Answer",
-          text: "We buy houses in Cottondale and across the broader Tuscaloosa area. We Buy Tuscaloosa Homes focuses on local sellers in Cottondale, Tuscaloosa, and nearby Alabama neighborhoods and can quickly let you know if your property fits our buying criteria.",
-        },
-      },
-    ],
-  },
-  {
+    {
     "@context": "https://schema.org",
     "@type": "LocalBusiness",
     name: "We Buy Tuscaloosa Homes",

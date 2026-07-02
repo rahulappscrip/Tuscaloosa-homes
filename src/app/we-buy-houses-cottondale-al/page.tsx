@@ -124,7 +124,6 @@ export default function CottondalePage() {
         }
         description="Below are answers to common questions Cottondale and Tuscaloosa-area homeowners ask when they look for we buy houses in Cottondale, AL services."
         defaultOpenId="how-it-works"
-        includeSchema={false}
         showNarLink={false}
         footerText={`Ask Us a Question About Your Cottondale House — ${PHONE}`}
       />

@@ -1,6 +1,15 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
+  images: {
+    remotePatterns: [
+      {
+        protocol: "https",
+        hostname: "wordpress-1628174-6525340.cloudwaysapps.com",
+        pathname: "/wp-content/uploads/**",
+      },
+    ],
+  },
   async redirects() {
     return [
       {
@@ -36,6 +45,11 @@ const nextConfig: NextConfig = {
       {
         source: "/woodland-forrest",
         destination: "/sell-my-house-fast-woodland-forrest-tuscaloosa",
+        permanent: true,
+      },
+      {
+        source: "/vance",
+        destination: "/sell-my-house-fast-vance-al",
         permanent: true,
       },
     ];

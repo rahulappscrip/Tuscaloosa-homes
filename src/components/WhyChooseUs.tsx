@@ -129,6 +129,7 @@ type WhyChooseUsProps = {
   media?: "video" | "image" | "none";
   imageSrc?: string;
   imageAlt?: string;
+  imageTitle?: string;
   imageCaption?: string;
   showFooterCards?: boolean;
   ctaHref?: string;
@@ -170,10 +171,12 @@ function CashSaleImageCard({
   imageSrc,
   imageAlt,
   imageCaption,
+  imageTitle,
 }: {
   imageSrc: string;
   imageAlt: string;
   imageCaption?: string;
+  imageTitle?: string;
 }) {
   return (
     <div className="mt-6 overflow-hidden rounded-xl border border-mist bg-white shadow-[0_8px_28px_rgba(26,35,50,0.08)]">
@@ -181,6 +184,7 @@ function CashSaleImageCard({
         <Image
           src={imageSrc}
           alt={imageAlt}
+          title={imageTitle ?? imageAlt}
           fill
           priority
           className="object-cover"
@@ -211,6 +215,7 @@ export function WhyChooseUs({
   media = "video",
   imageSrc = situationImages.foreclosure,
   imageAlt = "Homeowner considering a fast cash house sale",
+  imageTitle = "Sell your Tuscaloosa house fast for cash",
   imageCaption,
   showFooterCards = true,
   ctaHref,
@@ -246,6 +251,7 @@ export function WhyChooseUs({
               <CashSaleImageCard
                 imageSrc={imageSrc}
                 imageAlt={imageAlt}
+                imageTitle={imageTitle}
                 imageCaption={imageCaption}
               />
             ) : media === "video" ? (

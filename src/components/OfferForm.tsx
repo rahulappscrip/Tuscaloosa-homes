@@ -43,7 +43,7 @@ function FormField({
   );
 }
 
-export function OfferForm() {
+export function OfferForm({ className = "" }: { className?: string }) {
   const formRef = useRef<HTMLFormElement>(null);
   const startedRef = useRef(false);
   const submittedRef = useRef(false);
@@ -153,7 +153,7 @@ export function OfferForm() {
   return (
     <div
       id={OFFER_FORM_ID}
-      className="w-full max-w-[450px] rounded-2xl bg-white px-5 py-6 text-charcoal shadow-[0_12px_40px_rgba(26,35,50,0.08)] sm:px-6 sm:py-7"
+      className={`w-full max-w-[450px] rounded-2xl bg-white px-5 py-6 text-charcoal shadow-[0_12px_40px_rgba(26,35,50,0.08)] sm:px-6 sm:py-7 ${className}`}
     >
       <h2 className="font-primary mb-3 text-[clamp(1.35rem,2.5vw,1.75rem)] leading-tight font-extrabold text-charcoal">
         Get Your <span className="text-teal">Cash Offer</span> Today

@@ -141,6 +141,10 @@ export const woodlandForrestSituations = [
     description:
       "If you need to stop foreclosure Tuscaloosa or are a few payments behind, listing may take longer than you have. A cash sale can help you avoid a foreclosure on your record and close before a scheduled sale date.",
     image: getSituationImage("foreclosure"),
+    imageAlt:
+      "Sell my house fast Woodland Forrest Tuscaloosa when facing foreclosure or behind on payments",
+    imageTitle:
+      "Sell my house fast Woodland Forrest Tuscaloosa — foreclosure help",
   },
   {
     id: "inherited-probate",
@@ -148,6 +152,10 @@ export const woodlandForrestSituations = [
     description:
       "Maybe you inherited a parent's Woodland Forrest home that needs updates, clean-out, and probate paperwork. Instead of sinking money into a property you don't want to keep, you can sell house without repairs in Woodland Forrest and let us handle the clean-out after closing.",
     image: getSituationImage("inherited-probate"),
+    imageAlt:
+      "Sell my house fast Woodland Forrest Tuscaloosa — inherited or probate property sale",
+    imageTitle:
+      "Sell my house fast Woodland Forrest Tuscaloosa — inherited house",
   },
   {
     id: "divorce",
@@ -155,6 +163,10 @@ export const woodlandForrestSituations = [
     description:
       "Divorce often means needing a fair, quick solution both sides can agree on. A cash offer in Tuscaloosa gives you a simple number to split without months of showings and negotiations.",
     image: getSituationImage("divorce"),
+    imageAlt:
+      "Sell my house fast Woodland Forrest Tuscaloosa during a divorce or separation",
+    imageTitle:
+      "Sell my house fast Woodland Forrest Tuscaloosa — divorce sale",
   },
   {
     id: "tired-landlord",
@@ -162,6 +174,10 @@ export const woodlandForrestSituations = [
     description:
       "If you're a tired landlord Tuscaloosa with late payments, damages, or lease headaches, you can sell a tenant-occupied property directly to us. We review the leases and take over the problem so you can move on.",
     image: getSituationImage("tired-landlord"),
+    imageAlt:
+      "Sell my house fast Woodland Forrest Tuscaloosa — tired landlord or tenant-occupied rental",
+    imageTitle:
+      "Sell my house fast Woodland Forrest Tuscaloosa — rental property",
   },
   {
     id: "major-repairs",
@@ -169,6 +185,10 @@ export const woodlandForrestSituations = [
     description:
       "Some Woodland Forrest houses need roof replacements, foundation work, or full updates to compete on the MLS. Rather than borrowing or saving for big repairs, you can sell as-is and let us take on the project.",
     image: getSituationImage("major-repairs"),
+    imageAlt:
+      "Sell my house fast Woodland Forrest Tuscaloosa when the home needs major repairs or storm damage",
+    imageTitle:
+      "Sell my house fast Woodland Forrest Tuscaloosa — as-is sale",
   },
   {
     id: "relocating",
@@ -176,6 +196,10 @@ export const woodlandForrestSituations = [
     description:
       "New job, new school district, or moving closer to family — sometimes you just need a quick house sale Tuscaloosa so you can focus on what's next instead of juggling showings from out of town.",
     image: getSituationImage("relocating"),
+    imageAlt:
+      "Sell my house fast Woodland Forrest Tuscaloosa when relocating on a deadline",
+    imageTitle:
+      "Sell my house fast Woodland Forrest Tuscaloosa — relocation",
   },
 ] as const;
 
@@ -426,19 +450,7 @@ export const woodlandForrestFaqs = [
 ] as const;
 
 export const woodlandForrestPageSchema = [
-  {
-    "@context": "https://schema.org",
-    "@type": "FAQPage",
-    mainEntity: woodlandForrestFaqs.map((faq) => ({
-      "@type": "Question",
-      name: faq.question,
-      acceptedAnswer: {
-        "@type": "Answer",
-        text: faq.answer,
-      },
-    })),
-  },
-  {
+    {
     "@context": "https://schema.org",
     "@type": "LocalBusiness",
     name: "We Buy Tuscaloosa Homes",

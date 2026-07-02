@@ -164,8 +164,9 @@ export default function AlbertaCityPage() {
         description="These offices can help with documentation, records, and guidance — independent of any decision to sell."
         benefits={albertaCityLocalResources}
         media="image"
-        imageSrc="/assets/tuscaloosa-map.jpg"
-        imageAlt="Map of the Tuscaloosa area, including Alberta City and surrounding neighborhoods"
+        imageSrc="/assets/sell_my_house_fast_alberta_city_tuscaloosa.webp"
+        imageAlt="Map and local resources for homeowners in Alberta City and Tuscaloosa, Alabama"
+        imageTitle="Local resources for Alberta City and Tuscaloosa homeowners"
         imageCaption="Local city and county offices that can help Alberta City and Tuscaloosa homeowners with records and guidance."
         showFooterCards={false}
       />
@@ -176,7 +177,6 @@ export default function AlbertaCityPage() {
         heading="Common questions about selling your Alberta City house for cash"
         description=""
         defaultOpenId="code-violations"
-        includeSchema={false}
         showNarLink={false}
         footerText={`Still have questions? Call ${PHONE}`}
       />

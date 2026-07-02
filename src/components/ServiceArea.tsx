@@ -136,9 +136,13 @@ function ChevronIcon() {
 function ServiceMap({
   activeId,
   onSelect,
+  mapImageAlt,
+  mapImageTitle,
 }: {
   activeId: AreaId;
   onSelect: (id: AreaId) => void;
+  mapImageAlt: string;
+  mapImageTitle: string;
 }) {
   const activeArea = areas.find((area) => area.id === activeId) ?? areas[0];
 
@@ -146,7 +150,8 @@ function ServiceMap({
     <div className="relative aspect-square w-full min-w-0 max-w-full overflow-hidden rounded-2xl border border-mist bg-[#f7f5ef] shadow-[0_8px_32px_rgba(26,35,50,0.08)]">
       <Image
         src="/assets/tuscaloosa-map.jpg"
-        alt="Map of Tuscaloosa and surrounding areas we buy houses in"
+        alt={mapImageAlt}
+        title={mapImageTitle}
         fill
         className="object-cover"
         sizes="(max-width: 1024px) 100vw, 50vw"
@@ -281,9 +286,15 @@ function ServiceMap({
 
 type ServiceAreaProps = {
   ctaHref?: string;
+  mapImageAlt?: string;
+  mapImageTitle?: string;
 };
 
-export function ServiceArea({ ctaHref = "#offer-form" }: ServiceAreaProps) {
+export function ServiceArea({
+  ctaHref = "#offer-form",
+  mapImageAlt = "Map of Tuscaloosa and surrounding areas we buy houses in",
+  mapImageTitle = "We buy houses for cash in Tuscaloosa and West Alabama",
+}: ServiceAreaProps) {
   const [activeId, setActiveId] = useState<AreaId>("central");
 
   return (
@@ -313,7 +324,12 @@ export function ServiceArea({ ctaHref = "#offer-form" }: ServiceAreaProps) {
 
         <div className="grid min-w-0 gap-6 lg:grid-cols-2 lg:gap-8 xl:gap-10">
           <div className="min-w-0">
-            <ServiceMap activeId={activeId} onSelect={setActiveId} />
+            <ServiceMap
+              activeId={activeId}
+              onSelect={setActiveId}
+              mapImageAlt={mapImageAlt}
+              mapImageTitle={mapImageTitle}
+            />
           </div>
 
           <div className="grid gap-3 sm:grid-cols-2">

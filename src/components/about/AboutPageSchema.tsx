@@ -1,5 +1,3 @@
-import { aboutFaqs } from "@/data/about";
-
 export function AboutPageSchema() {
   const schema = {
     "@context": "https://schema.org",
@@ -39,17 +37,6 @@ export function AboutPageSchema() {
           name: "We Buy Tuscaloosa Homes",
         },
         alumniOf: "University of South Carolina",
-      },
-      {
-        "@type": "FAQPage",
-        mainEntity: aboutFaqs.map((faq) => ({
-          "@type": "Question",
-          name: faq.question,
-          acceptedAnswer: {
-            "@type": "Answer",
-            text: faq.answer,
-          },
-        })),
       },
       {
         "@type": "BreadcrumbList",

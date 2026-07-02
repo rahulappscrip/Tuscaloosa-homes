@@ -13,7 +13,6 @@ import { StatsRibbon } from "@/components/StatsRibbon";
 import { Testimonials } from "@/components/Testimonials";
 import { TransparentPricing } from "@/components/TransparentPricing";
 import { WhatToExpectPanel } from "@/components/WhatToExpectPanel";
-import { situationImages } from "@/data/situationImages";
 import {
   woodlandForrestCashProsItems,
   woodlandForrestComparisonColumns,
@@ -134,8 +133,9 @@ export default function WoodlandForrestPage() {
         description="Beyond the simple 3–4 step overview, here's what the day-to-day process of a quick house sale Tuscaloosa actually feels like when you work with Joe."
         steps={woodlandForrestWhatToExpectSteps}
         footnote={woodlandForrestWhatToExpectFootnote}
-        imageSrc={situationImages.foreclosure}
-        imageAlt="Woodland Forrest homeowner reviewing paperwork during a local cash home sale"
+        imageSrc="/assets/sell_my_house_fast_woodland_forrest_tuscaloosa.webp"
+        imageAlt="Sell my house fast Woodland Forrest Tuscaloosa — from first call to closing day with a local cash buyer"
+        imageTitle="Sell my house fast Woodland Forrest Tuscaloosa"
         showCta={true}
         ctaHref="#contact"
         ctaLabel="Schedule a No-Pressure Walk-Through"
@@ -154,7 +154,11 @@ export default function WoodlandForrestPage() {
         ctaHref="#contact"
         ctaLabel="Ask How Today's Market Affects Your Woodland Forrest Home"
       />
-      <ServiceArea ctaHref="#contact" />
+      <ServiceArea
+        ctaHref="#contact"
+        mapImageAlt="Map showing Woodland Forrest Tuscaloosa and surrounding areas where we sell my house fast Woodland Forrest Tuscaloosa for cash"
+        mapImageTitle="Sell my house fast Woodland Forrest Tuscaloosa — service area"
+      />
       <MeetJoe
         eyebrow="Local & Founder-Led"
         heading="Meet Joe and the Local Team Buying Houses in Woodland Forrest"
@@ -162,6 +166,8 @@ export default function WoodlandForrestPage() {
         paragraphs={woodlandForrestMeetJoeParagraphs}
         credentials={woodlandForrestMeetJoeCredentials}
         ctaLabel={`Schedule a Quick Call With Joe — ${PHONE}`}
+        imageAlt="Joe LeBlanc, local cash home buyer for sell my house fast Woodland Forrest Tuscaloosa"
+        imageTitle="Sell my house fast Woodland Forrest Tuscaloosa — meet Joe"
       />
       <TransparentPricing
         eyebrow="Transparent Offer Math"
@@ -187,7 +193,6 @@ export default function WoodlandForrestPage() {
         }
         description="Tap any question to see a detailed answer about selling your Woodland Forrest, Tuscaloosa house for cash."
         defaultOpenId="how-fast"
-        includeSchema={false}
         showNarLink={false}
         footerText={`Don't See Your Question? Ask Joe — ${PHONE}`}
       />
@@ -204,6 +209,8 @@ export default function WoodlandForrestPage() {
         primaryCtaLabel="Get My Free Woodland Forrest Cash Offer"
         secondaryCtaLabel={`${PHONE} — Call or Text`}
         consentText="No obligation, no fees. By contacting us you agree to receive communications from We Buy Tuscaloosa Homes."
+        imageAlt="Joe LeBlanc, Woodland Forrest Tuscaloosa cash home buyer — sell my house fast Woodland Forrest Tuscaloosa"
+        imageTitle="Sell my house fast Woodland Forrest Tuscaloosa — get your offer"
       />
     </>
   );

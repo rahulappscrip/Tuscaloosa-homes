@@ -52,6 +52,7 @@
 
 html {
   scroll-behavior: smooth;
+  overflow-x: clip;
 }
 
 body {
@@ -60,7 +61,6 @@ body {
   color: var(--charcoal);
   background: var(--white);
   line-height: 1.6;
-  overflow-x: hidden;
 }
 
 .text-eyebrow {
@@ -107,4 +107,84 @@ h3 {
   background: var(--teal);
   box-shadow: 0 2px 8px rgba(26, 35, 50, 0.2);
   cursor: pointer;
+}
+
+.blog-content {
+  color: var(--charcoal);
+  font-size: 1rem;
+  line-height: 1.75;
+}
+
+.blog-content > * + * {
+  margin-top: 1.25rem;
+}
+
+.blog-content h2,
+.blog-content h3,
+.blog-content h4 {
+  font-family: var(--font-primary);
+  color: var(--navy);
+  font-weight: 800;
+  line-height: 1.25;
+  margin-top: 2rem;
+}
+
+.blog-content h2 {
+  font-size: clamp(1.35rem, 2.5vw, 1.75rem);
+}
+
+.blog-content h3 {
+  font-size: clamp(1.15rem, 2vw, 1.4rem);
+}
+
+.blog-content p,
+.blog-content li {
+  color: var(--slate);
+}
+
+.blog-content a {
+  color: var(--teal-dark);
+  font-weight: 600;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+.blog-content a:hover {
+  color: var(--teal);
+}
+
+.blog-content ul,
+.blog-content ol {
+  padding-left: 1.25rem;
+}
+
+.blog-content ul {
+  list-style: disc;
+}
+
+.blog-content ol {
+  list-style: decimal;
+}
+
+.blog-content li + li {
+  margin-top: 0.5rem;
+}
+
+.blog-content figure {
+  margin: 2rem 0;
+}
+
+.blog-content img {
+  width: 100%;
+  height: auto;
+  border-radius: 0.875rem;
+}
+
+.blog-content strong {
+  color: var(--charcoal);
+  font-weight: 700;
+}
+
+.blog-content em {
+  font-style: italic;
 }

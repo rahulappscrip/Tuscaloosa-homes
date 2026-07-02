@@ -83,6 +83,7 @@ function VideoPanel({ youtubeId }: { youtubeId: string }) {
       <img
         src={thumbnail}
         alt="Ms. Juanita shares her experience selling to Joe"
+        title="Tuscaloosa homeowner video testimonial — We Buy Tuscaloosa Homes"
         className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-[1.03]"
       />
       <div className="absolute inset-0 bg-navy/10 transition-colors group-hover:bg-navy/20" />

@@ -22,6 +22,7 @@ const cities = [
   { label: "Brookwood", href: "/sell-my-house-fast-brookwood-al" },
   { label: "Alberta City", href: "/sell-my-house-fast-alberta-city-tuscaloosa" },
   { label: "Woodland Forrest", href: "/sell-my-house-fast-woodland-forrest-tuscaloosa" },
+  { label: "Vance", href: "/sell-my-house-fast-vance-al" },
   { label: "Hillcrest", href: "/we-buy-houses-in-hillcrest-tuscaloosa-al" },
   { label: "University of Alabama", href: "/sell-house-near-university-of-alabama" },
 ];
@@ -52,14 +53,15 @@ function SituationLinks({
 
 export function Footer() {
   return (
-    <footer className="border-t border-white/10 bg-navy px-6 py-12 pb-8 text-white">
-      <div className="mx-auto max-w-[1300px]">
+    <footer className="border-t border-white/10 bg-navy text-white">
+      <div className="mx-auto max-w-[1300px] px-6 py-12 pb-8">
         <div className="mb-12 grid grid-cols-1 gap-7 sm:grid-cols-2 lg:grid-cols-[2fr_1fr_1fr_1fr_1fr] lg:gap-10 xl:gap-12">
           <div>
             <Link href="/" className="mb-4 inline-block">
               <Image
                 src="/assets/logo-updated.webp"
                 alt="We Buy Tuscaloosa Homes"
+                title="We Buy Tuscaloosa Homes — Tuscaloosa cash home buyer"
                 width={2812}
                 height={624}
                 className="h-12 w-auto max-w-[320px] sm:h-14 sm:max-w-[360px]"

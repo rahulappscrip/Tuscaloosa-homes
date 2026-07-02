@@ -39,6 +39,9 @@ export const hillcrestSituations = [
     description:
       "If you're worried about falling further behind, a direct Hillcrest cash sale can help you move before things escalate. We can work with the title company and your lender to pay off what's owed at closing if the numbers allow.",
     image: getSituationImage("foreclosure"),
+    imageAlt:
+      "We buy houses in Hillcrest Tuscaloosa AL from homeowners facing foreclosure or behind on mortgage payments",
+    imageTitle: "We buy houses in Hillcrest Tuscaloosa AL — foreclosure help",
   },
   {
     id: "inherited-probate",
@@ -46,6 +49,10 @@ export const hillcrestSituations = [
     description:
       "Maybe you inherited a property near Hillcrest High and don't have the time or desire to fix it up. You can sell the house as-is, split proceeds with family, and avoid months of managing contractors.",
     image: getSituationImage("inherited-probate"),
+    imageAlt:
+      "We buy inherited houses in Hillcrest Tuscaloosa AL — sell probate property as-is for cash",
+    imageTitle:
+      "We buy houses in Hillcrest Tuscaloosa AL — inherited property",
   },
   {
     id: "divorce",
@@ -53,6 +60,10 @@ export const hillcrestSituations = [
     description:
       "Selling a house during a divorce is stressful. A cash buyer can provide one clear offer so you and your spouse can decide how to divide the proceeds without showings or repair debates.",
     image: getSituationImage("divorce"),
+    imageAlt:
+      "Cash home buyer for divorce house sales in Hillcrest Tuscaloosa Alabama",
+    imageTitle:
+      "We buy houses in Hillcrest Tuscaloosa AL — divorce sale",
   },
   {
     id: "relocating",
@@ -60,6 +71,10 @@ export const hillcrestSituations = [
     description:
       "If you need to move out of Tuscaloosa quickly, waiting months for a traditional sale may not fit. A Hillcrest cash offer can give you a firm closing date so you can plan your next chapter.",
     image: getSituationImage("relocating"),
+    imageAlt:
+      "Sell my house fast in Hillcrest Tuscaloosa when relocating for work or life changes",
+    imageTitle:
+      "We buy houses in Hillcrest Tuscaloosa AL — relocation sale",
   },
   {
     id: "tired-landlord",
@@ -67,6 +82,10 @@ export const hillcrestSituations = [
     description:
       "Owning rentals near Hillcrest schools can be rewarding, but tenant headaches add up. We can buy tenant-occupied houses, review your lease, and usually let you walk away without handling an eviction first.",
     image: getSituationImage("tired-landlord"),
+    imageAlt:
+      "We buy tenant-occupied rental houses in Hillcrest Tuscaloosa AL from tired landlords",
+    imageTitle:
+      "We buy houses in Hillcrest Tuscaloosa AL — rental property",
   },
   {
     id: "major-repairs",
@@ -74,6 +93,10 @@ export const hillcrestSituations = [
     description:
       "Roof leaks, foundation concerns, or a house that hasn't been updated in decades make it harder to sell the traditional way. We buy Hillcrest properties in almost any condition, so you don't have to spend more money before you sell.",
     image: getSituationImage("major-repairs"),
+    imageAlt:
+      "We buy houses in Hillcrest Tuscaloosa AL that need major repairs or outdated updates",
+    imageTitle:
+      "We buy houses in Hillcrest Tuscaloosa AL — as-is condition",
   },
 ] as const;
 
@@ -82,19 +105,25 @@ export const hillcrestProcessSteps = [
     num: 1,
     title: "Tell Us About Your Hillcrest Property",
     description:
-      "Share your address, basic details, and what's going on. You can call, text, or use the short form on this page. We'll ask a few simple questions about condition and timing so we understand your goals.",
+      "Share your address, basic property details, and your selling timeline by phone or through our online form. There's no obligation, and we'll ask a few simple questions to understand your situation before moving forward.",
   },
   {
     num: 2,
-    title: "We Review and Present Your As-Is Cash Offer",
+    title: "Schedule a Property Walkthrough",
     description:
-      "Joe looks at recent Hillcrest and Tuscaloosa sales, your home's size and layout, and its current condition. We put together a clear written cash offer for your house as-is and explain how we arrived at the number in plain language. You're encouraged to compare it with other options.",
+      "We'll arrange a convenient time to visit your Hillcrest home and assess its current condition. There's no need to clean, stage, or make repairs—we buy houses exactly as they are.",
   },
   {
     num: 3,
-    title: "You Choose Your Closing Date and Get Paid",
+    title: "Receive Your Fair Cash Offer",
     description:
-      "If the offer works for you, you pick a closing window that fits your move — as soon as 7 days or later if you need more time. We work with a local title company, handle the paperwork, and you don't have to make repairs or clean out every item.",
+      "After reviewing your property's condition and recent Hillcrest and Tuscaloosa sales, we'll provide a clear written cash offer. We'll explain how we arrived at the price, and you can review it without any pressure or obligation.",
+  },
+  {
+    num: 4,
+    title: "Choose Your Closing Date & Get Paid",
+    description:
+      "If you decide to move forward, you pick the closing date that works best for you. We coordinate with a trusted local title company to handle the paperwork, and you receive your payment once the sale is complete.",
   },
 ] as const;
 
@@ -365,19 +394,7 @@ export const hillcrestFaqs = [
 ] as const;
 
 export const hillcrestPageSchema = [
-  {
-    "@context": "https://schema.org",
-    "@type": "FAQPage",
-    mainEntity: hillcrestFaqs.map((faq) => ({
-      "@type": "Question",
-      name: faq.question,
-      acceptedAnswer: {
-        "@type": "Answer",
-        text: faq.answer,
-      },
-    })),
-  },
-  {
+    {
     "@context": "https://schema.org",
     "@type": "LocalBusiness",
     name: "We Buy Tuscaloosa Homes",

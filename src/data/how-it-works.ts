@@ -307,3 +307,13 @@ export const transparentPricingFormula = {
   note: "Joe walks through every line of the offer. You see what he's paying for repairs, what the ARV is based on, and what his margin is — before you decide anything. Compare it with an agent's estimate and choose what's right for you.",
   ctaLabel: "Get My Offer Breakdown →",
 } as const;
+
+export const howItWorksPricingFormulaSteps = transparentPricingRows.map(
+  ({ id, operator, operatorVariant, title, description }) => ({
+    id,
+    operator,
+    operatorVariant,
+    title,
+    description,
+  }),
+);

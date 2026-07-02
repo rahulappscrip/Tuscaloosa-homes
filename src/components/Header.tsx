@@ -17,6 +17,7 @@ const locations = [
   { label: "Brookwood", href: "/sell-my-house-fast-brookwood-al" },
   { label: "Alberta City", href: "/sell-my-house-fast-alberta-city-tuscaloosa" },
   { label: "Woodland Forrest", href: "/sell-my-house-fast-woodland-forrest-tuscaloosa" },
+  { label: "Vance", href: "/sell-my-house-fast-vance-al" },
   { label: "Hillcrest", href: "/we-buy-houses-in-hillcrest-tuscaloosa-al" },
   { label: "University of Alabama", href: "/sell-house-near-university-of-alabama" },
 ] as const;
@@ -28,7 +29,7 @@ const companyLinks = [
     href: "/how-much-is-my-house-worth-tuscaloosa-al",
   },
   { label: "FAQ", href: "/faq" },
-  { label: "Blog", href: "#" },
+  { label: "Blog", href: "/blog" },
   { label: "Contact", href: "/contact" },
 ] as const;
 
@@ -206,7 +207,10 @@ export function Header() {
   const [openSubnav, setOpenSubnav] = useState<string | null>(null);
   const [openDropdown, setOpenDropdown] = useState<string | null>(null);
   const [scrolled, setScrolled] = useState(false);
+  const [navHeight, setNavHeight] = useState(78);
   const headerRef = useRef<HTMLElement>(null);
+  const navRowRef = useRef<HTMLDivElement>(null);
+  const mobileMenuRef = useRef<HTMLDivElement>(null);
 
   const closeDropdown = useCallback(() => setOpenDropdown(null), []);
 
@@ -216,13 +220,16 @@ export function Header() {
 
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
+      const target = event.target as Node;
       if (
-        headerRef.current &&
-        !headerRef.current.contains(event.target as Node)
+        headerRef.current?.contains(target) ||
+        mobileMenuRef.current?.contains(target)
       ) {
-        setOpenDropdown(null);
-        setMobileOpen(false);
+        return;
       }
+
+      setOpenDropdown(null);
+      setMobileOpen(false);
     };
 
     document.addEventListener("mousedown", handleClickOutside);
@@ -231,11 +238,27 @@ export function Header() {
 
   useEffect(() => {
     const handleResize = () => {
-      if (window.innerWidth < 1024) setOpenDropdown(null);
+      if (window.innerWidth < 1024) {
+        setOpenDropdown(null);
+      } else {
+        setMobileOpen(false);
+      }
     };
 
     window.addEventListener("resize", handleResize);
     return () => window.removeEventListener("resize", handleResize);
+  }, []);
+
+  useEffect(() => {
+    const navRow = navRowRef.current;
+    if (!navRow) return;
+
+    const updateNavHeight = () => setNavHeight(navRow.offsetHeight);
+    updateNavHeight();
+
+    const observer = new ResizeObserver(updateNavHeight);
+    observer.observe(navRow);
+    return () => observer.disconnect();
   }, []);
 
   useEffect(() => {
@@ -246,33 +269,40 @@ export function Header() {
   }, []);
 
   useEffect(() => {
-    document.body.style.overflow = mobileOpen ? "hidden" : "";
+    if (!mobileOpen) return;
+
+    const scrollY = window.scrollY;
+    document.body.style.position = "fixed";
+    document.body.style.top = `-${scrollY}px`;
+    document.body.style.left = "0";
+    document.body.style.right = "0";
+    document.body.style.width = "100%";
+
     return () => {
-      document.body.style.overflow = "";
+      document.body.style.position = "";
+      document.body.style.top = "";
+      document.body.style.left = "";
+      document.body.style.right = "";
+      document.body.style.width = "";
+      window.scrollTo(0, scrollY);
     };
   }, [mobileOpen]);
 
   return (
-    <header
-      ref={headerRef}
-      className={`sticky top-0 z-[1000] bg-white transition-shadow duration-200 ${
-        scrolled
-          ? "shadow-[0_4px_20px_rgba(0,0,0,0.1)]"
-          : "shadow-[0_2px_12px_rgba(0,0,0,0.06)]"
-      }`}
-    >
-      {/* Top bar */}
-      <div className="bg-navy text-[0.8rem] text-white/80">
+    <>
+      <section className="Top-bar bg-navy text-[0.8rem] text-white/80">
         <div className="mx-auto max-w-[1300px] px-6 py-2.5">
           {/* Mobile — centered */}
-          <div className="flex flex-col items-center justify-center gap-1.5 text-center md:hidden">
-            <div className="flex items-center justify-center gap-1.5 text-xs font-medium">
-              <span className="shrink-0 tracking-[1px] text-gold">★★★★★</span>
-              <span>Rated 5.0 by 103+ Tuscaloosa homeowners</span>
-            </div>
-            <div className="text-xs text-white/75">
-              Locally owned · High Noon Home Buyers
-            </div>
+          <div className="flex flex-col items-center justify-center gap-1 text-center md:hidden">
+            <span className="text-[0.7rem] tracking-[2px] text-gold" aria-hidden>
+              ★★★★★
+            </span>
+            <p className="font-secondary text-[0.78rem] font-medium leading-snug text-white">
+              Rated 5.0 by 103+ Tuscaloosa homeowners
+            </p>
+            <p className="font-secondary text-[0.72rem] leading-snug text-teal">
+              Locally owned - High Noon Home Buyers
+            </p>
           </div>
 
           {/* Desktop — spread layout */}
@@ -282,9 +312,7 @@ export function Header() {
               <span>Rated 5.0 by 103+ Tuscaloosa homeowners</span>
             </div>
 
-            <div className="text-white/75">
-              Locally owned
-            </div>
+            <div className="text-white/75">Locally owned</div>
 
             <div className="flex shrink-0 items-center gap-5">
               <a
@@ -304,12 +332,33 @@ export function Header() {
             </div>
           </div>
         </div>
-      </div>
+      </section>
 
-      {/* Navbar */}
-      <nav className="border-b border-border bg-white">
+      {mobileOpen && (
+        <div
+          className="lg:hidden"
+          style={{ height: navHeight }}
+          aria-hidden
+        />
+      )}
+
+      <header
+        ref={headerRef}
+        className={`top-0 z-[1000] bg-white transition-shadow duration-200 ${
+          mobileOpen ? "fixed inset-x-0" : "sticky"
+        } ${
+          scrolled || mobileOpen
+            ? "shadow-[0_4px_20px_rgba(0,0,0,0.1)]"
+            : "shadow-[0_2px_12px_rgba(0,0,0,0.06)]"
+        }`}
+      >
+        {/* Navbar */}
+        <nav className="border-b border-border bg-white">
         <div className="mx-auto max-w-[1300px] px-6">
-          <div className="flex h-[78px] items-center justify-between gap-6">
+          <div
+            ref={navRowRef}
+            className="flex h-[78px] items-center justify-between gap-6"
+          >
             {/* Logo */}
             <Link href="/" className="flex shrink-0 items-center">
               <Logo className="h-auto w-[168px] sm:w-[220px]" />
@@ -379,22 +428,6 @@ export function Header() {
 
             {/* CTA area */}
             <div className="flex shrink-0 items-center gap-1.5 sm:gap-2">
-              {/* Mobile: phone + email + hamburger */}
-              <NavIconButton
-                href={PHONE_HREF}
-                label={`Call ${PHONE}`}
-                className="lg:hidden"
-              >
-                <PhoneIcon size={16} />
-              </NavIconButton>
-              <NavIconButton
-                href={EMAIL_HREF}
-                label={`Email ${EMAIL}`}
-                className="lg:hidden"
-              >
-                <MailIcon size={16} />
-              </NavIconButton>
-
               {/* Desktop: phone icon + CTA */}
               <NavIconButton
                 href={PHONE_HREF}
@@ -436,14 +469,18 @@ export function Header() {
             </div>
           </div>
         </div>
+      </nav>
+      </header>
 
-        {/* Mobile menu */}
-        <div
-          className={`border-t border-border bg-white lg:hidden ${
-            mobileOpen ? "block" : "hidden"
-          }`}
-        >
-          <div className="mx-auto max-h-[calc(100dvh-70px)] max-w-[1300px] overflow-y-auto px-6 py-2">
+      {/* Mobile menu — fixed overlay below nav so sticky header keeps working */}
+      <div
+        ref={mobileMenuRef}
+        className={`fixed inset-x-0 bottom-0 z-[999] overflow-y-auto border-t border-border bg-white lg:hidden ${
+          mobileOpen ? "block" : "hidden"
+        }`}
+        style={{ top: navHeight }}
+      >
+          <div className="mx-auto max-w-[1300px] px-6 py-2">
             {[
               { label: "How It Works", href: "/how-it-works" },
               { label: "About Joe", href: "/about" },
@@ -544,8 +581,7 @@ export function Header() {
               </Link>
             </div>
           </div>
-        </div>
-      </nav>
-    </header>
+      </div>
+    </>
   );
 }
