@@ -22,6 +22,7 @@ type HeroProps = {
   eyebrow?: string;
   heading?: React.ReactNode;
   description?: string;
+  secondaryDescription?: string;
   benefits?: readonly string[];
   steps?: readonly HeroStep[];
   badges?: readonly string[];
@@ -180,6 +181,7 @@ export function Hero({
     </>
   ),
   description = "We buy Tuscaloosa homes for cash in any condition and can close in as little as 7 days on the timeline that works for you. When you work with Joe LeBlanc, you skip listings, showings, repairs, and real estate commissions and go straight to a guaranteed cash buyer.",
+  secondaryDescription,
   benefits = defaultBenefits,
   steps,
   badges,
@@ -210,6 +212,11 @@ export function Hero({
             <p className="font-secondary mb-7 max-w-md text-base leading-relaxed text-white/65">
               {description}
             </p>
+            {secondaryDescription ? (
+              <p className="font-secondary mb-7 max-w-md text-base leading-relaxed text-white/65">
+                {secondaryDescription}
+              </p>
+            ) : null}
             {badges && badges.length > 0 ? (
               <ul className="flex flex-wrap gap-3">
                 {badges.map((badge) => (
@@ -252,11 +259,16 @@ export function Hero({
             <p className="font-secondary mb-4 max-w-xl text-base leading-relaxed text-slate">
               {description}
             </p>
+            {secondaryDescription ? (
+              <p className="font-secondary mb-4 max-w-xl text-base leading-relaxed text-slate">
+                {secondaryDescription}
+              </p>
+            ) : null}
 
             {steps && steps.length > 0 ? (
               <HeroSteps steps={steps} />
             ) : showBenefits ? (
-              <ul className="mb-4 flex flex-wrap gap-2 lg:flex-nowrap">
+              <ul className="mb-4 flex flex-wrap gap-2 lg:flex-wrap">
                 {benefits.map((benefit) => (
                   <li
                     key={benefit}

@@ -1,10 +1,19 @@
+import Image from "next/image";
 import Link from "next/link";
+import { situationImages } from "@/data/situationImages";
 
 const PHONE = "(803) 784-7672";
 const PHONE_HREF = "tel:8037847672";
 const CASH_SALE_VIDEO = "/assets/why-cash-sale.mp4";
 
-const benefits = [
+export type WhyChooseUsBenefit = {
+  title: string;
+  description: string;
+  icon?: React.ReactNode;
+  num?: string;
+};
+
+const defaultBenefits: WhyChooseUsBenefit[] = [
   {
     title: "Fast timeline when you need it most",
     description:
@@ -64,11 +73,7 @@ const benefits = [
           strokeWidth="1.75"
           strokeLinejoin="round"
         />
-        <path
-          d="M13 7l4 4"
-          stroke="currentColor"
-          strokeWidth="1.75"
-        />
+        <path d="M13 7l4 4" stroke="currentColor" strokeWidth="1.75" />
       </svg>
     ),
   },
@@ -112,7 +117,24 @@ const benefits = [
       </svg>
     ),
   },
-] as const;
+];
+
+type WhyChooseUsProps = {
+  sectionId?: string;
+  className?: string;
+  eyebrow?: string;
+  heading?: React.ReactNode;
+  description?: string;
+  benefits?: readonly WhyChooseUsBenefit[];
+  media?: "video" | "image" | "none";
+  imageSrc?: string;
+  imageAlt?: string;
+  imageCaption?: string;
+  showFooterCards?: boolean;
+  ctaHref?: string;
+  ctaLabel?: string;
+  headingId?: string;
+};
 
 function PlayIcon() {
   return (
@@ -144,34 +166,100 @@ function CashSaleVideoCard() {
   );
 }
 
-export function WhyChooseUs() {
+function CashSaleImageCard({
+  imageSrc,
+  imageAlt,
+  imageCaption,
+}: {
+  imageSrc: string;
+  imageAlt: string;
+  imageCaption?: string;
+}) {
+  return (
+    <div className="mt-6 overflow-hidden rounded-xl border border-mist bg-white shadow-[0_8px_28px_rgba(26,35,50,0.08)]">
+      <div className="relative aspect-video w-full bg-navy">
+        <Image
+          src={imageSrc}
+          alt={imageAlt}
+          fill
+          priority
+          className="object-cover"
+          sizes="(max-width: 1024px) 100vw, 50vw"
+        />
+      </div>
+      {imageCaption ? (
+        <div className="font-secondary border-t border-mist bg-ice px-4 py-3 text-center text-fine font-medium text-navy">
+          {imageCaption}
+        </div>
+      ) : null}
+    </div>
+  );
+}
+
+export function WhyChooseUs({
+  sectionId = "why-cash",
+  className = "bg-white",
+  eyebrow = "Why a local cash sale",
+  heading = (
+    <>
+      Why Sell Your Tuscaloosa Home for Cash to a{" "}
+      <em className="text-teal italic">Local Buyer?</em>
+    </>
+  ),
+  description = "We buy Tuscaloosa homes for cash as-is — meaning no repairs, no showings, and no open houses. Instead of waiting the typical 30+ days it can take for a traditional buyer's loan and inspections, you move straight to a simple, certain closing.",
+  benefits = defaultBenefits,
+  media = "video",
+  imageSrc = situationImages.foreclosure,
+  imageAlt = "Homeowner considering a fast cash house sale",
+  imageCaption,
+  showFooterCards = true,
+  ctaHref,
+  ctaLabel,
+  headingId = "why-choose-heading",
+}: WhyChooseUsProps) {
   return (
     <section
-      id="why-cash"
-      className="bg-white py-10"
-      aria-labelledby="why-choose-heading"
+      id={sectionId}
+      className={`py-10 ${className}`}
+      aria-labelledby={headingId}
     >
       <div className="mx-auto max-w-[1300px] px-6">
         <div className="grid items-start gap-10 lg:grid-cols-2 lg:gap-14 xl:gap-16">
           <div>
             <p className="font-secondary mb-3 flex items-center gap-2 text-eyebrow font-bold tracking-[0.14em] text-teal uppercase">
               <span className="h-px w-5 bg-teal" aria-hidden />
-              Why a local cash sale
+              {eyebrow}
             </p>
 
             <h2
-              id="why-choose-heading"
+              id={headingId}
               className="font-primary mb-4 text-[clamp(1.65rem,3.5vw,2.35rem)] font-extrabold leading-tight tracking-tight text-navy"
             >
-              Why Sell Your Tuscaloosa Home for Cash to a{" "}
-              <em className="text-teal italic">Local Buyer?</em>
+              {heading}
             </h2>
 
             <p className="font-secondary max-w-xl text-base leading-relaxed text-slate">
-            We buy Tuscaloosa homes for cash as-is — meaning no repairs, no showings, and no open houses. Instead of waiting the typical 30+ days it can take for a traditional buyer's loan and inspections, you move straight to a simple, certain closing.
+              {description}
             </p>
 
-            <CashSaleVideoCard />
+            {media === "image" ? (
+              <CashSaleImageCard
+                imageSrc={imageSrc}
+                imageAlt={imageAlt}
+                imageCaption={imageCaption}
+              />
+            ) : media === "video" ? (
+              <CashSaleVideoCard />
+            ) : null}
+
+            {ctaHref && ctaLabel ? (
+              <Link
+                href={ctaHref}
+                className="font-secondary mt-6 inline-flex items-center justify-center rounded-lg bg-teal px-5 py-3.5 text-[0.9rem] font-bold text-white transition-all duration-200 hover:bg-teal-dark hover:shadow-[0_4px_20px_rgba(43,188,212,0.4)]"
+              >
+                {ctaLabel}
+              </Link>
+            ) : null}
           </div>
 
           <div className="divide-y divide-mist border-y border-mist lg:border-y-0">
@@ -184,7 +272,13 @@ export function WhyChooseUs() {
                   className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-teal-tint text-teal"
                   aria-hidden
                 >
-                  {benefit.icon}
+                  {benefit.num ? (
+                    <span className="font-primary text-[0.72rem] font-extrabold tracking-tight">
+                      {benefit.num}
+                    </span>
+                  ) : (
+                    benefit.icon
+                  )}
                 </div>
                 <div className="min-w-0 pt-0.5">
                   <h3 className="font-primary mb-1 text-[0.95rem] font-bold text-navy">
@@ -199,48 +293,55 @@ export function WhyChooseUs() {
           </div>
         </div>
 
-        <div className="mt-10 grid gap-5 lg:grid-cols-2 lg:gap-6">
-          <div className="rounded-xl border border-mist bg-teal-tint/40 p-6 sm:p-7">
-            <p className="font-secondary mb-3 flex items-center gap-2 text-eyebrow font-bold tracking-[0.14em] text-teal uppercase">
-              <span className="h-px w-5 bg-teal" aria-hidden />
-              A simple example
-            </p>
-            <p className="font-secondary text-base leading-relaxed text-slate">
-            If you sold a{" "}
-              <strong className="font-semibold text-charcoal">$270,000</strong>{" "}
-              Tuscaloosa house with an agent at 6% commission, you could pay around {" "}
-              <strong className="font-semibold text-charcoal">$16,000</strong> in commissions plus closing costs and repairs. When you sell to us, you trade a bit of price for speed, certainty, no repairs, and no upfront costs — often a better fit when time and simplicity matter most.
-            </p>
-          </div>
+        {showFooterCards ? (
+          <div className="mt-10 grid gap-5 lg:grid-cols-2 lg:gap-6">
+            <div className="rounded-xl border border-mist bg-teal-tint/40 p-6 sm:p-7">
+              <p className="font-secondary mb-3 flex items-center gap-2 text-eyebrow font-bold tracking-[0.14em] text-teal uppercase">
+                <span className="h-px w-5 bg-teal" aria-hidden />
+                A simple example
+              </p>
+              <p className="font-secondary text-base leading-relaxed text-slate">
+                If you sold a{" "}
+                <strong className="font-semibold text-charcoal">$270,000</strong>{" "}
+                Tuscaloosa house with an agent at 6% commission, you could pay
+                around{" "}
+                <strong className="font-semibold text-charcoal">$16,000</strong>{" "}
+                in commissions plus closing costs and repairs. When you sell to
+                us, you trade a bit of price for speed, certainty, no repairs,
+                and no upfront costs — often a better fit when time and
+                simplicity matter most.
+              </p>
+            </div>
 
-          <div className="flex flex-col justify-center rounded-xl bg-navy p-6 sm:p-7">
-            <p className="font-secondary mb-3 flex items-center gap-2 text-eyebrow font-bold tracking-[0.14em] text-teal uppercase">
-              <span className="h-px w-5 bg-teal" aria-hidden />
-              No pressure, ever
-            </p>
-            <p className="font-primary mb-5 text-base font-bold leading-snug text-white sm:text-base">
-              If you&apos;re comparing options, Joe&apos;s goal is simple: give you
-              a clear, fair cash offer so you can decide what&apos;s right for you
-              without any pressure.
-            </p>
-            <Link
-              href="#offer-form"
-              className="font-secondary inline-flex w-full items-center justify-center gap-2 rounded-lg bg-teal px-5 py-3.5 text-center text-[0.88rem] font-bold text-white transition-all duration-200 hover:bg-teal-dark hover:shadow-[0_4px_20px_rgba(43,188,212,0.4)] sm:text-[0.92rem]"
-            >
-              See What My Tuscaloosa Home Could Sell for in Cash
-              <span aria-hidden>→</span>
-            </Link>
-            <p className="font-secondary mt-4 text-center text-base text-white/60">
-              or call Joe at{" "}
-              <a
-                href={PHONE_HREF}
-                className="font-semibold text-teal transition-colors hover:text-white"
+            <div className="flex flex-col justify-center rounded-xl bg-navy p-6 sm:p-7">
+              <p className="font-secondary mb-3 flex items-center gap-2 text-eyebrow font-bold tracking-[0.14em] text-teal uppercase">
+                <span className="h-px w-5 bg-teal" aria-hidden />
+                No pressure, ever
+              </p>
+              <p className="font-primary mb-5 text-base font-bold leading-snug text-white sm:text-base">
+                If you&apos;re comparing options, Joe&apos;s goal is simple: give
+                you a clear, fair cash offer so you can decide what&apos;s right
+                for you without any pressure.
+              </p>
+              <Link
+                href="#offer-form"
+                className="font-secondary inline-flex w-full items-center justify-center gap-2 rounded-lg bg-teal px-5 py-3.5 text-center text-[0.88rem] font-bold text-white transition-all duration-200 hover:bg-teal-dark hover:shadow-[0_4px_20px_rgba(43,188,212,0.4)] sm:text-[0.92rem]"
               >
-                {PHONE}
-              </a>
-            </p>
+                See What My Tuscaloosa Home Could Sell for in Cash
+                <span aria-hidden>→</span>
+              </Link>
+              <p className="font-secondary mt-4 text-center text-base text-white/60">
+                or call Joe at{" "}
+                <a
+                  href={PHONE_HREF}
+                  className="font-semibold text-teal transition-colors hover:text-white"
+                >
+                  {PHONE}
+                </a>
+              </p>
+            </div>
           </div>
-        </div>
+        ) : null}
       </div>
     </section>
   );

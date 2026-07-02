@@ -1,3 +1,5 @@
+import { getSituationImage } from "./situationImages";
+
 export const homeWorthPageStats = [
   { value: "$271", unit: "K", label: "Median Tuscaloosa sale price (2026)" },
   { value: "~33", unit: "days", label: "Avg. days to pending (listed homes)" },
@@ -241,42 +243,42 @@ export const homeWorthWhoJoeHelpsSituations = [
     title: "Can't afford repairs",
     description:
       "If your home needs a new roof, HVAC, foundation work, or anything else you can't fund upfront, Joe buys as-is and handles everything after closing. You don't take on debt or live through a renovation to sell.",
-    image: "/assets/Repairs.webp",
+    image: getSituationImage("sell-as-is"),
   },
   {
     id: "foreclosure",
     title: "Facing foreclosure",
     description:
       "A cash sale can close before the foreclosure date, paying off your mortgage and stopping the process. Call as early as possible — the more time available, the more options remain open.",
-    image: "/assets/Foreclosure.webp",
+    image: getSituationImage("foreclosure"),
   },
   {
     id: "inherited-probate",
     title: "Inherited property",
     description:
       "We regularly purchase estate and probate properties as-is. Leave what you don't want behind — we handle clean-out after closing. Joe works directly with personal representatives and estate attorneys.",
-    image: "/assets/Inherited.webp",
+    image: getSituationImage("inherited-probate"),
   },
   {
     id: "tired-landlord",
     title: "Tired landlord",
     description:
       "Student rentals near campus, long-term tenant wear, or an exit you've been putting off — we buy tenant-occupied properties without requiring vacancy first. You hand over the keys at closing.",
-    image: "/assets/Tenants.webp",
+    image: getSituationImage("tired-landlord"),
   },
   {
     id: "divorce",
     title: "Divorce or life change",
     description:
       "When both parties need a clean financial break and a firm close date, a cash sale removes the uncertainty of a financed buyer falling through. Joe works with both sides respectfully and aligns to your legal timeline.",
-    image: "/assets/Divorce.webp",
+    image: getSituationImage("divorce"),
   },
   {
     id: "relocating",
     title: "Relocating quickly",
     description:
       "When a job or life change puts you on a tight move schedule, waiting 60–90 days on the market isn't an option. Joe closes on your date and can coordinate everything remotely if needed.",
-    image: "/assets/Speed.webp",
+    image: getSituationImage("relocating"),
   },
 ] as const;
 

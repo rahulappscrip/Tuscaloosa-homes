@@ -1,12 +1,6 @@
 import Link from "next/link";
 import { OfferCalculatorWidget } from "@/components/CashOfferCalculator";
 
-const defaultIncludes = [
-  "0% commission — we charge nothing to buy your home",
-  "Standard closing costs paid by us, not you",
-  "No fees to receive or review an offer",
-] as const;
-
 const points = [
   {
     title: "Agent route vs. Us",
@@ -46,11 +40,190 @@ const points = [
   },
 ] as const;
 
+const defaultIncludes = [
+  "0% commission — we charge nothing to buy your home",
+  "Standard closing costs paid by us, not you",
+  "No fees to receive or review an offer",
+] as const;
+
+type FormulaStepVariant = "arv" | "minus" | "equals";
+
+export type TransparentPricingFormulaStep = {
+  id?: string;
+  operator: string;
+  operatorVariant: FormulaStepVariant;
+  title: string;
+  description: string;
+};
+
+const operatorStyles = {
+  arv: "bg-white/10 text-teal ring-1 ring-teal/30",
+  minus: "bg-white/[0.06] text-teal ring-1 ring-white/10",
+  equals: "bg-teal text-white ring-1 ring-teal/40",
+} as const;
+
+function HomeValueIcon() {
+  return (
+    <svg viewBox="0 0 24 24" fill="none" className="h-5 w-5" aria-hidden>
+      <path
+        d="M4 10.5L12 5l8 5.5V19a1 1 0 01-1 1h-5v-6H10v6H5a1 1 0 01-1-1v-8.5z"
+        stroke="currentColor"
+        strokeWidth="1.75"
+        strokeLinejoin="round"
+      />
+      <path
+        d="M9 19v-4a1 1 0 011-1h4a1 1 0 011 1v4"
+        stroke="currentColor"
+        strokeWidth="1.75"
+        strokeLinejoin="round"
+      />
+    </svg>
+  );
+}
+
+function RepairsIcon() {
+  return (
+    <svg viewBox="0 0 24 24" fill="none" className="h-5 w-5" aria-hidden>
+      <path
+        d="M14.5 6.5l3 3-7.5 7.5H7v-3l7.5-7.5z"
+        stroke="currentColor"
+        strokeWidth="1.75"
+        strokeLinejoin="round"
+      />
+      <path
+        d="M16 5l3 3"
+        stroke="currentColor"
+        strokeWidth="1.75"
+        strokeLinecap="round"
+      />
+    </svg>
+  );
+}
+
+function HoldingCostsIcon() {
+  return (
+    <svg viewBox="0 0 24 24" fill="none" className="h-5 w-5" aria-hidden>
+      <rect
+        x="4"
+        y="5"
+        width="16"
+        height="14"
+        rx="2"
+        stroke="currentColor"
+        strokeWidth="1.75"
+      />
+      <path
+        d="M8 3v4M16 3v4M4 10h16"
+        stroke="currentColor"
+        strokeWidth="1.75"
+        strokeLinecap="round"
+      />
+      <path
+        d="M8 14h3M8 17h5"
+        stroke="currentColor"
+        strokeWidth="1.75"
+        strokeLinecap="round"
+      />
+    </svg>
+  );
+}
+
+function ProfitMarginIcon() {
+  return (
+    <svg viewBox="0 0 24 24" fill="none" className="h-5 w-5" aria-hidden>
+      <path
+        d="M7 17l4-4 3 3 5-6"
+        stroke="currentColor"
+        strokeWidth="1.75"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+      <path
+        d="M17 10h-3v3"
+        stroke="currentColor"
+        strokeWidth="1.75"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+    </svg>
+  );
+}
+
+function CashOfferIcon() {
+  return (
+    <svg viewBox="0 0 24 24" fill="none" className="h-5 w-5" aria-hidden>
+      <rect
+        x="3"
+        y="6"
+        width="18"
+        height="12"
+        rx="2"
+        stroke="currentColor"
+        strokeWidth="1.75"
+      />
+      <circle cx="12" cy="12" r="2.5" stroke="currentColor" strokeWidth="1.75" />
+      <path
+        d="M7 10h.01M17 14h.01"
+        stroke="currentColor"
+        strokeWidth="2"
+        strokeLinecap="round"
+      />
+    </svg>
+  );
+}
+
+function FormulaStepIcon({
+  id,
+  variant,
+}: {
+  id?: string;
+  variant: FormulaStepVariant;
+}) {
+  if (id === "arv" || variant === "arv") {
+    return <HomeValueIcon />;
+  }
+  if (id === "repairs") {
+    return <RepairsIcon />;
+  }
+  if (id === "holding") {
+    return <HoldingCostsIcon />;
+  }
+  if (id === "margin") {
+    return <ProfitMarginIcon />;
+  }
+  if (id === "offer" || variant === "equals") {
+    return <CashOfferIcon />;
+  }
+  if (variant === "minus") {
+    return <RepairsIcon />;
+  }
+
+  return <CashOfferIcon />;
+}
+
+function FormulaStepBadge({
+  id,
+  variant,
+}: {
+  id?: string;
+  variant: FormulaStepVariant;
+}) {
+  return (
+    <div
+      className={`flex h-12 w-12 shrink-0 items-center justify-center rounded-xl ${operatorStyles[variant]}`}
+      aria-hidden
+    >
+      <FormulaStepIcon id={id} variant={variant} />
+    </div>
+  );
+}
+
 type TransparentPricingProps = {
   eyebrow?: string;
   heading?: React.ReactNode;
   description?: string;
   includes?: readonly string[];
+  formulaSteps?: readonly TransparentPricingFormulaStep[];
   ctaLabel?: string;
   ctaHref?: string;
 };
@@ -66,6 +239,7 @@ export function TransparentPricing({
   description =
     "We decide on your cash offer by looking at your home's after-repair value, subtracting repair and holding costs, and leaving a reasonable profit — without adding commissions or hidden fees.",
   includes = defaultIncludes,
+  formulaSteps,
   ctaLabel = "Request a Transparent Cash Offer Breakdown",
   ctaHref = "#offer-form",
 }: TransparentPricingProps) {
@@ -95,48 +269,71 @@ export function TransparentPricing({
           <OfferCalculatorWidget />
 
           <div className="flex flex-col gap-5">
-            <p className="font-secondary text-base leading-relaxed text-white/90">
-              Unlike a traditional sale where you might pay around 5–6% in
-              commissions plus closing costs and repairs, our offers include:
-            </p>
+            {formulaSteps && formulaSteps.length > 0 ? (
+              <ol className="divide-y divide-white/10 rounded-xl border border-white/10 bg-white/[0.03]">
+                {formulaSteps.map((step) => (
+                  <li key={step.title} className="flex gap-4 p-4 sm:gap-5 sm:p-5">
+                    <FormulaStepBadge
+                      id={step.id}
+                      variant={step.operatorVariant}
+                    />
+                    <div className="min-w-0 pt-0.5">
+                      <h3 className="font-primary mb-1.5 text-[0.95rem] font-bold text-white sm:text-[1rem]">
+                        {step.title}
+                      </h3>
+                      <p className="font-secondary text-[0.88rem] leading-relaxed text-white/70 sm:text-[0.9rem]">
+                        {step.description}
+                      </p>
+                    </div>
+                  </li>
+                ))}
+              </ol>
+            ) : (
+              <>
+                <p className="font-secondary text-base leading-relaxed text-white/90">
+                  Unlike a traditional sale where you might pay around 5–6% in
+                  commissions plus closing costs and repairs, our offers include:
+                </p>
 
-            <ul className="flex flex-col gap-2.5">
-              {includes.map((item) => (
-                <li
-                  key={item}
-                  className="font-secondary flex items-center gap-2.5 text-[0.9rem] text-white"
-                >
-                  <span className="font-bold text-teal" aria-hidden>
-                    ✓
-                  </span>
-                  {item}
-                </li>
-              ))}
-            </ul>
+                <ul className="flex flex-col gap-2.5">
+                  {includes.map((item) => (
+                    <li
+                      key={item}
+                      className="font-secondary flex items-center gap-2.5 text-[0.9rem] text-white"
+                    >
+                      <span className="font-bold text-teal" aria-hidden>
+                        ✓
+                      </span>
+                      {item}
+                    </li>
+                  ))}
+                </ul>
 
-            <div className="flex flex-col gap-4">
-              {points.map((point) => (
-                <div
-                  key={point.title}
-                  className="flex gap-4 rounded-lg border border-white/10 bg-white/[0.04] p-4"
-                >
-                  <div
-                    className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-teal/15 text-teal"
-                    aria-hidden
-                  >
-                    {point.icon}
-                  </div>
-                  <div>
-                    <h3 className="font-primary mb-1 text-[0.95rem] font-semibold text-white">
-                      {point.title}
-                    </h3>
-                    <p className="font-secondary text-base leading-relaxed text-white/80">
-                      {point.description}
-                    </p>
-                  </div>
+                <div className="flex flex-col gap-4">
+                  {points.map((point) => (
+                    <div
+                      key={point.title}
+                      className="flex gap-4 rounded-lg border border-white/10 bg-white/[0.04] p-4"
+                    >
+                      <div
+                        className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-teal/15 text-teal"
+                        aria-hidden
+                      >
+                        {point.icon}
+                      </div>
+                      <div>
+                        <h3 className="font-primary mb-1 text-[0.95rem] font-semibold text-white">
+                          {point.title}
+                        </h3>
+                        <p className="font-secondary text-base leading-relaxed text-white/80">
+                          {point.description}
+                        </p>
+                      </div>
+                    </div>
+                  ))}
                 </div>
-              ))}
-            </div>
+              </>
+            )}
 
             <Link
               href={ctaHref}

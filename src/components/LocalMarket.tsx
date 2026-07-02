@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 
 const defaultStats = [
@@ -37,6 +38,8 @@ type LocalMarketProps = {
   paragraphs?: readonly string[];
   columns?: readonly [string, string];
   benefits?: readonly string[] | null;
+  benefitsTitle?: string;
+  showBenefitsOutro?: boolean;
   stats?: readonly MarketStat[];
   footnote?: string;
   footerNote?: React.ReactNode;
@@ -45,6 +48,9 @@ type LocalMarketProps = {
   ctaHref?: string;
   className?: string;
   sectionId?: string;
+  imageSrc?: string;
+  imageAlt?: string;
+  imageCaption?: string;
 };
 
 function StatCard({ stat, variant }: { stat: MarketStat; variant: "sidebar" | "overview" }) {
@@ -104,6 +110,8 @@ export function LocalMarket({
   ],
   columns,
   benefits = defaultBenefits,
+  benefitsTitle,
+  showBenefitsOutro = true,
   stats = defaultStats,
   footnote,
   footerNote,
@@ -112,7 +120,13 @@ export function LocalMarket({
   ctaHref = "#offer-form",
   className = "bg-white",
   sectionId = "market",
+  imageSrc,
+  imageAlt = "",
+  imageCaption,
 }: LocalMarketProps) {
+  const hasImage = Boolean(imageSrc);
+  const hasSidebarStats = stats.length > 0;
+
   if (layout === "overview") {
     const columnCopy = columns ?? [paragraphs[0] ?? "", paragraphs[1] ?? ""];
 
@@ -178,7 +192,13 @@ export function LocalMarket({
       aria-labelledby={`${sectionId}-heading`}
     >
       <div className="mx-auto max-w-[1300px] px-6">
-        <div className="grid items-start gap-10 lg:grid-cols-[1fr_300px] lg:gap-12 xl:grid-cols-[1fr_320px] xl:gap-16">
+        <div
+          className={
+            hasImage
+              ? "grid items-start gap-10 lg:grid-cols-2 lg:gap-12 xl:gap-14"
+              : "grid items-start gap-10 lg:grid-cols-[1fr_300px] lg:gap-12 xl:grid-cols-[1fr_320px] xl:gap-16"
+          }
+        >
           <div>
             <div className="mb-4 flex items-center gap-2.5">
               <span className="h-px w-6 bg-teal" aria-hidden />
@@ -202,7 +222,12 @@ export function LocalMarket({
 
             {benefits && benefits.length > 0 ? (
               <>
-                <ul className="my-5 space-y-3">
+                {benefitsTitle ? (
+                  <p className="font-primary mb-3 mt-5 text-[0.95rem] font-bold text-navy">
+                    {benefitsTitle}
+                  </p>
+                ) : null}
+                <ul className={`space-y-3 ${benefitsTitle ? "my-0" : "my-5"}`}>
                   {benefits.map((benefit) => (
                     <li
                       key={benefit}
@@ -219,12 +244,14 @@ export function LocalMarket({
                   ))}
                 </ul>
 
-                <p className="font-secondary mb-5 text-base leading-relaxed text-charcoal">
-                  For some Tuscaloosa homeowners, the best outcome isn&apos;t
-                  squeezing out the highest theoretical price — it&apos;s choosing the
-                  path that gets them out from under payments, repairs, or stress on
-                  a clear timeline.
-                </p>
+                {showBenefitsOutro ? (
+                  <p className="font-secondary mb-5 text-base leading-relaxed text-charcoal">
+                    For some Tuscaloosa homeowners, the best outcome isn&apos;t
+                    squeezing out the highest theoretical price — it&apos;s choosing the
+                    path that gets them out from under payments, repairs, or stress on
+                    a clear timeline.
+                  </p>
+                ) : null}
               </>
             ) : null}
 
@@ -266,20 +293,41 @@ export function LocalMarket({
             ) : null}
           </div>
 
-          <aside className="flex flex-col gap-4 lg:sticky lg:top-28">
-            {stats.map((stat) => (
-              <StatCard key={stat.label} stat={stat} variant="sidebar" />
-            ))}
+          {hasImage || hasSidebarStats || showSidebarCta ? (
+            <aside className="flex flex-col gap-4 lg:sticky lg:top-28">
+              {hasImage && imageSrc ? (
+                <div className="overflow-hidden rounded-2xl border border-mist bg-white shadow-[0_8px_28px_rgba(26,35,50,0.08)]">
+                  <div className="relative aspect-[4/3] w-full bg-navy">
+                    <Image
+                      src={imageSrc}
+                      alt={imageAlt}
+                      fill
+                      className="object-cover"
+                      sizes="(max-width: 1024px) 100vw, 50vw"
+                    />
+                  </div>
+                  {imageCaption ? (
+                    <div className="font-secondary border-t border-mist bg-ice px-4 py-3 text-center text-fine font-medium text-navy">
+                      {imageCaption}
+                    </div>
+                  ) : null}
+                </div>
+              ) : null}
 
-            {showSidebarCta ? (
-              <Link
-                href={ctaHref}
-                className="font-secondary mt-1 hidden rounded-xl border border-mist bg-hero-surface px-5 py-4 text-center text-[0.88rem] font-semibold text-navy transition-all duration-200 hover:border-teal hover:bg-teal-tint/40 hover:text-teal lg:block"
-              >
-                See if a cash sale fits your timeline →
-              </Link>
-            ) : null}
-          </aside>
+              {stats.map((stat) => (
+                <StatCard key={stat.label} stat={stat} variant="sidebar" />
+              ))}
+
+              {showSidebarCta ? (
+                <Link
+                  href={ctaHref}
+                  className="font-secondary mt-1 hidden rounded-xl border border-mist bg-hero-surface px-5 py-4 text-center text-[0.88rem] font-semibold text-navy transition-all duration-200 hover:border-teal hover:bg-teal-tint/40 hover:text-teal lg:block"
+                >
+                  See if a cash sale fits your timeline →
+                </Link>
+              ) : null}
+            </aside>
+          ) : null}
         </div>
       </div>
     </section>

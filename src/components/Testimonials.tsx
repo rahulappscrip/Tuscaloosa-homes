@@ -156,17 +156,19 @@ type TestimonialsProps = {
   display?: "carousel" | "grid";
 };
 
-function TestimonialsGrid({
-  slides,
-  eyebrow,
-  heading,
-  description,
-}: {
+export type TestimonialsGridProps = {
   slides: readonly TestimonialSlide[];
-  eyebrow: string;
-  heading: string;
-  description: React.ReactNode;
-}) {
+  eyebrow?: string;
+  heading?: string;
+  description?: React.ReactNode;
+};
+
+export function TestimonialsGrid({
+  slides,
+  eyebrow = "Reviews",
+  heading = "What Tuscaloosa homeowners say about selling to Joe",
+  description = "",
+}: TestimonialsGridProps) {
   const gridSlides = slides.filter(
     (slide): slide is TextSlide => slide.kind === "text",
   );

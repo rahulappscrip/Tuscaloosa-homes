@@ -161,6 +161,12 @@ export function HowItWorks({
                   </span>
                 </div>
 
+                {step.tag ? (
+                  <p className="font-secondary mb-1 text-[0.68rem] font-bold tracking-[0.1em] text-teal uppercase">
+                    {step.tag}
+                  </p>
+                ) : null}
+
                 <h3 className="font-primary mb-2.5 text-[1.05rem] font-bold text-navy">
                   {step.title}
                 </h3>
